@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title></title>
+	<!--  Bootstrap v5.3.0 -->
+	<link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css" />
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/dashboard.css">
+	<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="wp-admin wp-core-ui js sys-admin sys toplevel_page_sys auto-fold admin-bar branch-6-2 version-6-2-2 admin-color-fresh locale-en-us multisite customize-support sticky-menu svg">
+
+
+	<div id="sys-show-mobile-menu"
+		class="sys-all-wrapper sys sys-view-dashboard-widget_bookings_and_availability_timeline sys-view-dashboard-widget_daily_bookings_chart sys-view-dashboard-widget_upcoming_appointments sys-view-dashboard-index">
+		<div class="sys-content-and-menu-w">
+			<div id="sys-side-menu" class="sys-side-menu-w side-menu-full">
+				<div class="side-menu-top-part-w">
+					<a href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=dashboard__index"
+						class="logo-w"><span class="sys-logo"></span></a>
+					<div class="menu-color-toggler">
+						<div class="mc-toggler-label"><i class="sys-icon sys-icon-sun"></i></div>
+					</div>
+					<div class="menu-toggler" data-route="settings__set_menu_layout_style">
+						<div class="menu-toggler-lines"></div>
+					</div>
+				</div>
+				<ul class="side-menu">
+					<li class=" menu-item-is-active">
+						<a href="./index.html">
+							<i class="sys-icon sys-icon-box"></i>
+							<span>Dashboard</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Dashboard</li>
+						</ul>
+					</li>
+					<li class="">
+						<a
+							href="./calendar.html">
+							<i class="sys-icon sys-icon-calendar"></i>
+							<span>Calendar</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Calendar</li>
+						</ul>
+					</li>
+					<li class="">
+						<a
+							href="">
+							<i class="sys-icon sys-icon-inbox"></i>
+							<span>Appointments</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Appointments</li>
+						</ul>
+					</li>
+					<li class="">
+						<a
+							href="">
+							<i class="sys-icon sys-icon-credit-card"></i>
+							<span>Payments</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Payments</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a
+							href="">
+							<i class="sys-icon sys-icon-users"></i>
+							<span>Customers</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Customers</li>
+							<li class=""><a href="./customers.html"><span>List
+										of Customers</span></a></li>
+							<li class=""><a href="./add-customer.html"><span>Add
+										Customer</span></a></li>
+						</ul>
+					</li>
+					<li class="menu-spacer with-label"><span>Resources<span></span></span></li>
+					<li class=" has-children">
+						<a
+							href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=services__index">
+							<i class="sys-icon sys-icon-package"></i>
+							<span>Services</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Services</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=services__index"><span>Services</span></a>
+							</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=service_categories__index"><span>Categories</span></a>
+							</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=service_extras__index"><span>Service
+										Extras</span></a></li>
+						</ul>
+					</li>
+					<li class="">
+						<a
+							href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=agents__index">
+							<i class="sys-icon sys-icon-briefcase"></i>
+							<span>Agents</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Agents</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a
+							href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=locations__index">
+							<i class="sys-icon sys-icon-map-pin"></i>
+							<span>Locations</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Locations</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=locations__index"><span>All
+										Locations</span></a></li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=location_categories__index"><span>Categories</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-spacer with-label"><span>Settings<span></span></span></li>
+					<li class="">
+						<a
+							href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=addons__index">
+							<i class="sys-icon sys-icon-plus-circle2"></i>
+							<span>Add-ons</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Add-ons</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a
+							href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=settings__general">
+							<i class="sys-icon sys-icon-settings"></i>
+							<span>Settings</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Settings</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=settings__general"><span>General</span></a>
+							</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=settings__work_periods"><span>Schedule</span></a>
+							</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=addons__missing_taxes"><span>Tax</span></a>
+							</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=settings__steps"><span>Steps</span></a>
+							</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=settings__payments"><span>Payments</span></a>
+							</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=settings__notifications"><span>Notifications</span></a>
+							</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=settings__roles"><span>Roles</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a
+							href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=processes__index">
+							<i class="sys-icon sys-icon-server"></i>
+							<span>Processes</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Processes</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=processes__index"><span>Processes</span></a>
+							</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=process_jobs__index"><span>Scheduled
+										Jobs</span></a></li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=activities__index"><span>Activity
+										Log</span></a></li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a
+							href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=integrations__external_calendars">
+							<i class="sys-icon sys-icon-link-2"></i>
+							<span>Integrations</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Integrations</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=integrations__external_calendars"><span>Calendars</span></a>
+							</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=integrations__external_meeting_systems"><span>Meetings</span></a>
+							</li>
+							<li class=""><a
+									href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=integrations__external_marketing_systems"><span>Marketing</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a
+							href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=settings__default_form_fields">
+							<i class="sys-icon sys-icon-layers"></i>
+							<span>Form Fields</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Form Fields</li>
+						</ul>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="sys-content-w">
+				<div class="sys-top-bar-w">
+					<a id="sys-mop-icon-menu" href="#" title="Menu"
+						class="sys-top-iconed-link sys-mobile-top-menu-trigger">
+						<i class="sys-icon sys-icon-menu"></i>
+					</a>
+					<div class="sys-top-search-w">
+						<div class="sys-top-search-input-w">
+							<i class="sys-icon sys-icon-x sys-mobile-top-search-trigger-cancel"></i>
+							<input type="text" data-route="search__query_results" class="sys-top-search"
+								placeholder="Start typing to find bookings, customers, agents or services..."
+								spellcheck="false" data-ms-editor="true">
+						</div>
+						<div class="sys-top-search-results-w"></div>
+					</div>
+					<a href="#" title="Search" class="sys-top-iconed-link sys-mobile-top-search-trigger"><i
+							class="sys-icon sys-icon-search"></i></a>
+					<a href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=bookings__pending_approval"
+						title="Pending Bookings" class="sys-top-iconed-link sys-top-notifications-trigger">
+						<i class="sys-icon sys-icon-inbox"></i>
+					</a>
+					<a href="#" data-sys-params="" data-sys-action="bookings__quick_edit"
+						data-sys-output-target="side-panel" data-sys-after-call="sys_init_quick_booking_form"
+						title="New Appointment" class="sys-mobile-top-new-appointment-btn-trigger sys-top-iconed-link">
+						<i class="sys-icon sys-icon-plus-circle"></i>
+					</a>
+					<a href="#" class="sys-top-new-appointment-btn sys-btn sys-btn-primary" data-sys-params=""
+						data-sys-action="bookings__quick_edit" data-sys-output-target="side-panel"
+						data-sys-after-call="sys_init_quick_booking_form">
+						<i class="sys-icon sys-icon-plus"></i>
+						<span>New Booking</span>
+					</a>
+					<div class="sys-top-user-info-w">
+						<div class="avatar-w top-user-info-toggler"
+							style="background-image: url('https://secure.gravatar.com/avatar/093f388d9b7286cefa950eefb3a831ac?s=96&amp;d=mm&amp;r=g');">
+						</div>
+						<div class="sys-user-info-dropdown">
+							<a href="#" class="sys-user-info-close top-user-info-toggler"><i
+									class="sys-icon sys-icon-x"></i></a>
+							<div class="sys-uid-head">
+								<div class="uid-avatar-w">
+									<div class="uid-avatar"
+										style="background-image: url('https://secure.gravatar.com/avatar/093f388d9b7286cefa950eefb3a831ac?s=96&amp;d=mm&amp;r=g');">
+									</div>
+								</div>
+								<div class="uid-info">
+									<h4>Sandbox Site Admin</h4>
+									<h5>Administrator</h5>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<a
+										href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=settings__general">
+										<i class="sys-icon sys-icon-ui-46"></i>
+										<span>Settings</span>
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-login.php?action=logout&amp;_wpnonce=ee10984979">
+										<i class="sys-icon sys-icon-log-in"></i>
+										<span>Logout</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="sys-content ">
+					<div class="table-with-pagination-w">
+						<div class="sys-pagination-w with-actions">
+							<div class="table-heading-w">
+								<h2 class="table-heading">Customers</h2>
+								<div class="pagination-info">Showing <span class="sys-pagination-from">1</span>-<span
+										class="sys-pagination-to">20</span> of <span
+										class="sys-pagination-total">20</span></div>
+							</div>
+							<div class="mobile-table-actions-trigger"><i class="sys-icon sys-icon-more-horizontal"></i>
+							</div>
+							<div class="table-actions">
+								<a href=""
+									target="_blank"
+									class="sys-btn sys-btn-outline sys-btn-grey download-csv-with-filters"><i
+										class="sys-icon sys-icon-download"></i><span>Download .csv</span></a>
+								<a href="./add-customer.html"
+									class="sys-btn sys-btn-outline sys-btn-grey"><i
+										class="sys-icon sys-icon-plus"></i><span>New Customer</span></a>
+							</div>
+						</div>
+						<div class="sys-customers-list">
+							<div class="sys-scrollable-table-w">
+								<div class="sys-table-w sys-table-compact">
+									<table class="sys-table sys-scrollable-table" data-route="customers__index">
+										<thead>
+											<tr>
+												<th>ID</th>
+												<th class="text-left">Full Name</th>
+												<th>Phone</th>
+												<th>Email</th>
+												<th>Total Apps</th>
+												<th>Next App</th>
+												<th>Time to Next</th>
+												<th>WP User ID</th>
+												<th>Registered On</th>
+												<th></th>
+											</tr>
+											<tr>
+												<th>
+													<div
+														class="sys-form-group sys-form-textfield-group sys-form-group-transparent no-label">
+														<input type="text" placeholder="ID" name="filter[id]" value=""
+															style="width: 40px;"
+															class="sys-table-filter sys-form-control" id="filter_id"
+															spellcheck="false" data-ms-editor="true"></div>
+												</th>
+												<th>
+													<div
+														class="sys-form-group sys-form-textfield-group sys-form-group-transparent no-label">
+														<input type="text" placeholder="Search by Name"
+															name="filter[customer]" value=""
+															class="sys-table-filter sys-form-control"
+															id="filter_customer" spellcheck="false"
+															data-ms-editor="true"></div>
+												</th>
+												<th>
+													<div
+														class="sys-form-group sys-form-textfield-group sys-form-group-transparent no-label">
+														<input type="text" placeholder="Phone..." name="filter[phone]"
+															value="" class="sys-table-filter sys-form-control"
+															id="filter_phone" spellcheck="false" data-ms-editor="true">
+													</div>
+												</th>
+												<th>
+													<div
+														class="sys-form-group sys-form-textfield-group sys-form-group-transparent no-label">
+														<input type="text" placeholder="Search by Email"
+															name="filter[email]" value=""
+															class="sys-table-filter sys-form-control" id="filter_email"
+															spellcheck="false" data-ms-editor="true"></div>
+												</th>
+												<th></th>
+												<th></th>
+												<th></th>
+												<th></th>
+												<th>
+													<div class="sys-form-group">
+														<div class="sys-date-range-picker sys-table-filter-datepicker"
+															data-can-be-cleared="yes"
+															data-no-value-label="Filter By Date"
+															data-clear-btn-label="Reset Date Filtering">
+															<span class="range-picker-value">Filter By Date</span>
+															<i class="sys-icon sys-icon-chevron-down"></i>
+															<input type="hidden"
+																class="sys-table-filter sys-datepicker-date-from"
+																name="filter[registration_date_from]" value="">
+															<input type="hidden"
+																class="sys-table-filter sys-datepicker-date-to"
+																name="filter[registration_date_to]" value="">
+														</div>
+													</div>
+												</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="text-center sys-column-faded">4</td>
+												<td>
+													<a class="sys-with-avatar"
+														href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=customers__edit_form&amp;id=4">
+														<span class="sys-avatar"
+															style="background-image: url(https://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/plugins/sys/public/images/default-avatar.jpg)"></span>
+														<span class="sys-name">Gloria Piralta</span>
+													</a>
+												</td>
+												<td>+18589838734</td>
+												<td style="max-width: 220px; overflow: scroll;">customer+c4@sys.com</td>
+												<td>2</td>
+												<td>n/a</td>
+												<td><span class="time-left is-past">Past</span></td>
+												<td>
+													<div class="not-connected-pill"></div>
+												</td>
+												<td>n/a</td>
+												<td><a
+														href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=customers__edit_form&amp;id=4"><i
+															class="sys-icon sys-icon-edit-2"></i><span>Edit</span></a>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center sys-column-faded">3</td>
+												<td>
+													<a class="sys-with-avatar"
+														href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=customers__edit_form&amp;id=3">
+														<span class="sys-avatar"
+															style="background-image: url(https://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/plugins/sys/public/images/default-avatar.jpg)"></span>
+														<span class="sys-name">Ken Brossman</span>
+													</a>
+												</td>
+												<td>+18589838724</td>
+												<td style="max-width: 220px; overflow: scroll;">customer+c3@sys.com</td>
+												<td>1</td>
+												<td>n/a</td>
+												<td><span class="time-left is-past">Past</span></td>
+												<td>
+													<div class="not-connected-pill"></div>
+												</td>
+												<td>n/a</td>
+												<td><a
+														href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=customers__edit_form&amp;id=3"><i
+															class="sys-icon sys-icon-edit-2"></i><span>Edit</span></a>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center sys-column-faded">2</td>
+												<td>
+													<a class="sys-with-avatar"
+														href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=customers__edit_form&amp;id=2">
+														<span class="sys-avatar"
+															style="background-image: url(https://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/plugins/sys/public/images/default-avatar.jpg)"></span>
+														<span class="sys-name">Mandy Bishops</span>
+													</a>
+												</td>
+												<td>+18589838746</td>
+												<td style="max-width: 220px; overflow: scroll;">customer+c2@sys.com</td>
+												<td>0</td>
+												<td>n/a</td>
+												<td><span class="time-left is-past">Past</span></td>
+												<td>
+													<div class="not-connected-pill"></div>
+												</td>
+												<td>n/a</td>
+												<td><a
+														href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=customers__edit_form&amp;id=2"><i
+															class="sys-icon sys-icon-edit-2"></i><span>Edit</span></a>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center sys-column-faded">1</td>
+												<td>
+													<a class="sys-with-avatar"
+														href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=customers__edit_form&amp;id=1">
+														<span class="sys-avatar"
+															style="background-image: url(https://secure.gravatar.com/avatar/d6c736d352acefc680bb735c161dbca2?s=96&amp;d=mm&amp;r=g)"></span>
+														<span class="sys-name">Brad Cooper</span>
+													</a>
+												</td>
+												<td>+18589838584</td>
+												<td style="max-width: 220px; overflow: scroll;">
+													.c9ebe9a8022281f3_customer@sys-demo.com.</td>
+												<td>3</td>
+												<td>n/a</td>
+												<td><span class="time-left is-past">Past</span></td>
+												<td><a target="_blank" href="">25234</a></td>
+												<td>n/a</td>
+												<td><a
+														href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=customers__edit_form&amp;id=1"><i
+															class="sys-icon sys-icon-edit-2"></i><span>Edit</span></a>
+												</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<th>ID</th>
+												<th class="text-left">Full Name</th>
+												<th>Phone</th>
+												<th>Email</th>
+												<th>Total Apps</th>
+												<th>Next App</th>
+												<th>Time to Next</th>
+												<th>WP User ID</th>
+												<th>Registered On</th>
+												<th></th>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="sys-pagination-w">
+							<div class="pagination-info">Showing <span class="sys-pagination-from">1</span>-<span
+									class="sys-pagination-to">20</span> of <span class="sys-pagination-total">20</span>
+							</div>
+							<div class="pagination-page-select-w">
+								<label for="">Page:</label>
+								<select name="page" class="pagination-page-select">
+									<option selected="">1</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sys-template-variables">
+					<div class="close-template-variables-panel"><i class="sys-icon sys-icon-x"></i></div>
+					<h3>Available Template Variables</h3>
+					<div class="sys-template-variables-i">
+						<div class="available-vars-block">
+							<h4>Direct URLs to Manage Appointment</h4>
+							<ul>
+								<li><span class="var-label">For Agent:</span> <span
+										class="var-code sys-click-to-copy">{{manage_booking_url_agent}}</span></li>
+								<li><span class="var-label">For Customer:</span> <span
+										class="var-code sys-click-to-copy">{{manage_booking_url_customer}}</span>
+								</li>
+							</ul>
+							<h4>Appointment</h4>
+							<ul>
+								<li><span class="var-label">Appointment ID#:</span> <span
+										class="var-code sys-click-to-copy">{{booking_id}}</span></li>
+								<li><span class="var-label">Confirmation Code:</span> <span
+										class="var-code sys-click-to-copy">{{booking_code}}</span></li>
+								<li><span class="var-label">Service Name:</span> <span
+										class="var-code sys-click-to-copy">{{service_name}}</span></li>
+								<li><span class="var-label">Service Category:</span> <span
+										class="var-code sys-click-to-copy">{{service_category}}</span></li>
+								<li><span class="var-label">Start Date:</span> <span
+										class="var-code sys-click-to-copy">{{start_date}}</span></li>
+								<li><span class="var-label">Start Time:</span> <span
+										class="var-code sys-click-to-copy">{{start_time}}</span></li>
+								<li><span class="var-label">End Time:</span> <span
+										class="var-code sys-click-to-copy">{{end_time}}</span></li>
+								<li><span class="var-label">Service Duration:</span> <span
+										class="var-code sys-click-to-copy">{{booking_duration}}</span></li>
+								<li><span class="var-label">Status:</span> <span
+										class="var-code sys-click-to-copy">{{booking_status}}</span></li>
+								<li><span class="var-label">Service Extras:</span> <span
+										class="var-code sys-click-to-copy">{{service_extras}}</span></li>
+								<li><span class="var-label">Total Attendees</span> <span
+										class="var-code sys-click-to-copy">{{total_attendees}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Payment</h4>
+							<ul>
+								<li><span class="var-label">Payment Status:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_status}}</span></li>
+								<li><span class="var-label">Payment Portion:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_portion}}</span></li>
+								<li><span class="var-label">Payment Method:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_method}}</span></li>
+								<li><span class="var-label">Payment Amount:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_amount}}</span></li>
+								<li><span class="var-label">Total Price:</span> <span
+										class="var-code sys-click-to-copy">{{booking_price}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Customer</h4>
+							<ul>
+								<li><span class="var-label">Full Name:</span> <span
+										class="var-code sys-click-to-copy">{{customer_full_name}}</span></li>
+								<li><span class="var-label">First Name:</span> <span
+										class="var-code sys-click-to-copy">{{customer_first_name}}</span></li>
+								<li><span class="var-label">Last Name:</span> <span
+										class="var-code sys-click-to-copy">{{customer_last_name}}</span></li>
+								<li><span class="var-label">Email Address:</span> <span
+										class="var-code sys-click-to-copy">{{customer_email}}</span></li>
+								<li><span class="var-label">Phone:</span> <span
+										class="var-code sys-click-to-copy">{{customer_phone}}</span></li>
+								<li><span class="var-label">Comments:</span> <span
+										class="var-code sys-click-to-copy">{{customer_notes}}</span></li>
+								<li><span class="var-label">Password Reset Token:</span> <span
+										class="var-code sys-click-to-copy">{{token}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Agent</h4>
+							<ul>
+								<li><span class="var-label">First Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_first_name}}</span></li>
+								<li><span class="var-label">Last Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_last_name}}</span></li>
+								<li><span class="var-label">Full Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_full_name}}</span></li>
+								<li><span class="var-label">Display Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_display_name}}</span></li>
+								<li><span class="var-label">Email:</span> <span
+										class="var-code sys-click-to-copy">{{agent_email}}</span></li>
+								<li><span class="var-label">Phone:</span> <span
+										class="var-code sys-click-to-copy">{{agent_phone}}</span></li>
+								<li><span class="var-label">Additional Emails:</span> <span
+										class="var-code sys-click-to-copy">{{agent_additional_emails}}</span></li>
+								<li><span class="var-label">Additional Phone Numbers:</span> <span
+										class="var-code sys-click-to-copy">{{agent_additional_phones}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Location</h4>
+							<ul>
+								<li><span class="var-label">Name:</span> <span
+										class="var-code sys-click-to-copy">{{location_name}}</span></li>
+								<li><span class="var-label">Full Address:</span> <span
+										class="var-code sys-click-to-copy">{{location_full_address}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Transaction</h4>
+							<ul>
+								<li><span class="var-label">Token:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_token}}</span></li>
+								<li><span class="var-label">Amount:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_amount}}</span></li>
+								<li><span class="var-label">Processor:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_processor}}</span></li>
+								<li><span class="var-label">Payment Method:</span> <span
+										class="var-code sys-click-to-copy"> {{transaction_payment_method}}</span>
+								</li>
+								<li><span class="var-label">Funds Status:</span> <span
+										class="var-code sys-click-to-copy"> {{transaction_funds_status}}</span></li>
+								<li><span class="var-label">Status:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_status}}</span></li>
+								<li><span class="var-label">Notes:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_notes}}</span></li>
+								<li><span class="var-label">Payment Portion:</span> <span
+										class="var-code sys-click-to-copy">{{transaction_payment_portion}}</span>
+								</li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Business Info</h4>
+							<ul>
+								<li><span class="var-label">Customer Cabinet URL:</span> <span
+										class="var-code sys-click-to-copy">{{customer_dashboard_url}}</span></li>
+								<li><span class="var-label">Business logo HTML:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_image}}</span></li>
+								<li><span class="var-label">Business logo URL:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_url}}</span></li>
+								<li><span class="var-label">Business Address:</span> <span
+										class="var-code sys-click-to-copy">{{business_address}}</span></li>
+								<li><span class="var-label">Business Phone:</span> <span
+										class="var-code sys-click-to-copy">{{business_phone}}</span></li>
+								<li><span class="var-label">Business Name:</span> <span
+										class="var-code sys-click-to-copy">{{business_name}}</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="sys-layout-template-variables">
+					<div class="close-layout-template-variables-panel"><i class="sys-icon sys-icon-x"></i></div>
+					<h3>Available Layout Variables</h3>
+					<div class="sys-template-variables-i">
+						<div class="available-vars-block">
+							<h4>Business Info</h4>
+							<ul>
+								<li><span class="var-label">Customer Cabinet URL:</span> <span
+										class="var-code sys-click-to-copy">{{customer_dashboard_url}}</span></li>
+								<li><span class="var-label">Business logo HTML:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_image}}</span></li>
+								<li><span class="var-label">Business logo URL:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_url}}</span></li>
+								<li><span class="var-label">Business Address:</span> <span
+										class="var-code sys-click-to-copy">{{business_address}}</span></li>
+								<li><span class="var-label">Business Phone:</span> <span
+										class="var-code sys-click-to-copy">{{business_phone}}</span></li>
+								<li><span class="var-label">Business Name:</span> <span
+										class="var-code sys-click-to-copy">{{business_name}}</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- js script files  -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-alpha.2/chart.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+	<script src="assets/js/jquery-3.7.0.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/dashboard.js"></script>
+	<script src="assets/js/wow.min.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -816,7 +816,7 @@ body.sys-admin .sys-btn {
   cursor: pointer;
   white-space: nowrap;
   line-height: 1.2;
-  font-size: 16px
+  font-size: 16px;
 }
 
 body.sys-admin .sys-btn:focus,

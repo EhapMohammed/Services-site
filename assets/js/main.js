@@ -21,64 +21,31 @@ toggleSidebarMop.addEventListener('click', function() {
 });
 
 const canvas = document.getElementById('chartDailyBookings');
-const labels = canvas.dataset.chartLabels ? canvas.dataset.chartLabels.split(',') : [];
-const values = canvas.dataset.chartValues ? canvas.dataset.chartValues.split(',').map(Number) : [];
+const today = new Date();
+const xValues = [];
 
-// rest of the chart code goes here...
+for (let i = 0; i < today.getDate(); i++) {
+  const date = new Date(today.getFullYear(), today.getMonth(), i + 1);
+  const formattedDate = date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  xValues.push(formattedDate);
+}
 
 new Chart(canvas, {
-  type: 'line',
+  type: "line",
   data: {
-    labels: labels,
-    // datasets: [{
-    //   label: 'Daily Bookings',
-    //   data: values,
-    //   borderColor: 'blue',
-    //   fill: false
-    // }]
+    labels: xValues,
+    datasets: [{
+      borderWidth: 1,
+      data: false,
+    }]
   },
   options: {
-    responsive: true,
     scales: {
-      xAxes: [{
-        display: true,
-        scaleLabel: {
-          display: true,
-          labelString: 'Date'
-        },
-        ticks: {
-          callback: function(value, index, values) {
-            // Convert label value to day number and month name
-            const date = new Date(value);
-            const monthName = date.toLocaleString('default', { month: 'short' });
-            return `${date.getDate()} ${monthName}`;
-          }
-        }
-      }],
       yAxes: [{
-        display: true,
-        scaleLabel: {
-          display: true,
-          labelString: 'Date'
+        ticks: {
+          display: false
         }
       }]
-    },
-    tooltips: {
-      callbacks: {
-        title: function(tooltipItem, data) {
-          // Get label value for this tooltip item
-          const label = data.labels[tooltipItem[0].index];
-          // Convert label value to day number and month name
-          const date = new Date(label);
-          const monthName = date.toLocaleString('default', { month: 'long' });
-          return `${date.getDate()} ${monthName}`;
-        },
-        label: function(tooltipItem, data) {
-          // Get data value for this tooltip item
-          const value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-          return `Bookings: ${value}`;
-        }
-      }
     }
   }
 });

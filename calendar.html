@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title></title>
+	<!--  Bootstrap v5.3.0 -->
+	<link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css" />
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/dashboard.css">
+	<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="wp-admin wp-core-ui js sys-admin sys toplevel_page_sys auto-fold admin-bar branch-6-2 version-6-2-2 admin-color-fresh locale-en-us multisite customize-support sticky-menu svg">
+
+
+	<div id="sys-show-mobile-menu"
+		class="sys-all-wrapper sys sys-view-dashboard-widget_bookings_and_availability_timeline sys-view-dashboard-widget_daily_bookings_chart sys-view-dashboard-widget_upcoming_appointments sys-view-dashboard-index">
+		<div class="sys-content-and-menu-w">
+			<div id="sys-side-menu" class="sys-side-menu-w side-menu-full">
+				<div class="side-menu-top-part-w">
+					<a href="./index.html" class="logo-w"><span class="sys-logo"></span></a>
+					<div class="menu-color-toggler">
+						<div class="mc-toggler-label"><i class="sys-icon sys-icon-sun"></i></div>
+					</div>
+					<div class="menu-toggler" data-route="settings__set_menu_layout_style">
+						<div class="menu-toggler-lines"></div>
+					</div>
+				</div>
+				<ul class="side-menu">
+					<li class=" menu-item-is-active">
+						<a href="./index.html">
+							<i class="sys-icon sys-icon-box"></i>
+							<span>Dashboard</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Dashboard</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="./calendar.html">
+							<i class="sys-icon sys-icon-calendar"></i>
+							<span>Calendar</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Calendar</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="">
+							<i class="sys-icon sys-icon-inbox"></i>
+							<span>Appointments</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Appointments</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="">
+							<i class="sys-icon sys-icon-credit-card"></i>
+							<span>Payments</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Payments</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-users"></i>
+							<span>Customers</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Customers</li>
+							<li class=""><a href="./customers.html"><span>List
+										of Customers</span></a></li>
+							<li class=""><a href="/add-customer.html"><span>Add
+										Customer</span></a></li>
+						</ul>
+					</li>
+					<li class="menu-spacer with-label"><span>Resources<span></span></span></li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-package"></i>
+							<span>Services</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Services</li>
+							<li class=""><a href=""><span>Services</span></a>
+							</li>
+							<li class=""><a href=""><span>Categories</span></a>
+							</li>
+							<li class=""><a href=""><span>Service
+										Extras</span></a></li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="">
+							<i class="sys-icon sys-icon-briefcase"></i>
+							<span>Agents</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Agents</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-map-pin"></i>
+							<span>Locations</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Locations</li>
+							<li class=""><a href=""><span>All
+										Locations</span></a></li>
+							<li class=""><a href=""><span>Categories</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-spacer with-label"><span>Settings<span></span></span></li>
+					<li class="">
+						<a href="">
+							<i class="sys-icon sys-icon-plus-circle2"></i>
+							<span>Add-ons</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Add-ons</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-settings"></i>
+							<span>Settings</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Settings</li>
+							<li class=""><a href=""><span>General</span></a>
+							</li>
+							<li class=""><a href=""><span>Schedule</span></a>
+							</li>
+							<li class=""><a href=""><span>Tax</span></a>
+							</li>
+							<li class=""><a href=""><span>Steps</span></a>
+							</li>
+							<li class=""><a href=""><span>Payments</span></a>
+							</li>
+							<li class=""><a href=""><span>Notifications</span></a>
+							</li>
+							<li class=""><a href=""><span>Roles</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-server"></i>
+							<span>Processes</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Processes</li>
+							<li class=""><a href=""><span>Processes</span></a>
+							</li>
+							<li class=""><a href=""><span>Scheduled
+										Jobs</span></a></li>
+							<li class=""><a href=""><span>Activity
+										Log</span></a></li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-link-2"></i>
+							<span>Integrations</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Integrations</li>
+							<li class=""><a href=""><span>Calendars</span></a>
+							</li>
+							<li class=""><a href=""><span>Meetings</span></a>
+							</li>
+							<li class=""><a href=""><span>Marketing</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="">
+							<i class="sys-icon sys-icon-layers"></i>
+							<span>Form Fields</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Form Fields</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="sys-content-w">
+				<div class="sys-top-bar-w">
+					<a id="sys-mop-icon-menu" href="#" title="Menu"
+						class="sys-top-iconed-link sys-mobile-top-menu-trigger">
+						<i class="sys-icon sys-icon-menu"></i>
+					</a>
+					<div class="sys-top-search-w">
+						<div class="sys-top-search-input-w">
+							<i class="sys-icon sys-icon-x sys-mobile-top-search-trigger-cancel"></i>
+							<input type="text" data-route="search__query_results" class="sys-top-search"
+								placeholder="Start typing to find bookings, customers, agents or services..."
+								spellcheck="false" data-ms-editor="true">
+						</div>
+						<div class="sys-top-search-results-w"></div>
+					</div>
+					<a href="#" title="Search" class="sys-top-iconed-link sys-mobile-top-search-trigger"><i
+							class="sys-icon sys-icon-search"></i></a>
+					<a href="" title="Pending Bookings" class="sys-top-iconed-link sys-top-notifications-trigger">
+						<i class="sys-icon sys-icon-inbox"></i>
+					</a>
+					<a href="#" data-sys-params="" data-sys-action="bookings__quick_edit"
+						data-sys-output-target="side-panel" data-sys-after-call="sys_init_quick_booking_form"
+						title="New Appointment" class="sys-mobile-top-new-appointment-btn-trigger sys-top-iconed-link">
+						<i class="sys-icon sys-icon-plus-circle"></i>
+					</a>
+					<a href="#" class="sys-top-new-appointment-btn sys-btn sys-btn-primary" data-sys-params=""
+						data-sys-action="bookings__quick_edit" data-sys-output-target="side-panel"
+						data-sys-after-call="sys_init_quick_booking_form">
+						<i class="sys-icon sys-icon-plus"></i>
+						<span>New Booking</span>
+					</a>
+					<div class="sys-top-user-info-w">
+						<div class="avatar-w top-user-info-toggler"
+							style="background-image: url('https://secure.gravatar.com/avatar/093f388d9b7286cefa950eefb3a831ac?s=96&amp;d=mm&amp;r=g');">
+						</div>
+						<div class="sys-user-info-dropdown">
+							<a href="#" class="sys-user-info-close top-user-info-toggler"><i
+									class="sys-icon sys-icon-x"></i></a>
+							<div class="sys-uid-head">
+								<div class="uid-avatar-w">
+									<div class="uid-avatar"
+										style="background-image: url('https://secure.gravatar.com/avatar/093f388d9b7286cefa950eefb3a831ac?s=96&amp;d=mm&amp;r=g');">
+									</div>
+								</div>
+								<div class="uid-info">
+									<h4>Sandbox Site Admin</h4>
+									<h5>Administrator</h5>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<a href="">
+										<i class="sys-icon sys-icon-ui-46"></i>
+										<span>Settings</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="sys-icon sys-icon-log-in"></i>
+										<span>Logout</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="sys-content ">
+					<div class="calendar-wrapper" data-view="day">
+						<form class="sys-calendar-settings-form" action="">
+							<div class="sys-calendar-settings-main">
+								<div class="sys-current-month-label-w calendar-mobile-controls">
+									<div class="sys-current-month-label">
+										<div class="current-month">
+											July 30 </div>
+										<div class="current-year">2023</div>
+									</div>
+									<div class="cc-actions">
+
+										<a href="#"
+											class="cc-action-today sys-calendar-today-btn calendar-load-target-date"
+											data-target-date="2023-07-30">
+											<span>Today</span>
+										</a>
+										<div class="cc-navigate-arrows">
+											<a href="#" class="cc-action-prev sys-calendar-prev-btn"><i
+													class="sys-icon sys-icon-arrow-left"></i></a>
+											<a href="#" class="cc-action-next sys-calendar-next-btn"><i
+													class="sys-icon sys-icon-arrow-right"></i></a>
+										</div>
+									</div>
+									<div class="cc-view">
+										<div class="sys-form-group sys-form-select-group sys-form-group-transparent">
+											<select name="calendar_settings[view]" id="calendar_settings_view"
+												class="sys-form-control">
+												<option value="day" selected="">Day</option>
+												<option value="week">Week</option>
+												<option value="month">Month</option>
+												<option value="list">List</option>
+											</select></div>
+									</div>
+									<div class="sys-calendar-settings-toggler-wrapper">
+										<a href="#" class="calendar-settings-toggler"><i
+												class="sys-icon sys-icon-more-horizontal"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="sys-calendar-settings-extra">
+								<div class="cc-availability-toggler-w">
+									<div class="cc-availability-toggler">
+										<div class="sys-form-group sys-form-toggler-group  size-normal"><input
+												type="hidden" name="calendar_settings[overlay_service_availability]"
+												value="off" id="calendar_settings_overlay_service_availability">
+											<div data-controlled-toggle-id="cc-service-availability-selector"
+												class="sys-toggler off size-normal" data-is-string-value="true"
+												data-for="calendar_settings_overlay_service_availability">
+												<div class="toggler-rail">
+													<div class="toggler-pill"></div>
+												</div>
+											</div>
+											<div class="sys-toggler-label-w"><label>Overlay service hours</label></div>
+										</div>
+									</div>
+									<div class="cc-service-availability-selector" id="cc-service-availability-selector">
+										<div class="sys-form-group sys-form-select-group sys-form-group-transparent">
+											<label for="calendar_settings_availability_service_id">For:</label><select
+												name="calendar_settings[availability_service_id]"
+												id="calendar_settings_availability_service_id" class="sys-form-control">
+												<option value="1">Tooth Whitening</option>
+												<option value="2">Invisilign Braces</option>
+												<option value="3">Group Booking</option>
+												<option value="4">Porcelain Crown</option>
+												<option value="5">Root Canal Therapy</option>
+												<option value="6">Gum Decease</option>
+											</select></div>
+									</div>
+								</div>
+								<div class="resource-filters-wrapper">
+									<div class="latecheckbox-w"
+										data-latecheckbox-id="latecheckbox-8c18c863-3516-bf7b-9c9e-fa8afcfcf749">
+										<a href="#" class="latecheckbox">
+											<div class="filter-label">Services:</div>
+											<div class="filter-value">All</div>
+										</a>
+										<div class="latecheckbox-options-w">
+											<div class="latecheckbox-filter-input-w">
+												<input class="latecheckbox-all-check" type="checkbox" checked="">
+												<input class="latecheckbox-filter-input" type="text"
+													placeholder="Type to filter..." spellcheck="false"
+													data-ms-editor="true">
+											</div>
+											<div class="latecheckbox-options">
+												<div class="latecheckbox-group">
+													<div class="latecheckbox-group-heading"><label><input
+																type="checkbox" class="latecheckbox-group-check"
+																checked=""><span>General Dentistry</span></label></div>
+													<div class="latecheckbox-group-options">
+														<div class="latecheckbox-option"><label><input
+																	name="calendar_settings[show_service_ids][]"
+																	type="checkbox" checked="" value="3"><span>Group
+																	Booking</span></label></div>
+														<div class="latecheckbox-option"><label><input
+																	name="calendar_settings[show_service_ids][]"
+																	type="checkbox" checked="" value="5"><span>Root
+																	Canal Therapy</span></label></div>
+														<div class="latecheckbox-option"><label><input
+																	name="calendar_settings[show_service_ids][]"
+																	type="checkbox" checked="" value="6"><span>Gum
+																	Decease</span></label></div>
+													</div>
+												</div>
+												<div class="latecheckbox-group">
+													<div class="latecheckbox-group-heading"><label><input
+																type="checkbox" class="latecheckbox-group-check"
+																checked=""><span>Cosmetic Dentistry</span></label></div>
+													<div class="latecheckbox-group-options">
+														<div class="latecheckbox-option"><label><input
+																	name="calendar_settings[show_service_ids][]"
+																	type="checkbox" checked="" value="1"><span>Tooth
+																	Whitening</span></label></div>
+														<div class="latecheckbox-option"><label><input
+																	name="calendar_settings[show_service_ids][]"
+																	type="checkbox" checked=""
+																	value="2"><span>Invisilign Braces</span></label>
+														</div>
+													</div>
+												</div>
+												<div class="latecheckbox-group">
+													<div class="latecheckbox-group-heading"><label><input
+																type="checkbox" class="latecheckbox-group-check"
+																checked=""><span>Implants Dentistry</span></label></div>
+													<div class="latecheckbox-group-options">
+														<div class="latecheckbox-option"><label><input
+																	name="calendar_settings[show_service_ids][]"
+																	type="checkbox" checked="" value="4"><span>Porcelain
+																	Crown</span></label></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="latecheckbox-w"
+										data-latecheckbox-id="latecheckbox-60546350-cde0-a2a0-9b0d-e22fbdd581b1">
+										<a href="#" class="latecheckbox">
+											<div class="filter-label">Agents:</div>
+											<div class="filter-value">All</div>
+										</a>
+										<div class="latecheckbox-options-w">
+											<div class="latecheckbox-options">
+												<div class="latecheckbox-option"><label><input
+															name="calendar_settings[show_agent_ids][]" type="checkbox"
+															checked="" value="2"><span class="late-avatar"
+															style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23170/2018/11/avatar1-150x150.jpg)"></span><span
+															class="late-label">John Mayers</span></label></div>
+												<div class="latecheckbox-option"><label><input
+															name="calendar_settings[show_agent_ids][]" type="checkbox"
+															checked="" value="3"><span class="late-avatar"
+															style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23170/2018/11/avatar7.jpg)"></span><span
+															class="late-label">Kim Collins</span></label></div>
+												<div class="latecheckbox-option"><label><input
+															name="calendar_settings[show_agent_ids][]" type="checkbox"
+															checked="" value="4"><span class="late-avatar"
+															style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23170/2018/11/avatar3.jpg)"></span><span
+															class="late-label">Ben Stones</span></label></div>
+												<div class="latecheckbox-option"><label><input
+															name="calendar_settings[show_agent_ids][]" type="checkbox"
+															checked="" value="5"><span class="late-avatar"
+															style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23170/2018/11/avatar2.jpg)"></span><span
+															class="late-label">Clark Simeone</span></label></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<input type="hidden" name="calendar_settings[target_date_string]" value="2023-07-30"
+									id="calendar_settings_target_date_string"><input type="hidden"
+									name="calendar_settings[selected_agent_id]" value="2"
+									id="calendar_settings_selected_agent_id">
+							</div>
+						</form>
+						<div class="calendar-view-wrapper" data-route="calendars__view">
+							<div class="daily-availability-calendar-wrapper">
+								<a href="#" data-target-date="2023-06-30"
+									class="daily-calendar-action-navigation-btn"><i
+										class="sys-icon sys-icon-chevron-left"></i></a>
+								<div class="daily-availability-calendar horizontal-calendar">
+									<div class="sys-monthly-calendar-days-w  active" data-calendar-layout="horizontal"
+										data-calendar-year="2023" data-calendar-month="7"
+										data-calendar-month-label="July">
+										<div class="sys-monthly-calendar-days">
+											<div class="sys-day sys-day-current week-day-6 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-01" data-nice-date="July 1"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Sat</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">1</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-7 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-02" data-nice-date="July 2"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Sun</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">2</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-1 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-03" data-nice-date="July 3"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Mon</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">3</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-2 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-04" data-nice-date="July 4"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Tue</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">4</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-3 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-05" data-nice-date="July 5"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Wed</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">5</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-4 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-06" data-nice-date="July 6"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Thu</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">6</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-5 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-07" data-nice-date="July 7"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Fri</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">7</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-6 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-08" data-nice-date="July 8"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Sat</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">8</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-7 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-09" data-nice-date="July 9"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Sun</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">9</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-1 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-10" data-nice-date="July 10"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Mon</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">10</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-2 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-11" data-nice-date="July 11"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Tue</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">11</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-3 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-12" data-nice-date="July 12"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Wed</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">12</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-4 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-13" data-nice-date="July 13"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Thu</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">13</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-5 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-14" data-nice-date="July 14"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Fri</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">14</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-6 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-15" data-nice-date="July 15"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Sat</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">15</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-7 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-16" data-nice-date="July 16"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Sun</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">16</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-1 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-17" data-nice-date="July 17"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Mon</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">17</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-2 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-18" data-nice-date="July 18"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Tue</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">18</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-3 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-19" data-nice-date="July 19"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Wed</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">19</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-4 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-20" data-nice-date="July 20"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Thu</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">20</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-5 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-21" data-nice-date="July 21"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Fri</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">21</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-6 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-22" data-nice-date="July 22"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Sat</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">22</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-7 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-23" data-nice-date="July 23"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Sun</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">23</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-1 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-24" data-nice-date="July 24"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Mon</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">24</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-2 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-25" data-nice-date="July 25"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Tue</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">25</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-3 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-26" data-nice-date="July 26"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Wed</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">26</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-4 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-27" data-nice-date="July 27"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Thu</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">27</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-5 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-28" data-nice-date="July 28"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Fri</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">28</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-6 sys-not-available sys-day-passed sys-month-current sys-not-in-allowed-period"
+												data-date="2023-07-29" data-nice-date="July 29"
+												data-service-duration="30" data-total-work-minutes="0"
+												data-work-start-time="0" data-work-end-time="0" data-bookable-minutes=""
+												data-work-minutes="" data-interval="30">
+												<div class="sys-day-weekday">Sat</div>
+												<div class="sys-day-box">
+													<div class="sys-day-number">29</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-7 sys-today sys-month-current selected"
+												data-date="2023-07-30" data-nice-date="July 30"
+												data-service-duration="30" data-total-work-minutes="540"
+												data-work-start-time="480" data-work-end-time="1020"
+												data-bookable-minutes="570,600,630,660,690,720,750,780,810,840,870,900,930,960,990"
+												data-work-minutes="480,510,540,570,600,630,660,690,720,750,780,810,840,870,900,930,960,990"
+												data-interval="30">
+												<div class="sys-day-weekday">Sun</div>
+												<div class="sys-day-box">
+													<div class="sys-available-slots-tooltip">15 Available</div>
+													<div class="sys-day-number">30</div>
+													<div class="sys-day-status">
+														<div class="day-available"
+															style="left:16.666666666667%;width:83.333333333333%;"></div>
+													</div>
+												</div>
+											</div>
+
+
+											<div class="sys-day sys-day-current week-day-1 sys-month-current"
+												data-date="2023-07-31" data-nice-date="July 31"
+												data-service-duration="30" data-total-work-minutes="540"
+												data-work-start-time="480" data-work-end-time="1020"
+												data-bookable-minutes="480,510,540,570,600,630,660,690,720,750,780,810,840,870,900,930,960,990"
+												data-work-minutes="480,510,540,570,600,630,660,690,720,750,780,810,840,870,900,930,960,990"
+												data-interval="30">
+												<div class="sys-day-weekday">Mon</div>
+												<div class="sys-day-box">
+													<div class="sys-available-slots-tooltip">18 Available</div>
+													<div class="sys-day-number">31</div>
+													<div class="sys-day-status">
+														<div class="day-available" style="left:0%;width:100%;"></div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<a href="#" data-target-date="2023-08-01"
+									class="daily-calendar-action-navigation-btn"><i
+										class="sys-icon sys-icon-chevron-right"></i></a>
+							</div>
+							<div class="daily-agent-calendar-w ">
+								<div class="current-time-indicator" style="top: 173.6px"><span>9:24am</span></div>
+								<div class="calendar-daily-agent-w">
+
+									<div class="calendar-hours">
+										<div class="ch-hours">
+											<div class="ch-filter">
+												<span>Agent</span>
+												<span>Time</span>
+											</div>
+											<div class="chh-period chh-period-hour" style="height: 37px;"><span>8
+													am</span></div>
+											<div class="chh-period chh-period-minutes" style="height: 37px;">
+												<span>08:30am</span></div>
+											<div class="chh-period chh-period-hour" style="height: 37px;"><span>9
+													am</span></div>
+											<div class="chh-period chh-period-minutes" style="height: 37px;">
+												<span>09:30am</span></div>
+											<div class="chh-period chh-period-hour" style="height: 37px;"><span>10
+													am</span></div>
+											<div class="chh-period chh-period-minutes" style="height: 37px;">
+												<span>10:30am</span></div>
+											<div class="chh-period chh-period-hour" style="height: 37px;"><span>11
+													am</span></div>
+											<div class="chh-period chh-period-minutes" style="height: 37px;">
+												<span>11:30am</span></div>
+											<div class="chh-period chh-period-hour" style="height: 37px;"><span>12
+													pm</span></div>
+											<div class="chh-period chh-period-minutes" style="height: 37px;">
+												<span>12:30pm</span></div>
+											<div class="chh-period chh-period-hour" style="height: 37px;"><span>1
+													pm</span></div>
+											<div class="chh-period chh-period-minutes" style="height: 37px;">
+												<span>01:30pm</span></div>
+											<div class="chh-period chh-period-hour" style="height: 37px;"><span>2
+													pm</span></div>
+											<div class="chh-period chh-period-minutes" style="height: 37px;">
+												<span>02:30pm</span></div>
+											<div class="chh-period chh-period-hour" style="height: 37px;"><span>3
+													pm</span></div>
+											<div class="chh-period chh-period-minutes" style="height: 37px;">
+												<span>03:30pm</span></div>
+											<div class="chh-period chh-period-hour" style="height: 37px;"><span>4
+													pm</span></div>
+											<div class="chh-period chh-period-minutes" style="height: 37px;">
+												<span>04:30pm</span></div>
+											<div class="chh-period last-period chh-period-hour" style="height: 37px;">
+												<span>5 pm</span></div>
+										</div>
+										<div class="ch-agents">
+											<div class="da-head-agents">
+												<div class="da-head-agent">
+													<div class="da-head-agent-avatar"
+														style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23170/2018/11/avatar1-150x150.jpg)">
+													</div>
+													<a href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=agents__edit_form&amp;id=2"
+														class="da-head-agent-name">John Mayers</a>
+												</div>
+												<div class="da-head-agent">
+													<div class="da-head-agent-avatar"
+														style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23170/2018/11/avatar7.jpg)">
+													</div>
+													<a href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=agents__edit_form&amp;id=3"
+														class="da-head-agent-name">Kim Collins</a>
+												</div>
+												<div class="da-head-agent">
+													<div class="da-head-agent-avatar"
+														style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23170/2018/11/avatar3.jpg)">
+													</div>
+													<a href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=agents__edit_form&amp;id=4"
+														class="da-head-agent-name">Ben Stones</a>
+												</div>
+												<div class="da-head-agent">
+													<div class="da-head-agent-avatar"
+														style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23170/2018/11/avatar2.jpg)">
+													</div>
+													<a href="https://sys-demo.com/demo_c9ebe9a8022281f3/wp-admin/admin.php?page=sys&amp;route_name=agents__edit_form&amp;id=5"
+														class="da-head-agent-name">Clark Simeone</a>
+												</div>
+											</div>
+											<div class="da-agents-bookings">
+												<div class="da-agent-bookings-and-periods">
+													<div class="ch-day-periods ch-day-7">
+
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=480&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">08:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=510&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">08:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=540&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">09:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=570&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">09:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=600&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">10:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=630&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">10:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=660&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">11:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=690&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">11:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=720&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">12:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=750&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">12:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=780&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">01:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=810&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">01:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=840&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">02:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=870&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">02:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=900&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">03:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=930&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">03:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=960&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">04:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=990&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">04:30pm</div>
+														</div>
+														<div class="chd-period chd-period-off  last-period chd-period-hour"
+															data-sys-params="start_time=1020&amp;start_date=2023-07-30&amp;agent_id=2&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">05:00pm</div>
+														</div>
+													</div>
+													<div class="da-agent-bookings">
+													</div>
+												</div>
+												<div class="da-agent-bookings-and-periods">
+													<div class="ch-day-periods ch-day-7">
+
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=480&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">08:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=510&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">08:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=540&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">09:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=570&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">09:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=600&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">10:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=630&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">10:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=660&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">11:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=690&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">11:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=720&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">12:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=750&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">12:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=780&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">01:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=810&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">01:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=840&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">02:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=870&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">02:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=900&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">03:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=930&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">03:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=960&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">04:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=990&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">04:30pm</div>
+														</div>
+														<div class="chd-period chd-period-off  last-period chd-period-hour"
+															data-sys-params="start_time=1020&amp;start_date=2023-07-30&amp;agent_id=3&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">05:00pm</div>
+														</div>
+													</div>
+													<div class="da-agent-bookings">
+													</div>
+												</div>
+												<div class="da-agent-bookings-and-periods">
+													<div class="ch-day-periods ch-day-7">
+
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=480&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">08:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=510&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">08:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=540&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">09:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=570&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">09:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=600&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">10:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=630&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">10:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=660&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">11:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=690&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">11:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=720&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">12:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=750&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">12:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=780&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">01:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=810&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">01:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=840&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">02:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=870&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">02:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=900&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">03:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=930&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">03:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=960&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">04:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=990&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">04:30pm</div>
+														</div>
+														<div class="chd-period chd-period-off  last-period chd-period-hour"
+															data-sys-params="start_time=1020&amp;start_date=2023-07-30&amp;agent_id=4&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">05:00pm</div>
+														</div>
+													</div>
+													<div class="da-agent-bookings">
+													</div>
+												</div>
+												<div class="da-agent-bookings-and-periods">
+													<div class="ch-day-periods ch-day-7">
+
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=480&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">08:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=510&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">08:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=540&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">09:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=570&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">09:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=600&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">10:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=630&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">10:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=660&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">11:00am</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=690&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">11:30am</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=720&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">12:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=750&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">12:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=780&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">01:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=810&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">01:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=840&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">02:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=870&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">02:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=900&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">03:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=930&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">03:30pm</div>
+														</div>
+														<div class="chd-period chd-period-hour"
+															data-sys-params="start_time=960&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">04:00pm</div>
+														</div>
+														<div class="chd-period chd-period-minutes"
+															data-sys-params="start_time=990&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">04:30pm</div>
+														</div>
+														<div class="chd-period chd-period-off  last-period chd-period-hour"
+															data-sys-params="start_time=1020&amp;start_date=2023-07-30&amp;agent_id=5&amp;location_id=1&amp;service_id=1"
+															data-sys-action="bookings__quick_edit"
+															data-sys-output-target="side-panel"
+															data-sys-after-call="sys_init_quick_booking_form"
+															style="height: 37px;">
+															<div class="chd-period-minutes-value">05:00pm</div>
+														</div>
+													</div>
+													<div class="da-agent-bookings">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<input type="hidden" name="prev_target_date" value="2023-07-29" id="prev_target_date"><input
+								type="hidden" name="next_target_date" value="2023-07-31" id="next_target_date">
+						</div>
+					</div>
+				</div>
+				<div class="sys-template-variables">
+					<div class="close-template-variables-panel"><i class="sys-icon sys-icon-x"></i></div>
+					<h3>Available Template Variables</h3>
+					<div class="sys-template-variables-i">
+						<div class="available-vars-block">
+							<h4>Direct URLs to Manage Appointment</h4>
+							<ul>
+								<li><span class="var-label">For Agent:</span> <span
+										class="var-code sys-click-to-copy">{{manage_booking_url_agent}}</span></li>
+								<li><span class="var-label">For Customer:</span> <span
+										class="var-code sys-click-to-copy">{{manage_booking_url_customer}}</span>
+								</li>
+							</ul>
+							<h4>Appointment</h4>
+							<ul>
+								<li><span class="var-label">Appointment ID#:</span> <span
+										class="var-code sys-click-to-copy">{{booking_id}}</span></li>
+								<li><span class="var-label">Confirmation Code:</span> <span
+										class="var-code sys-click-to-copy">{{booking_code}}</span></li>
+								<li><span class="var-label">Service Name:</span> <span
+										class="var-code sys-click-to-copy">{{service_name}}</span></li>
+								<li><span class="var-label">Service Category:</span> <span
+										class="var-code sys-click-to-copy">{{service_category}}</span></li>
+								<li><span class="var-label">Start Date:</span> <span
+										class="var-code sys-click-to-copy">{{start_date}}</span></li>
+								<li><span class="var-label">Start Time:</span> <span
+										class="var-code sys-click-to-copy">{{start_time}}</span></li>
+								<li><span class="var-label">End Time:</span> <span
+										class="var-code sys-click-to-copy">{{end_time}}</span></li>
+								<li><span class="var-label">Service Duration:</span> <span
+										class="var-code sys-click-to-copy">{{booking_duration}}</span></li>
+								<li><span class="var-label">Status:</span> <span
+										class="var-code sys-click-to-copy">{{booking_status}}</span></li>
+								<li><span class="var-label">Service Extras:</span> <span
+										class="var-code sys-click-to-copy">{{service_extras}}</span></li>
+								<li><span class="var-label">Total Attendees</span> <span
+										class="var-code sys-click-to-copy">{{total_attendees}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Payment</h4>
+							<ul>
+								<li><span class="var-label">Payment Status:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_status}}</span></li>
+								<li><span class="var-label">Payment Portion:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_portion}}</span></li>
+								<li><span class="var-label">Payment Method:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_method}}</span></li>
+								<li><span class="var-label">Payment Amount:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_amount}}</span></li>
+								<li><span class="var-label">Total Price:</span> <span
+										class="var-code sys-click-to-copy">{{booking_price}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Customer</h4>
+							<ul>
+								<li><span class="var-label">Full Name:</span> <span
+										class="var-code sys-click-to-copy">{{customer_full_name}}</span></li>
+								<li><span class="var-label">First Name:</span> <span
+										class="var-code sys-click-to-copy">{{customer_first_name}}</span></li>
+								<li><span class="var-label">Last Name:</span> <span
+										class="var-code sys-click-to-copy">{{customer_last_name}}</span></li>
+								<li><span class="var-label">Email Address:</span> <span
+										class="var-code sys-click-to-copy">{{customer_email}}</span></li>
+								<li><span class="var-label">Phone:</span> <span
+										class="var-code sys-click-to-copy">{{customer_phone}}</span></li>
+								<li><span class="var-label">Comments:</span> <span
+										class="var-code sys-click-to-copy">{{customer_notes}}</span></li>
+								<li><span class="var-label">Password Reset Token:</span> <span
+										class="var-code sys-click-to-copy">{{token}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Agent</h4>
+							<ul>
+								<li><span class="var-label">First Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_first_name}}</span></li>
+								<li><span class="var-label">Last Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_last_name}}</span></li>
+								<li><span class="var-label">Full Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_full_name}}</span></li>
+								<li><span class="var-label">Display Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_display_name}}</span></li>
+								<li><span class="var-label">Email:</span> <span
+										class="var-code sys-click-to-copy">{{agent_email}}</span></li>
+								<li><span class="var-label">Phone:</span> <span
+										class="var-code sys-click-to-copy">{{agent_phone}}</span></li>
+								<li><span class="var-label">Additional Emails:</span> <span
+										class="var-code sys-click-to-copy">{{agent_additional_emails}}</span></li>
+								<li><span class="var-label">Additional Phone Numbers:</span> <span
+										class="var-code sys-click-to-copy">{{agent_additional_phones}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Location</h4>
+							<ul>
+								<li><span class="var-label">Name:</span> <span
+										class="var-code sys-click-to-copy">{{location_name}}</span></li>
+								<li><span class="var-label">Full Address:</span> <span
+										class="var-code sys-click-to-copy">{{location_full_address}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Transaction</h4>
+							<ul>
+								<li><span class="var-label">Token:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_token}}</span></li>
+								<li><span class="var-label">Amount:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_amount}}</span></li>
+								<li><span class="var-label">Processor:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_processor}}</span></li>
+								<li><span class="var-label">Payment Method:</span> <span
+										class="var-code sys-click-to-copy"> {{transaction_payment_method}}</span>
+								</li>
+								<li><span class="var-label">Funds Status:</span> <span
+										class="var-code sys-click-to-copy"> {{transaction_funds_status}}</span></li>
+								<li><span class="var-label">Status:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_status}}</span></li>
+								<li><span class="var-label">Notes:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_notes}}</span></li>
+								<li><span class="var-label">Payment Portion:</span> <span
+										class="var-code sys-click-to-copy">{{transaction_payment_portion}}</span>
+								</li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Business Info</h4>
+							<ul>
+								<li><span class="var-label">Customer Cabinet URL:</span> <span
+										class="var-code sys-click-to-copy">{{customer_dashboard_url}}</span></li>
+								<li><span class="var-label">Business logo HTML:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_image}}</span></li>
+								<li><span class="var-label">Business logo URL:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_url}}</span></li>
+								<li><span class="var-label">Business Address:</span> <span
+										class="var-code sys-click-to-copy">{{business_address}}</span></li>
+								<li><span class="var-label">Business Phone:</span> <span
+										class="var-code sys-click-to-copy">{{business_phone}}</span></li>
+								<li><span class="var-label">Business Name:</span> <span
+										class="var-code sys-click-to-copy">{{business_name}}</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="sys-layout-template-variables">
+					<div class="close-layout-template-variables-panel"><i class="sys-icon sys-icon-x"></i></div>
+					<h3>Available Layout Variables</h3>
+					<div class="sys-template-variables-i">
+						<div class="available-vars-block">
+							<h4>Business Info</h4>
+							<ul>
+								<li><span class="var-label">Customer Cabinet URL:</span> <span
+										class="var-code sys-click-to-copy">{{customer_dashboard_url}}</span></li>
+								<li><span class="var-label">Business logo HTML:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_image}}</span></li>
+								<li><span class="var-label">Business logo URL:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_url}}</span></li>
+								<li><span class="var-label">Business Address:</span> <span
+										class="var-code sys-click-to-copy">{{business_address}}</span></li>
+								<li><span class="var-label">Business Phone:</span> <span
+										class="var-code sys-click-to-copy">{{business_phone}}</span></li>
+								<li><span class="var-label">Business Name:</span> <span
+										class="var-code sys-click-to-copy">{{business_name}}</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- js script files  -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-alpha.2/chart.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+	<script src="assets/js/jquery-3.7.0.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/dashboard.js"></script>
+	<script src="assets/js/wow.min.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+
+</html>
