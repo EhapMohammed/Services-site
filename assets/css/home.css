@@ -11,24 +11,35 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .inside-container {
-  height: 100vh;
-  width: 100%;
+  height: 80%;
+  width: 75%;
   background: #fff;
   border-radius: 5px;
   /* padding: 10px; */
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
   overflow-y: scroll;
 }
-
+@media (max-width:768px) {
+  .inside-container
+  {
+    height: 100%;
+  width: 100%;
+  }
+}
 .left-sec {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  padding: 25px 0;
   border-right: 1px solid rgba(0, 0, 0, .1);
 }
 
@@ -102,6 +113,8 @@ p {
   border-right: 1px solid rgba(0, 0, 0, .1);
   display: flex;
   flex-direction: column;
+  border-right: 1px solid rgba(0, 0, 0, .1);
+  position: relative;
 }
 
 .services-sec .services-header {
@@ -151,10 +164,8 @@ p {
 
 
 /* sub-service */
-.services-sec {
-  border-right: 1px solid rgba(0, 0, 0, .1);
-  position: relative;
-}
+
+
 
 .services-sec .sub-services-header {
   padding: 20px;
@@ -178,6 +189,13 @@ p {
   width: 100%;
   padding: 20px;
   /* border-top: 1px solid rgba(0, 0, 0, .1); */
+}
+@media (max-width:768px) {
+  .services-sec .sub-services-cont {
+    /* padding: 5px; */
+    /* height: 100%; */
+    /* justify-content: stretch; */
+  }
 }
 
 .services-sec .sub-service {
@@ -231,7 +249,12 @@ p {
   padding: 20px;
   border-top: 1px solid rgba(0, 0, 0, .1);
 }
-
+@media (max-width:768px) {
+  .services-sec .sub-services-div {
+    height: 100vh;
+    justify-content: flex-start;
+  }
+}
 .services-sec .sub-serv-name-cont .sub-serv-name h2 {
   font-weight: 500;
   font-size: 25px;
@@ -253,8 +276,8 @@ p {
   }
   .services-sec .sub-serv-name-cont img
   {
-    height: 75px;
-    width: 75px;
+    height: 65px;
+    width: 65px;
   }
 }
 .date-picker,
@@ -299,9 +322,16 @@ p {
   font-weight: bold;
   border-bottom: #1d7bff 4px solid;
 }
-
+@media (max-width:768px) {
+  .signin-register .nav-tabs .nav-link.active {
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: #1d7bff 4px solid;
+  }
+}
 .signin-register .nav-tabs .nav-link:not(.signin-register .nav-tabs .nav-link.active),
-.signin-register input::placeholder {
+.signin-register input::placeholder,
+.signin-register textarea::placeholder {
   color: #8e97b3;
 }
 
@@ -315,6 +345,7 @@ p {
   align-items: center;
   border-top: 1px solid rgba(0, 0, 0, .1);
   padding: 40px 0;
+  gap: 1rem;
 }
 
 .signin-register .or {
@@ -327,7 +358,7 @@ p {
 input {
   border: 1px solid #cad2e0 !important;
   border-radius: 8px;
-  height: 50px;
+  height: 50px !important;
 }
 
 .centerd-footer {
@@ -342,6 +373,20 @@ input {
 }
 
 /* start payment section */
+.payment-sec
+{
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+@media (max-width:768px) {
+  .payment-sec
+  {
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+  }
+}
 .payment-sec .payments-cards {
   display: flex;
   justify-content: space-evenly;
@@ -396,14 +441,17 @@ input {
   .signin-register .signin-con
   {
     padding: 0 10px;
+    height: 80%;
   }
+ 
   .payment-sec .payments-cards
   {
     gap: 1rem;
   }
   .credit-form .payment-card
   {
-    width: 100%;
+    width: 95%;
+    margin: auto !important;
   }
   .credit-form .payment-hint
   {
@@ -411,5 +459,26 @@ input {
     flex-wrap: nowrap;
     margin: 10px;
     text-align: center;
+  }
+}
+/* date picker */
+#datepicker-container,
+#datepicker-container .datepicker ,
+#datepicker-container .datepicker table
+{
+  width:100% !important;
+}
+.date-picker
+  {
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+  }
+@media (max-width:768px) {
+  .date-picker
+  {
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
   }
 }

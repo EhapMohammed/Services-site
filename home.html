@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <!--  Bootstrap v5.3.0 -->
-    <link rel="stylesheet"
+    <!-- jQuery and jQuery UI Datepicker CDN links -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
+<!-- Bootstrap CDN links -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/all.min.css">
@@ -135,14 +138,19 @@
                         </div>
                     </div>
                 </div>
+                <!--datePicker  -->
                 <div id="datePicker" class="date-picker col-lg-12 ">
                     <h3 class="services-header">
                         Select Date & Time
                     </h3>
-                    <form>
-                        <input type="date" class="form-control datepicker" id="datepicker" name="datepicker">
-                    </form>
-                    <div class="time-picker"> </div>
+                   <!-- HTML code for button and date picker container -->
+                    <div class="form-group">
+                        <!-- <button type="button" class="btn btn-primary" id="datepicker-button">Select a date</button> -->
+                        <div id="datepicker-container"></div>
+                    </div>
+                    
+                    <!-- HTML code for displaying available hours -->
+                    <div id="available-hours"></div>
                     <div class="centerd-footer">
                         <button id="div2Back" class="btn border-0 text-bold"><i
                                 class="fa fa-long-arrow-alt-left me-2"></i>Back</button>
@@ -172,7 +180,7 @@
                         </ul>
 
                         <!-- Tab panes -->
-                        <div class="tab-content py-md-3 px-md-5">
+                        <div class="tab-content py-md-3 px-md-1 px-lg-2">
                             <div class="tab-pane fade show active" id="register" role="tabpanel"
                                 aria-labelledby="register-tab">
                                 <form class="mt-4">
@@ -188,7 +196,7 @@
                                                 placeholder="Last Name" required>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row mb-3">
                                         <!-- <label for="phoneNumber" class="form-label">Phone Number</label> -->
                                         <div class="col input-group">
                                             <select class="form-select" name="countryCode" id="countryCode"
@@ -200,16 +208,20 @@
                                             <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber"
                                                 placeholder="201-555-0123" required>
                                         </div>
-                                        <div class="mb-3 col">
+                                        <div class="mb-3 col d-none d-md-flex">
                                             <!-- <label for="email" class="form-label">Email</label> -->
                                             <input type="email" class="form-control" id="email" name="email"
                                                 placeholder="Email Address" required>
                                         </div>
                                     </div>
-
+                                    <div class="mb-3 d-flex d-md-none">
+                                        <!-- <label for="email" class="form-label">Email</label> -->
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="Email Address" required>
+                                    </div>
                                     <div class="mb-3">
                                         <!-- <label for="comment" class="form-label">Comment</label> -->
-                                        <textarea class="form-control" id="comment" name="comment" rows="6"
+                                        <textarea class="form-control" id="comment" name="comment" rows="3"
                                             placeholder="ADD Comments"></textarea>
                                     </div>
                                 </form>
@@ -252,7 +264,7 @@
                     <h3 class="services-header">
                         Enter Payment Information
                     </h3>
-                    <div class="payments-cards m-5 ">
+                    <div class="payments-cards m-md-3 m-lg-5 ">
                         <div class="card col-lg-5">
                             <img src="./assets/img/payment_later.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -409,6 +421,12 @@
 
 
     <!-- js script files  -->
+    <!-- jQuery and jQuery UI Datepicker CDN links -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+
+<!-- Bootstrap CDN links -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-alpha.2/chart.min.js"></script>
     <script type="text/javascript"
@@ -421,12 +439,6 @@
     <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/home.js"></script>
-    <script>
-        // Initialize datepicker
-        $(document).ready(function () {
-            $('.datepicker').datepicker();
-        });
-    </script>
 </body>
 
 </html>

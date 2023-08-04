@@ -16,7 +16,7 @@ div5Next = document.getElementById('div6Next');
 subservice.forEach(service => {
     service.addEventListener('click', function() {
         subServicesDiv.style.display = 'none';
-        datePicker.style.display = 'block'
+        datePicker.style.display = 'flex'
     });
 });
 
@@ -32,11 +32,11 @@ div2Next.addEventListener('click', function() {
 // back to first div services and move to next div 
 div3Back.addEventListener('click', function() {
     signinRegister.style.display = 'none';
-    datePicker.style.display = 'block'
+    datePicker.style.display = 'flex'
 });
 div3Next.addEventListener('click', function() {
     signinRegister.style.display = 'none';
-    paymentSec.style.display = 'block'
+    paymentSec.style.display = 'flex'
 });
 // back to first div services and move to next div 
 div4Back.addEventListener('click', function() {
@@ -49,7 +49,70 @@ div4Next.addEventListener('click', function() {
 });
 // back to first div services and move to next div 
 div5Back.addEventListener('click', function() {
-    paymentSec.style.display = 'block';
+    paymentSec.style.display = 'flex';
     creditForm.style.display = 'none'
 });
+
+
+  // Initialize date picker
+  $( function() {
+    $( "#datepicker-container" ).datepicker({
+      dateFormat: "yy-mm-dd",
+      onSelect: function(dateText) {
+        // Call function to handle date selection
+        handleDateSelection(dateText);
+      },
+      onClose: function() {
+        // Hide date picker container when calendar is closed
+        $("#datepicker-container").hide();
+      }
+    });
+
+    // Hide date picker container initially
+    $("#datepicker-container").hide();
+
+    // Show date picker container when button is clicked
+    $("#datepicker-container").show();
+    // $("#datepicker-button").click(function() {
+      
+    // });
+  });
+
+  function handleDateSelection(date) {
+    // Fetch available hours for selected day using API or database query
+    const availableHours = [
+      { time: "08:00 am", available: true },
+      { time: "09:00 am", available: false },
+      { time: "10:00 am", available: true },
+      // ...more available hours for selected day
+    ];
+
+    // Display available hours in table format
+    let hoursAvailabilty = `
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+    for (let i = 0; i < availableHours.length; i++) {
+      const hour = availableHours[i];
+      const badgeClass = hour.available ? "badge-success" : "badge-danger";
+      const badgeText = hour.available ? "Available" : "Unavailable";
+      hoursAvailabilty += `
+        <tr>
+          <td>${hour.time}</td>
+          <td><span class="badge ${badgeClass}">${badgeText}</span></td>
+        </tr>
+      `;
+    }
+    hoursAvailabilty += `
+        </tbody>
+      </table>
+    `;
+    document.getElementById("available-hours").innerHTML = hoursAvailabilty;
+  }
 
