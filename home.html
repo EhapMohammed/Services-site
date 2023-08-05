@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <!-- jQuery and jQuery UI Datepicker CDN links -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
-<!-- Bootstrap CDN links -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-   <link rel="stylesheet"
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css"> -->
+    <!-- Bootstrap CDN links -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/all.min.css">
@@ -143,14 +143,25 @@
                     <h3 class="services-header">
                         Select Date & Time
                     </h3>
-                   <!-- HTML code for button and date picker container -->
+                    <!-- HTML code for button and date picker container -->
                     <div class="form-group">
                         <!-- <button type="button" class="btn btn-primary" id="datepicker-button">Select a date</button> -->
-                        <div id="datepicker-container"></div>
+                        <!-- <div id="datepicker-container"></div> -->
+                        <div class="calendar"></div>
+                        <div id="timePicker" class="timePicker mt-md-3">
+                            <a href="">08:00 am</a>
+                            <a href="" class="disabled">08:00 am</a>
+                            <a href="">08:00 am</a>
+                            <a href="">08:00 am</a>
+                            <a href="">08:00 am</a>
+                            <a href="">08:00 am</a>
+                            <a href="">08:00 am</a>
+                            <a href="">08:00 am</a>
+                        </div>
+                        <div class="notimeAvilabale">Not Available</div>
                     </div>
-                    
-                    <!-- HTML code for displaying available hours -->
-                    <div id="available-hours"></div>
+
+
                     <div class="centerd-footer">
                         <button id="div2Back" class="btn border-0 text-bold"><i
                                 class="fa fa-long-arrow-alt-left me-2"></i>Back</button>
@@ -268,15 +279,15 @@
                         <div class="card col-lg-5">
                             <img src="./assets/img/payment_later.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Pay Later</h5>
-                              </div>
-                          </div>
-                          <div class="card col-lg-5" >
+                                <h5 class="card-title">Pay Later</h5>
+                            </div>
+                        </div>
+                        <div class="card col-lg-5">
                             <img src="./assets/img/paynow.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Pay Now</h5>
-                              </div>
-                          </div>
+                                <h5 class="card-title">Pay Now</h5>
+                            </div>
+                        </div>
                     </div>
                     <div class="totle-price my-4  mx-auto">
                         <p class="">Totle Booking Price : $25 </p>
@@ -288,41 +299,36 @@
                                 class="fa fa-long-arrow-alt-right"></i></button>
                     </div>
                 </section>
-                 <!-- payment card inputs div -->
-                 <section id="creditForm" class="credit-form">
+                <!-- payment card inputs div -->
+                <section id="creditForm" class="credit-form">
                     <h3 class="services-header">
                         Enter Credit Information
                     </h3>
                     <div class="payment-card m-md-5 ">
                         <div class="row mb-3">
                             <div class="col ">
-                                <input type="text" class="form-control" id="namOnCrad" name="namOnCrad"
-                                    required>
-                                    <label for="namOnCrad" class="form-label text-light">Name On Card</label>
+                                <input type="text" class="form-control" id="namOnCrad" name="namOnCrad" required>
+                                <label for="namOnCrad" class="form-label text-light">Name On Card</label>
                             </div>
                             <div class="col ">
-                                <input type="number" class="form-control" id="cardNumber" name="Zip"
-                                     required>
-                                    <label for="ZIP" class="form-label text-light">Zip</label>
+                                <input type="number" class="form-control" id="cardNumber" name="Zip" required>
+                                <label for="ZIP" class="form-label text-light">Zip</label>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col ">
-                                <input type="number" class="form-control" id="cardNumber" name="cardNumber"
-                                     required>
-                                     <label for="cardNumber" class="form-label text-light">Card Number</label>
+                                <input type="number" class="form-control" id="cardNumber" name="cardNumber" required>
+                                <label for="cardNumber" class="form-label text-light">Card Number</label>
                             </div>
                         </div>
                         <div class="row mb-3 w-50 m-auto">
                             <div class="col ">
-                                <input type="number" class="form-control" id="expDate" name="expDate"
-                                     required>
-                                     <label for="expDate" class="form-label text-light">Exp.Date</label>
+                                <input type="number" class="form-control" id="expDate" name="expDate" required>
+                                <label for="expDate" class="form-label text-light">Exp.Date</label>
                             </div>
                             <div class="col ">
-                                <input type="number" class="form-control" id="cvc" name="cvc"
-                                     required>
-                                     <label for="cvc" class="form-label text-light">cvc</label>
+                                <input type="number" class="form-control" id="cvc" name="cvc" required>
+                                <label for="cvc" class="form-label text-light">cvc</label>
                             </div>
                         </div>
                     </div>
@@ -419,14 +425,272 @@
         </div>
     </section>
 
+    <script>
 
+        function CalendarControl() {
+            const calendar = new Date();
+            const calendarControl = {
+                localDate: new Date(),
+                prevMonthLastDate: null,
+                calWeekDays: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
+                calMonthName: [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December"
+                ],
+                daysInMonth: function (month, year) {
+                    return new Date(year, month, 0).getDate();
+                },
+                firstDay: function () {
+                    return new Date(calendar.getFullYear(), calendar.getMonth(), 1);
+                },
+                lastDay: function () {
+                    return new Date(calendar.getFullYear(), calendar.getMonth() + 1, 0);
+                },
+                firstDayNumber: function () {
+                    return calendarControl.firstDay().getDay() + 1;
+                },
+                lastDayNumber: function () {
+                    return calendarControl.lastDay().getDay() + 1;
+                },
+                getPreviousMonthLastDate: function () {
+                    let lastDate = new Date(
+                        calendar.getFullYear(),
+                        calendar.getMonth(),
+                        0
+                    ).getDate();
+                    return lastDate;
+                },
+                navigateToPreviousMonth: function (e) {
+                    e.preventDefault();
+                    calendar.setMonth(calendar.getMonth() - 1);
+                    calendarControl.attachEventsOnNextPrev();
+                },
+                navigateToNextMonth: function (e) {
+                    e.preventDefault();
+                    calendar.setMonth(calendar.getMonth() + 1);
+                    calendarControl.attachEventsOnNextPrev();
+                },
+                navigateToCurrentMonth: function () {
+                    let currentMonth = calendarControl.localDate.getMonth();
+                    let currentYear = calendarControl.localDate.getFullYear();
+                    calendar.setMonth(currentMonth);
+                    calendar.setYear(currentYear);
+                    calendarControl.attachEventsOnNextPrev();
+                },
+                displayYear: function () {
+                    let yearLabel = document.querySelector(".calendar .calendar-year-label");
+                    yearLabel.innerHTML = calendar.getFullYear();
+                },
+                displayMonth: function () {
+                    let monthLabel = document.querySelector(
+                        ".calendar .calendar-month-label"
+                    );
+                    monthLabel.innerHTML = calendarControl.calMonthName[calendar.getMonth()];
+                },
+                selectDate: function (e) {
+                    e.preventDefault();
+
+                    var selectDate = new Date(` ${calendar.getMonth() + 1} , ${e.target.textContent},${calendar.getFullYear()}`);
+
+                    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+
+                    $('.calendar .number-item').removeClass('selected');
+                    $(this).closest(".calendar .number-item").addClass("selected");
+                },
+                plotSelectors: function () {
+                    document.querySelector(
+                        ".calendar"
+                    ).innerHTML += `<div class="calendar-inner"><div class="calendar-controls">
+          <div class="calendar-prev"><a href="#"><img src="./assets/img/Icon-Box-left.png" alt="" /></a></div>
+          <div class="calendar-year-month">
+          <div class="calendar-month-label"></div>
+          <div class="calendar-year-label"></div>
+          </div>
+          <div class="calendar-next"><a href="#"><img src="./assets/img/Icon-Box-right.png" alt="" /></a></div>
+          </div>
+          <div class="calendar-today-date">اليوم: 
+            ${calendarControl.calWeekDays[calendarControl.localDate.getDay()]}, 
+            ${calendarControl.localDate.getDate()}, 
+            ${calendarControl.calMonthName[calendarControl.localDate.getMonth()]} 
+            ${calendarControl.localDate.getFullYear()}
+          </div>
+          <div class="calendar-body"></div></div>
+          <p class="abovTime">Pick a slot for </p>`;
+                },
+                plotDayNames: function () {
+                    for (let i = 0; i < calendarControl.calWeekDays.length; i++) {
+                        document.querySelector(
+                            ".calendar .calendar-body"
+                        ).innerHTML += `<div>${calendarControl.calWeekDays[i]}</div>`;
+                    }
+                },
+                plotDates: function () {
+                    document.querySelector(".calendar .calendar-body").innerHTML = "";
+                    calendarControl.plotDayNames();
+                    calendarControl.displayMonth();
+                    calendarControl.displayYear();
+                    let count = 1;
+                    let prevDateCount = 0;
+
+                    calendarControl.prevMonthLastDate = calendarControl.getPreviousMonthLastDate();
+                    let prevMonthDatesArray = [];
+                    let calendarDays = calendarControl.daysInMonth(
+                        calendar.getMonth() + 1,
+                        calendar.getFullYear()
+                    );
+                    // dates of current month
+                    for (let i = 1; i < calendarDays; i++) {
+                        if (i < calendarControl.firstDayNumber()) {
+                            prevDateCount += 1;
+                            document.querySelector(
+                                ".calendar .calendar-body"
+                            ).innerHTML += `<div class="prev-dates"></div>`;
+                            prevMonthDatesArray.push(calendarControl.prevMonthLastDate--);
+                        } else {
+                            document.querySelector(
+                                ".calendar .calendar-body"
+                            ).innerHTML += `<div title="8 available" class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a>
+                                <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            </ul>
+                        </div>`;
+                        }
+                    }
+                    //remaining dates after month dates
+                    for (let j = 0; j < prevDateCount + 1; j++) {
+                        document.querySelector(
+                            ".calendar .calendar-body"
+                        ).innerHTML += `<div title="8 available" class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a>
+                            <ul>
+                            <li></li>
+                            <li></li>
+                            <li class="disabled"></li>
+                            <li></li>
+                            <li class="disabled"></li>
+                            </ul>
+                        </div>`;
+                    }
+                    calendarControl.highlightToday();
+                    calendarControl.plotPrevMonthDates(prevMonthDatesArray);
+                    calendarControl.plotNextMonthDates();
+                },
+                attachEvents: function () {
+                    let prevBtn = document.querySelector(".calendar .calendar-prev a");
+                    let nextBtn = document.querySelector(".calendar .calendar-next a");
+                    let todayDate = document.querySelector(".calendar .calendar-today-date");
+                    let dateNumber = document.querySelectorAll(".calendar .dateNumber");
+                    prevBtn.addEventListener(
+                        "click",
+                        calendarControl.navigateToPreviousMonth
+                    );
+                    nextBtn.addEventListener("click", calendarControl.navigateToNextMonth);
+                    todayDate.addEventListener(
+                        "click",
+                        calendarControl.navigateToCurrentMonth
+                    );
+                    for (var i = 0; i < dateNumber.length; i++) {
+                        dateNumber[i].addEventListener(
+                            "click",
+                            calendarControl.selectDate,
+                            false
+                        );
+                    }
+                },
+                highlightToday: function () {
+                    let currentMonth = calendarControl.localDate.getMonth() + 1;
+                    let changedMonth = calendar.getMonth() + 1;
+                    let currentYear = calendarControl.localDate.getFullYear();
+                    let changedYear = calendar.getFullYear();
+                    if (
+                        currentYear === changedYear &&
+                        currentMonth === changedMonth &&
+                        document.querySelectorAll(".calendar .number-item")
+                    ) {
+                        document
+                            .querySelectorAll(".calendar .number-item")
+                        [calendar.getDate() - 1].classList.add("calendar-today");
+                    }
+                },
+                plotPrevMonthDates: function (dates) {
+                    dates.reverse();
+                    for (let i = 0; i < dates.length; i++) {
+                        if (document.querySelectorAll(".calendar .prev-dates")) {
+                            document.querySelectorAll(".calendar .prev-dates")[i].textContent = dates[i];
+                        }
+                    }
+                },
+                plotNextMonthDates: function () {
+                    let childElemCount = document.querySelector('.calendar .calendar-body').childElementCount;
+                    //7 lines
+                    if (childElemCount > 42) {
+                        let diff = 49 - childElemCount;
+                        calendarControl.loopThroughNextDays(diff);
+                    }
+
+                    //6 lines
+                    if (childElemCount > 35 && childElemCount <= 42) {
+                        let diff = 42 - childElemCount;
+                        calendarControl.loopThroughNextDays(42 - childElemCount);
+                    }
+
+                },
+                loopThroughNextDays: function (count) {
+                    if (count > 0) {
+                        for (let i = 1; i <= count; i++) {
+                            document.querySelector('.calendar .calendar-body').innerHTML += `<div class="next-dates">${i}</div>`;
+                        }
+                    }
+                },
+                attachEventsOnNextPrev: function () {
+                    calendarControl.plotDates();
+                    calendarControl.attachEvents();
+                },
+                init: function () {
+                    calendarControl.plotSelectors();
+                    calendarControl.plotDates();
+                    calendarControl.attachEvents();
+                }
+            };
+            calendarControl.init();
+        }
+
+        const calendarControl = new CalendarControl();
+
+        const numberItem = document.querySelectorAll('.number-item');
+
+        (numberItem).forEach(numitem => {
+            numitem.addEventListener('click', function () {
+                const timePicker = document.getElementById('timePicker');
+                timePicker.style.display = 'flex'
+                timePicker.scrollIntoView();
+            })
+        })
+
+
+    </script>
     <!-- js script files  -->
     <!-- jQuery and jQuery UI Datepicker CDN links -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script> -->
 
-<!-- Bootstrap CDN links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CDN links -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script> -->
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-alpha.2/chart.min.js"></script>
     <script type="text/javascript"
