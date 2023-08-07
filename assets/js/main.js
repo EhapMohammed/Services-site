@@ -1,3 +1,4 @@
+// side bar toggler
 const toggleSidebar = document.getElementById('sys-side-menu');
 
 toggleSidebar.addEventListener('click', function() {
@@ -20,6 +21,7 @@ toggleSidebarMop.addEventListener('click', function() {
   }
 });
 
+//dashborad home screen chart 
 const canvas = document.getElementById('chartDailyBookings');
 const today = new Date();
 const xValues = [];
@@ -47,5 +49,18 @@ new Chart(canvas, {
         }
       }]
     }
+  }
+});
+
+//calendar-settings-toggler
+
+const calendarSettingsToggler = document.getElementsByClassName('calendar-settings-toggler')[0];
+const calendarSettingsExtra = document.getElementsByClassName('sys-calendar-settings-extra')[0];
+
+calendarSettingsToggler.addEventListener('click', function() {
+  if (getComputedStyle(calendarSettingsExtra).display === "none") {
+    calendarSettingsExtra.style.display = "flex";
+  } else {
+    calendarSettingsExtra.style.display = "none";
   }
 });
