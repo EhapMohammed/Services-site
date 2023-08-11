@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title></title>
+	<!--  Bootstrap v5.3.0 -->
+	<link rel="stylesheet" href="../assets/css/bootstrap.rtl.min.css" />
+	<link rel="stylesheet" href="../assets/css/all.min.css">
+	<link rel="stylesheet" href="../assets/css/style.rtl.css" />
+</head>
+
+<body class="wp-admin wp-core-ui js sys-admin sys toplevel_page_sys auto-fold admin-bar branch-6-2 version-6-2-2 admin-color-fresh locale-en-us multisite customize-support sticky-menu svg">
+
+
+	<div id="sys-show-mobile-menu"
+		class="sys-all-wrapper sys sys-view-dashboard-widget_bookings_and_availability_timeline sys-view-dashboard-widget_daily_bookings_chart sys-view-dashboard-widget_upcoming_appointments sys-view-dashboard-index">
+		<div class="sys-content-and-menu-w">
+			<div id="sys-side-menu" class="sys-side-menu-w side-menu-full">
+				<div class="side-menu-top-part-w">
+					<a href="./index.html"
+						class="logo-w"><span class="sys-logo"></span></a>
+					<div class="menu-color-toggler">
+						<div class="mc-toggler-label"><i class="sys-icon sys-icon-sun"></i></div>
+					</div>
+					<div class="menu-toggler" data-route="settings__set_menu_layout_style">
+						<div class="menu-toggler-lines"></div>
+					</div>
+				</div>
+				<ul class="side-menu">
+					<li class=" menu-item-is-active">
+						<a
+							href="./index.html">
+							<i class="sys-icon sys-icon-box"></i>
+							<span>Dashboard</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Dashboard</li>
+						</ul>
+					</li>
+					<li class="">
+						<a
+							href="./calendar.html">
+							<i class="sys-icon sys-icon-calendar"></i>
+							<span>Calendar</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Calendar</li>
+						</ul>
+					</li>
+					<li class="">
+						<a
+							href="">
+							<i class="sys-icon sys-icon-inbox"></i>
+							<span>Appointments</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Appointments</li>
+						</ul>
+					</li>
+					<li class="">
+						<a
+							href="">
+							<i class="sys-icon sys-icon-credit-card"></i>
+							<span>Payments</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Payments</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a
+							href="./customers.html">
+							<i class="sys-icon sys-icon-users"></i>
+							<span>Customers</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Customers</li>
+							<li class=""><a href="./customers.html"><span>List
+										of Customers</span></a></li>
+							<li class=""><a href="./new-customer.html"><span>New
+										Customer</span></a></li>
+						</ul>
+					</li>
+					
+					<!-- <li class="menu-spacer with-label"><span>Settings<span></span></span></li> -->
+					<li class="">
+						<a
+							href="./settings.html">
+							<i class="sys-icon sys-icon-settings"></i>
+							<span>Settings</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Settings</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="sys-content-w">
+				<div class="sys-top-bar-w">
+					<a id="sys-mop-icon-menu" href="#" title="Menu"
+						class="sys-top-iconed-link sys-mobile-top-menu-trigger">
+						<i class="sys-icon sys-icon-menu"></i>
+					</a>
+					<div class="sys-top-search-w">
+						<div class="sys-top-search-input-w">
+							<i class="sys-icon sys-icon-x sys-mobile-top-search-trigger-cancel"></i>
+							<input type="text" data-route="search__query_results" class="sys-top-search"
+								placeholder="Start typing to find bookings, customers, agents or services..."
+								spellcheck="false" data-ms-editor="true">
+						</div>
+						<div class="sys-top-search-results-w"></div>
+					</div>
+					<a href="#" title="Search" class="sys-top-iconed-link sys-mobile-top-search-trigger"><i
+							class="sys-icon sys-icon-search"></i></a>
+					<a href=""
+						title="Pending Bookings" class="sys-top-iconed-link sys-top-notifications-trigger">
+						<i class="sys-icon sys-icon-inbox"></i>
+					</a>
+					<a href="#" data-sys-params="" data-sys-action="bookings__quick_edit"
+						data-sys-output-target="side-panel" data-sys-after-call="sys_init_quick_booking_form"
+						title="New Appointment" class="sys-mobile-top-new-appointment-btn-trigger sys-top-iconed-link">
+						<i class="sys-icon sys-icon-plus-circle"></i>
+					</a>
+					<a href="#" class="sys-top-new-appointment-btn sys-btn sys-btn-primary" data-sys-params=""
+						data-sys-action="bookings__quick_edit" data-sys-output-target="side-panel"
+						data-sys-after-call="sys_init_quick_booking_form">
+						<i class="sys-icon sys-icon-plus"></i>
+						<span>New Booking</span>
+					</a>
+					<div class="sys-top-user-info-w">
+						<div class="avatar-w top-user-info-toggler"
+							style="background-image: url(../assets/img/093f388d9b7286cefa950eefb3a831ac.png);">
+						</div>
+						<div class="sys-user-info-dropdown">
+							<a href="#" class="sys-user-info-close top-user-info-toggler"><i
+									class="sys-icon sys-icon-x"></i></a>
+							<div class="sys-uid-head">
+								<div class="uid-avatar-w">
+									<div class="uid-avatar" style="background-image: url(../assets/img/093f388d9b7286cefa950eefb3a831ac.png);">
+									</div>
+								</div>
+								<div class="uid-info">
+									<h4>Sandbox Site Admin</h4>
+									<h5>Administrator</h5>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<a
+										href="">
+										<i class="sys-icon sys-icon-ui-46"></i>
+										<span>Settings</span>
+									</a>
+								</li>
+								<li>
+									<a
+										href="">
+										<i class="sys-icon sys-icon-log-in"></i>
+										<span>Logout</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="page-header-w">
+					<h1 class="page-header-main">New Customer</h1>
+					<div class="breadcrumbs-w">
+						<ul class="breadcrumbs">
+							<li><a
+									href="">Dashboard</a>
+							</li>
+							<li><a
+									href="">Customers</a>
+							</li>
+							<li><span>Create New Customer</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sys-content ">
+
+					<div class="sys-form-w customer-form-wrapper">
+						<form action="" data-sys-success-action="redirect"
+							data-sys-redirect-to=""
+							data-sys-action="customers__create">
+
+							<div class="white-box">
+								<div class="white-box-header">
+									<div class="sys-form-sub-header">
+										<h3>General Information</h3>
+									</div>
+								</div>
+								<div class="white-box-content">
+									<div class="sys-row">
+										<div class="sys-col-lg-12">
+											<div class="sys-image-selector-w "><a
+													href=""
+													data-label-remove-str="Remove Avatar"
+													data-label-set-str="Set Avatar" class="sys-image-selector-trigger">
+													<div class="sys-image-container "></div>
+													<div class="sys-image-selector-text"><span
+															class="sys-text-holder">Set
+															Avatar</span></div>
+												</a><input type="hidden" name="customer" value=""
+													class="sys-image-id-holder"></div>
+										</div>
+									</div>
+									<div class="sys-row">
+										<div class="sys-col-6">
+											<div
+												class="sys-form-group sys-form-textfield-group sys-form-group-transparent">
+												<label for="customer_first_name">First Name</label><input type="text"
+													placeholder="First Name" name="customer[first_name]" value=""
+													id="customer_first_name" class="sys-form-control" spellcheck="false"
+													data-ms-editor="true">
+											</div>
+										</div>
+										<div class="sys-col-6">
+											<div
+												class="sys-form-group sys-form-textfield-group sys-form-group-transparent">
+												<label for="customer_last_name">Last Name</label><input type="text"
+													placeholder="Last Name" name="customer[last_name]" value=""
+													id="customer_last_name" class="sys-form-control" spellcheck="false"
+													data-ms-editor="true">
+											</div>
+										</div>
+									</div>
+									<div class="sys-row">
+										<div class="sys-col-lg-6">
+											<div
+												class="sys-form-group sys-form-textfield-group sys-form-group-transparent">
+												<label for="customer_email">Email Address</label><input type="text"
+													placeholder="Email Address" name="customer" value=""
+													id="customer_email" class="sys-form-control" spellcheck="false"
+													data-ms-editor="true">
+											</div>
+										</div>
+										<div class="sys-col-lg-6">
+											<div
+												class="sys-form-group sys-form-textfield-group sys-form-group-transparent  sys-form-phonefield-group ">
+												<label for="customer_phone">Phone Number</label>
+												<div class="iti iti--separate-dial-code">
+													<div class="iti__flag-container">
+														<div class="iti__selected-flag" role="combobox"
+															aria-controls="iti-0__country-listbox"
+															aria-owns="iti-0__country-listbox" aria-expanded="false"
+															title="United States: +1">
+															<div class="iti__flag iti__us"></div>
+															<div class="iti__selected-dial-code">+1</div>
+														</div>
+													</div><input type="tel" placeholder="201-555-0123"
+														name="customer[phone]" value="" format="[0-9]*"
+														class=" sys-mask-phone sys-form-control" id="customer_phone"
+														autocomplete="off" data-intl-tel-input-id="0"
+														style="padding-left: 52px;">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sys-row">
+										<div class="sys-col-lg-12">
+											<div>
+												<div
+													class="sys-form-group sys-form-textfield-group sys-form-textarea-group sys-form-group-transparent">
+													<label for="customer_notes">Notes by Customer</label><textarea
+														type="text" placeholder="Notes by Customer"
+														name="customer[notes]" id="customer_notes"
+														class="sys-form-control" spellcheck="false"
+														data-ms-editor="true"></textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sys-row">
+										<div class="sys-col-lg-12">
+											<div>
+												<div
+													class="sys-form-group sys-form-textfield-group sys-form-textarea-group sys-form-group-transparent">
+													<label for="customer_admin_notes">Notes by admins, only visible to
+														admins</label><textarea type="text"
+														placeholder="Notes by admins, only visible to admins"
+														name="customer[admin_notes]" id="customer_admin_notes"
+														class="sys-form-control" spellcheck="false"
+														data-ms-editor="true"></textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="sys-form-buttons sys-flex">
+								<div class="sys-form-group"><button type="submit" name="submit" class="sys-btn"
+										id="submit">Save Customer</button></div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="sys-template-variables">
+					<div class="close-template-variables-panel"><i class="sys-icon sys-icon-x"></i></div>
+					<h3>Available Template Variables</h3>
+					<div class="sys-template-variables-i">
+						<div class="available-vars-block">
+							<h4>Direct URLs to Manage Appointment</h4>
+							<ul>
+								<li><span class="var-label">For Agent:</span> <span
+										class="var-code sys-click-to-copy">{{manage_booking_url_agent}}</span></li>
+								<li><span class="var-label">For Customer:</span> <span
+										class="var-code sys-click-to-copy">{{manage_booking_url_customer}}</span>
+								</li>
+							</ul>
+							<h4>Appointment</h4>
+							<ul>
+								<li><span class="var-label">Appointment ID#:</span> <span
+										class="var-code sys-click-to-copy">{{booking_id}}</span></li>
+								<li><span class="var-label">Confirmation Code:</span> <span
+										class="var-code sys-click-to-copy">{{booking_code}}</span></li>
+								<li><span class="var-label">Service Name:</span> <span
+										class="var-code sys-click-to-copy">{{service_name}}</span></li>
+								<li><span class="var-label">Service Category:</span> <span
+										class="var-code sys-click-to-copy">{{service_category}}</span></li>
+								<li><span class="var-label">Start Date:</span> <span
+										class="var-code sys-click-to-copy">{{start_date}}</span></li>
+								<li><span class="var-label">Start Time:</span> <span
+										class="var-code sys-click-to-copy">{{start_time}}</span></li>
+								<li><span class="var-label">End Time:</span> <span
+										class="var-code sys-click-to-copy">{{end_time}}</span></li>
+								<li><span class="var-label">Service Duration:</span> <span
+										class="var-code sys-click-to-copy">{{booking_duration}}</span></li>
+								<li><span class="var-label">Status:</span> <span
+										class="var-code sys-click-to-copy">{{booking_status}}</span></li>
+								<li><span class="var-label">Service Extras:</span> <span
+										class="var-code sys-click-to-copy">{{service_extras}}</span></li>
+								<li><span class="var-label">Total Attendees</span> <span
+										class="var-code sys-click-to-copy">{{total_attendees}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Payment</h4>
+							<ul>
+								<li><span class="var-label">Payment Status:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_status}}</span></li>
+								<li><span class="var-label">Payment Portion:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_portion}}</span></li>
+								<li><span class="var-label">Payment Method:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_method}}</span></li>
+								<li><span class="var-label">Payment Amount:</span> <span
+										class="var-code sys-click-to-copy">{{booking_payment_amount}}</span></li>
+								<li><span class="var-label">Total Price:</span> <span
+										class="var-code sys-click-to-copy">{{booking_price}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Customer</h4>
+							<ul>
+								<li><span class="var-label">Full Name:</span> <span
+										class="var-code sys-click-to-copy">{{customer_full_name}}</span></li>
+								<li><span class="var-label">First Name:</span> <span
+										class="var-code sys-click-to-copy">{{customer_first_name}}</span></li>
+								<li><span class="var-label">Last Name:</span> <span
+										class="var-code sys-click-to-copy">{{customer_last_name}}</span></li>
+								<li><span class="var-label">Email Address:</span> <span
+										class="var-code sys-click-to-copy">{{customer_email}}</span></li>
+								<li><span class="var-label">Phone:</span> <span
+										class="var-code sys-click-to-copy">{{customer_phone}}</span></li>
+								<li><span class="var-label">Comments:</span> <span
+										class="var-code sys-click-to-copy">{{customer_notes}}</span></li>
+								<li><span class="var-label">Password Reset Token:</span> <span
+										class="var-code sys-click-to-copy">{{token}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Agent</h4>
+							<ul>
+								<li><span class="var-label">First Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_first_name}}</span></li>
+								<li><span class="var-label">Last Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_last_name}}</span></li>
+								<li><span class="var-label">Full Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_full_name}}</span></li>
+								<li><span class="var-label">Display Name:</span> <span
+										class="var-code sys-click-to-copy">{{agent_display_name}}</span></li>
+								<li><span class="var-label">Email:</span> <span
+										class="var-code sys-click-to-copy">{{agent_email}}</span></li>
+								<li><span class="var-label">Phone:</span> <span
+										class="var-code sys-click-to-copy">{{agent_phone}}</span></li>
+								<li><span class="var-label">Additional Emails:</span> <span
+										class="var-code sys-click-to-copy">{{agent_additional_emails}}</span></li>
+								<li><span class="var-label">Additional Phone Numbers:</span> <span
+										class="var-code sys-click-to-copy">{{agent_additional_phones}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Location</h4>
+							<ul>
+								<li><span class="var-label">Name:</span> <span
+										class="var-code sys-click-to-copy">{{location_name}}</span></li>
+								<li><span class="var-label">Full Address:</span> <span
+										class="var-code sys-click-to-copy">{{location_full_address}}</span></li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Transaction</h4>
+							<ul>
+								<li><span class="var-label">Token:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_token}}</span></li>
+								<li><span class="var-label">Amount:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_amount}}</span></li>
+								<li><span class="var-label">Processor:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_processor}}</span></li>
+								<li><span class="var-label">Payment Method:</span> <span
+										class="var-code sys-click-to-copy"> {{transaction_payment_method}}</span>
+								</li>
+								<li><span class="var-label">Funds Status:</span> <span
+										class="var-code sys-click-to-copy"> {{transaction_funds_status}}</span></li>
+								<li><span class="var-label">Status:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_status}}</span></li>
+								<li><span class="var-label">Notes:</span> <span class="var-code sys-click-to-copy">
+										{{transaction_notes}}</span></li>
+								<li><span class="var-label">Payment Portion:</span> <span
+										class="var-code sys-click-to-copy">{{transaction_payment_portion}}</span>
+								</li>
+							</ul>
+						</div>
+						<div class="available-vars-block">
+							<h4>Business Info</h4>
+							<ul>
+								<li><span class="var-label">Customer Cabinet URL:</span> <span
+										class="var-code sys-click-to-copy">{{customer_dashboard_url}}</span></li>
+								<li><span class="var-label">Business logo HTML:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_image}}</span></li>
+								<li><span class="var-label">Business logo URL:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_url}}</span></li>
+								<li><span class="var-label">Business Address:</span> <span
+										class="var-code sys-click-to-copy">{{business_address}}</span></li>
+								<li><span class="var-label">Business Phone:</span> <span
+										class="var-code sys-click-to-copy">{{business_phone}}</span></li>
+								<li><span class="var-label">Business Name:</span> <span
+										class="var-code sys-click-to-copy">{{business_name}}</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="sys-layout-template-variables">
+					<div class="close-layout-template-variables-panel"><i class="sys-icon sys-icon-x"></i></div>
+					<h3>Available Layout Variables</h3>
+					<div class="sys-template-variables-i">
+						<div class="available-vars-block">
+							<h4>Business Info</h4>
+							<ul>
+								<li><span class="var-label">Customer Cabinet URL:</span> <span
+										class="var-code sys-click-to-copy">{{customer_dashboard_url}}</span></li>
+								<li><span class="var-label">Business logo HTML:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_image}}</span></li>
+								<li><span class="var-label">Business logo URL:</span> <span
+										class="var-code sys-click-to-copy">{{business_logo_url}}</span></li>
+								<li><span class="var-label">Business Address:</span> <span
+										class="var-code sys-click-to-copy">{{business_address}}</span></li>
+								<li><span class="var-label">Business Phone:</span> <span
+										class="var-code sys-click-to-copy">{{business_phone}}</span></li>
+								<li><span class="var-label">Business Name:</span> <span
+										class="var-code sys-click-to-copy">{{business_name}}</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="__wp-uploader-id-5" class="supports-drag-drop" style="position: relative;">
+		<div tabindex="0" class="media-modal wp-core-ui" role="dialog" aria-labelledby="media-frame-title">
+
+			<button type="button" class="media-modal-close"><span class="media-modal-icon"><span
+						class="screen-reader-text">
+						Close dialog </span></span></button>
+
+			<div class="media-modal-content" role="document">
+				<div class="media-frame mode-select wp-core-ui hide-menu" id="__wp-uploader-id-3">
+					<div class="media-frame-title" id="media-frame-title">
+						<h1>Select or Upload Media</h1>
+					</div>
+					<h2 class="media-frame-menu-heading">Actions</h2>
+					<button type="button" class="button button-link media-frame-menu-toggle" aria-expanded="false">
+						Menu <span class="dashicons dashicons-arrow-down" aria-hidden="true"></span>
+					</button>
+					<div class="media-frame-menu">
+						<div role="tablist" aria-orientation="vertical" class="media-menu"><button type="button"
+								role="tab" class="media-menu-item active" id="menu-item-library"
+								aria-selected="true">Select or Upload Media</button></div>
+					</div>
+					<div class="media-frame-tab-panel">
+						<div class="media-frame-router">
+							<div role="tablist" aria-orientation="horizontal" class="media-router"><button type="button"
+									role="tab" class="media-menu-item active" id="menu-item-upload"
+									aria-selected="true">Upload files</button><button type="button" role="tab"
+									class="media-menu-item" id="menu-item-browse" aria-selected="false"
+									tabindex="-1">Media Library</button></div>
+						</div>
+						<div class="media-frame-content" role="tabpanel" aria-labelledby="menu-item-upload"
+							tabindex="0">
+							<div class="uploader-inline">
+
+
+								<div class="uploader-inline-content no-upload-message">
+
+									<div class="upload-ui">
+										<h2 class="upload-instructions drop-instructions">Drop files to upload</h2>
+										<p class="upload-instructions drop-instructions">or</p>
+										<button type="button" class="browser button button-hero"
+											style="position: relative; z-index: 1;" id="__wp-uploader-id-4"
+											aria-labelledby="__wp-uploader-id-4 post-upload-info">Select Files</button>
+									</div>
+
+									<div class="upload-inline-status">
+										<div class="media-uploader-status" style="display: none;">
+											<h2>Uploading</h2>
+
+											<div class="media-progress-bar">
+												<div></div>
+											</div>
+											<div class="upload-details">
+												<span class="upload-count">
+													<span class="upload-index"></span> / <span
+														class="upload-total"></span>
+												</span>
+												<span class="upload-detail-separator">–</span>
+												<span class="upload-filename"></span>
+											</div>
+											<div class="upload-errors"></div>
+											<button type="button" class="button upload-dismiss-errors">Dismiss
+												errors</button>
+										</div>
+									</div>
+
+									<div class="post-upload-ui" id="post-upload-info">
+
+										<p class="max-upload-size">
+											Maximum upload file size: 1 MB. </p>
+
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2 class="media-frame-actions-heading screen-reader-text">
+						Selected media actions </h2>
+					<div class="media-frame-toolbar">
+						<div class="media-toolbar">
+							<div class="media-toolbar-secondary"></div>
+							<div class="media-toolbar-primary search-form"><button type="button"
+									class="button media-button button-primary button-large media-button-select"
+									disabled="disabled">Use this media</button></div>
+						</div>
+					</div>
+					<div class="media-frame-uploader">
+						<div class="uploader-window">
+							<div class="uploader-window-content">
+								<div class="uploader-editor-title">Drop files to upload</div>
+							</div>
+						</div>
+					</div>
+					<div id="html5_1h6jngjkm167i1bt175gnud1ud3b_container" class="moxie-shim moxie-shim-html5"
+						style="position: absolute; top: 234px; left: 605px; width: 141px; height: 46px; overflow: hidden; z-index: 0;">
+						<input id="html5_1h6jngjkm167i1bt175gnud1ud3b" type="file"
+							style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+							multiple=""
+							accept="image/jpeg,.jpg,.jpeg,.jpe,image/png,.png,image/gif,.gif,video/quicktime,.mov,.qt,video/avi,.avi,video/mpeg,.mpeg,.mpg,.mpe,video/3gpp,.3gp,.3gpp,video/3gpp2,.3g2,.3gp2,.mid,.midi,application/pdf,.pdf,application/msword,.doc,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.docx,.docm,application/vnd.ms-powerpoint,.pot,.pps,.ppt,application/vnd.openxmlformats-officedocument.presentationml.presentation,.pptx,.pptm,.odt,application/vnd.openxmlformats-officedocument.presentationml.slideshow,.ppsx,.ppsm,.xla,application/vnd.ms-excel,.xls,.xlt,.xlw,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,.xlsx,.xlsm,.xlsb,.key,audio/mpeg,.mp3,audio/x-m4a,.m4a,.m4b,audio/ogg,.ogg,.oga,audio/flac,.flac,audio/x-wav,.wav,video/mp4,.mp4,video/x-m4v,.m4v,video/webm,.webm,video/ogg,.ogv,video/x-flv,.flv"
+							tabindex="-1" aria-hidden="true"></div>
+				</div>
+			</div>
+		</div>
+		<div class="media-modal-backdrop"></div>
+	</div>
+
+	<!-- js script files  -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-alpha.2/chart.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+	<script src="../assets/js/jquery-3.7.0.min.js"></script>
+	<script src="../assets/js/popper.min.js"></script>
+	<script src="../assets/js/bootstrap.bundle.min.js"></script>
+	<script src="../assets/js/dashboard.js"></script>
+	<script src="../assets/js/wow.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>
