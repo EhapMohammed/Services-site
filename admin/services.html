@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title></title>
+	<!--  Bootstrap v5.3.0 -->
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../assets/css/all.min.css">
+	<link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body class="wp-admin wp-core-ui js sys-admin sys toplevel_page_sys auto-fold admin-bar branch-6-2 version-6-2-2 admin-color-fresh locale-en-us multisite customize-support sticky-menu svg">
+
+
+	<div id="sys-show-mobile-menu"
+		class="sys-all-wrapper sys sys-view-dashboard-widget_bookings_and_availability_timeline sys-view-dashboard-widget_daily_bookings_chart sys-view-dashboard-widget_upcoming_appointments sys-view-dashboard-index">
+		<div class="sys-content-and-menu-w">
+			<div id="sys-side-menu" class="sys-side-menu-w side-menu-full">
+				<div class="side-menu-top-part-w">
+					<a href="./index.html" class="logo-w"><span class="sys-logo"></span></a>
+					<div class="menu-color-toggler">
+						<div class="mc-toggler-label"><i class="sys-icon sys-icon-sun"></i></div>
+					</div>
+					<div class="menu-toggler" data-route="settings__set_menu_layout_style">
+						<div class="menu-toggler-lines"></div>
+					</div>
+				</div>
+				<ul class="side-menu">
+					<li class=" menu-item-is-active">
+						<a href="./index.html">
+							<i class="sys-icon sys-icon-box"></i>
+							<span>Dashboard</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Dashboard</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="./calendar.html">
+							<i class="sys-icon sys-icon-calendar"></i>
+							<span>Calendar</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Calendar</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="">
+							<i class="sys-icon sys-icon-inbox"></i>
+							<span>Appointments</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Appointments</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="">
+							<i class="sys-icon sys-icon-credit-card"></i>
+							<span>Payments</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Payments</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-users"></i>
+							<span>Customers</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Customers</li>
+							<li class=""><a href="./customers.html"><span>List
+										of Customers</span></a></li>
+							<li class=""><a href="/add-customer.html"><span>Add
+										Customer</span></a></li>
+						</ul>
+					</li>
+					<li class="menu-spacer with-label"><span>Resources<span></span></span></li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-package"></i>
+							<span>Services</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Services</li>
+							<li class=""><a href=""><span>Services</span></a>
+							</li>
+							<li class=""><a href=""><span>Categories</span></a>
+							</li>
+							<li class=""><a href=""><span>Service
+										Extras</span></a></li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="">
+							<i class="sys-icon sys-icon-briefcase"></i>
+							<span>Agents</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Agents</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-map-pin"></i>
+							<span>Locations</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Locations</li>
+							<li class=""><a href=""><span>All
+										Locations</span></a></li>
+							<li class=""><a href=""><span>Categories</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-spacer with-label"><span>Settings<span></span></span></li>
+					<li class="">
+						<a href="">
+							<i class="sys-icon sys-icon-plus-circle2"></i>
+							<span>Add-ons</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Add-ons</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-settings"></i>
+							<span>Settings</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Settings</li>
+							<li class=""><a href=""><span>General</span></a>
+							</li>
+							<li class=""><a href=""><span>Schedule</span></a>
+							</li>
+							<li class=""><a href=""><span>Tax</span></a>
+							</li>
+							<li class=""><a href=""><span>Steps</span></a>
+							</li>
+							<li class=""><a href=""><span>Payments</span></a>
+							</li>
+							<li class=""><a href=""><span>Notifications</span></a>
+							</li>
+							<li class=""><a href=""><span>Roles</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-server"></i>
+							<span>Processes</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Processes</li>
+							<li class=""><a href=""><span>Processes</span></a>
+							</li>
+							<li class=""><a href=""><span>Scheduled
+										Jobs</span></a></li>
+							<li class=""><a href=""><span>Activity
+										Log</span></a></li>
+						</ul>
+					</li>
+					<li class=" has-children">
+						<a href="">
+							<i class="sys-icon sys-icon-link-2"></i>
+							<span>Integrations</span>
+						</a>
+						<ul class="side-sub-menu">
+							<li class="side-sub-menu-header">Integrations</li>
+							<li class=""><a href=""><span>Calendars</span></a>
+							</li>
+							<li class=""><a href=""><span>Meetings</span></a>
+							</li>
+							<li class=""><a href=""><span>Marketing</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="">
+							<i class="sys-icon sys-icon-layers"></i>
+							<span>Form Fields</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Form Fields</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="sys-content-w">
+				<div class="sys-top-bar-w">
+					<a href="#" title="Menu" class="sys-top-iconed-link sys-mobile-top-menu-trigger">
+						<i class="sys-icon sys-icon-menu"></i>
+					</a>
+					<div class="sys-top-search-w">
+						<div class="sys-top-search-input-w">
+							<i class="sys-icon sys-icon-x sys-mobile-top-search-trigger-cancel"></i>
+							<input type="text" data-route="search__query_results" class="sys-top-search"
+								placeholder="Start typing to find bookings, customers, agents or services..."
+								spellcheck="false" data-ms-editor="true">
+						</div>
+						<div class="sys-top-search-results-w"></div>
+					</div>
+					<a href="#" title="Search" class="sys-top-iconed-link sys-mobile-top-search-trigger"><i
+							class="sys-icon sys-icon-search"></i></a>
+					<a href=""
+						title="Activity Log" class="sys-top-iconed-link sys-top-activity-trigger">
+						<i class="sys-icon sys-icon-activity"></i>
+					</a>
+					<a href=""
+						title="Pending Bookings" class="sys-top-iconed-link sys-top-notifications-trigger">
+						<i class="sys-icon sys-icon-inbox"></i>
+					</a>
+					<a href="#" data-sys-params="" data-sys-action="bookings__quick_edit"
+						data-sys-output-target="side-panel" data-sys-after-call="sys_init_quick_booking_form"
+						title="New Appointment" class="sys-mobile-top-new-appointment-btn-trigger sys-top-iconed-link">
+						<i class="sys-icon sys-icon-plus-circle"></i>
+					</a>
+					<a href="#" class="sys-top-new-appointment-btn sys-btn sys-btn-primary" data-sys-params=""
+						data-sys-action="bookings__quick_edit" data-sys-output-target="side-panel"
+						data-sys-after-call="sys_init_quick_booking_form">
+						<i class="sys-icon sys-icon-plus"></i>
+						<span>New Booking</span>
+					</a>
+					<div class="sys-top-user-info-w">
+						<div class="avatar-w top-user-info-toggler"
+							style="background-image: url('../assets/img/093f388d9b7286cefa950eefb3a831ac.png');">
+						</div>
+						<div class="sys-user-info-dropdown">
+							<a href="#" class="sys-user-info-close top-user-info-toggler"><i
+									class="sys-icon sys-icon-x"></i></a>
+							<div class="sys-uid-head">
+								<div class="uid-avatar-w">
+									<div class="uid-avatar"
+										style="background-image: url('../assets/img/093f388d9b7286cefa950eefb3a831ac.png');">
+									</div>
+								</div>
+								<div class="uid-info">
+									<h4>Sandbox Site Admin</h4>
+									<h5>Administrator</h5>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<a
+										href="">
+										<i class="sys-icon sys-icon-ui-46"></i>
+										<span>Settings</span>
+									</a>
+								</li>
+								<li>
+									<a
+										href="">
+										<i class="sys-icon sys-icon-log-in"></i>
+										<span>Logout</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="page-header-w">
+					<div class="sys-page-tabs-w ">
+						<ul class="sys-page-tabs">
+							<li class="sys-page-tab-active "><a
+									href="">Services</a>
+							</li>
+							<li class=" "><a
+									href="">Categories</a>
+							</li>
+							<li class=" "><a
+									href="">Service
+									Extras</a></li>
+						</ul>
+					</div>
+					<div class="breadcrumbs-w">
+						<ul class="breadcrumbs">
+							<li><a
+									href="">Dashboard</a>
+							</li>
+							<li><a
+									href="">Services</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="sys-content ">
+					<div class="sys-item-category-w">
+						<div class="sys-form-sub-header sub-level">
+							<h3>General Dentistry</h3>
+						</div>
+						<div class="sys-services-list">
+							<div class="sys-service sys-service-status-active">
+								<div class="sys-service-header">
+									<h3 class="service-name">Group Booking</h3>
+								</div>
+								<div class="sys-service-body">
+									<div class="sys-service-agents">
+										<div class="label">Agents:</div>
+										<div class="agents-avatars">
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar1-150x150.jpg)">
+											</div>
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar7.jpg)">
+											</div>
+											<div class="agents-more">+2 more</div>
+										</div>
+									</div>
+									<div class="sys-service-info">
+										<div class="service-info-row">
+											<div class="label">Duration:</div>
+											<div class="value"><strong>30</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Price:</div>
+											<div class="value"><strong>$20</strong></div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Buffer:</div>
+											<div class="value"><strong>0/0</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Capacity:</div>
+											<div class="value"><strong>1 - 6</strong> person</div>
+										</div>
+									</div>
+								</div>
+								<div class="sys-service-foot">
+									<a href=""
+										class="sys-btn sys-btn-block sys-btn-secondary">
+										<i class="sys-icon sys-icon-edit-3"></i>
+										<span>Edit Service</span>
+									</a>
+								</div>
+							</div>
+							<div class="sys-service sys-service-status-active">
+								<div class="sys-service-header">
+									<h3 class="service-name">Root Canal Therapy</h3>
+								</div>
+								<div class="sys-service-body">
+									<div class="sys-service-agents">
+										<div class="label">Agents:</div>
+										<div class="agents-avatars">
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar1-150x150.jpg)">
+											</div>
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar7.jpg)">
+											</div>
+											<div class="agents-more">+2 more</div>
+										</div>
+									</div>
+									<div class="sys-service-info">
+										<div class="service-info-row">
+											<div class="label">Duration:</div>
+											<div class="value"><strong>20</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Price:</div>
+											<div class="value"><strong>$30</strong></div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Buffer:</div>
+											<div class="value"><strong>0/0</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Capacity:</div>
+											<div class="value"><strong>1</strong> person</div>
+										</div>
+									</div>
+								</div>
+								<div class="sys-service-foot">
+									<a href=""
+										class="sys-btn sys-btn-block sys-btn-secondary">
+										<i class="sys-icon sys-icon-edit-3"></i>
+										<span>Edit Service</span>
+									</a>
+								</div>
+							</div>
+							<div class="sys-service sys-service-status-active">
+								<div class="sys-service-header">
+									<h3 class="service-name">Gum Decease</h3>
+								</div>
+								<div class="sys-service-body">
+									<div class="sys-service-agents">
+										<div class="label">Agents:</div>
+										<div class="agents-avatars">
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar1-150x150.jpg)">
+											</div>
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar7.jpg)">
+											</div>
+											<div class="agents-more">+2 more</div>
+										</div>
+									</div>
+									<div class="sys-service-info">
+										<div class="service-info-row">
+											<div class="label">Duration:</div>
+											<div class="value"><strong>60</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Price:</div>
+											<div class="value"><strong>$20</strong></div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Buffer:</div>
+											<div class="value"><strong>10/10</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Capacity:</div>
+											<div class="value"><strong>1</strong> person</div>
+										</div>
+									</div>
+								</div>
+								<div class="sys-service-foot">
+									<a href=""
+										class="sys-btn sys-btn-block sys-btn-secondary">
+										<i class="sys-icon sys-icon-edit-3"></i>
+										<span>Edit Service</span>
+									</a>
+								</div>
+							</div> <a class="create-service-link-w"
+								href="./add-service.html">
+								<div class="create-service-link-i">
+									<div class="add-service-graphic-w">
+										<div class="add-service-plus"><i class="sys-icon sys-icon-plus4"></i></div>
+									</div>
+									<div class="add-service-label">Add Service</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sys-item-category-w">
+						<div class="sys-form-sub-header sub-level">
+							<h3>Cosmetic Dentistry</h3>
+						</div>
+						<div class="sys-services-list">
+							<div class="sys-service sys-service-status-active">
+								<div class="sys-service-header">
+									<h3 class="service-name">Tooth Whitening</h3>
+								</div>
+								<div class="sys-service-body">
+									<div class="sys-service-agents">
+										<div class="label">Agents:</div>
+										<div class="agents-avatars">
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar1-150x150.jpg)">
+											</div>
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar7.jpg)">
+											</div>
+											<div class="agents-more">+2 more</div>
+										</div>
+									</div>
+									<div class="sys-service-info">
+										<div class="service-info-row">
+											<div class="label">Duration:</div>
+											<div class="value"><strong>30</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Price:</div>
+											<div class="value"><strong>$15</strong></div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Buffer:</div>
+											<div class="value"><strong>10/10</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Capacity:</div>
+											<div class="value"><strong>1</strong> person</div>
+										</div>
+									</div>
+								</div>
+								<div class="sys-service-foot">
+									<a href=""
+										class="sys-btn sys-btn-block sys-btn-secondary">
+										<i class="sys-icon sys-icon-edit-3"></i>
+										<span>Edit Service</span>
+									</a>
+								</div>
+							</div>
+							<div class="sys-service sys-service-status-active">
+								<div class="sys-service-header">
+									<h3 class="service-name">Invisilign Braces</h3>
+								</div>
+								<div class="sys-service-body">
+									<div class="sys-service-agents">
+										<div class="label">Agents:</div>
+										<div class="agents-avatars">
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar1-150x150.jpg)">
+											</div>
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar7.jpg)">
+											</div>
+											<div class="agents-more">+2 more</div>
+										</div>
+									</div>
+									<div class="sys-service-info">
+										<div class="service-info-row">
+											<div class="label">Duration:</div>
+											<div class="value"><strong>30</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Price:</div>
+											<div class="value"><strong>$10</strong></div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Buffer:</div>
+											<div class="value"><strong>20/20</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Capacity:</div>
+											<div class="value"><strong>1</strong> person</div>
+										</div>
+									</div>
+								</div>
+								<div class="sys-service-foot">
+									<a href=""
+										class="sys-btn sys-btn-block sys-btn-secondary">
+										<i class="sys-icon sys-icon-edit-3"></i>
+										<span>Edit Service</span>
+									</a>
+								</div>
+							</div> <a class="create-service-link-w"
+								href="./add-service.html">
+								<div class="create-service-link-i">
+									<div class="add-service-graphic-w">
+										<div class="add-service-plus"><i class="sys-icon sys-icon-plus4"></i></div>
+									</div>
+									<div class="add-service-label">Add Service</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sys-item-category-w">
+						<div class="sys-form-sub-header sub-level">
+							<h3>Implants Dentistry</h3>
+						</div>
+						<div class="sys-services-list">
+							<div class="sys-service sys-service-status-active">
+								<div class="sys-service-header">
+									<h3 class="service-name">Porcelain Crown</h3>
+								</div>
+								<div class="sys-service-body">
+									<div class="sys-service-agents">
+										<div class="label">Agents:</div>
+										<div class="agents-avatars">
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar1-150x150.jpg)">
+											</div>
+											<div class="agent-avatar"
+												style="background-image: url(http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar7.jpg)">
+											</div>
+											<div class="agents-more">+2 more</div>
+										</div>
+									</div>
+									<div class="sys-service-info">
+										<div class="service-info-row">
+											<div class="label">Duration:</div>
+											<div class="value"><strong>60</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Price:</div>
+											<div class="value"><strong>$10</strong></div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Buffer:</div>
+											<div class="value"><strong>10/10</strong> min</div>
+										</div>
+										<div class="service-info-row">
+											<div class="label">Capacity:</div>
+											<div class="value"><strong>1</strong> person</div>
+										</div>
+									</div>
+								</div>
+								<div class="sys-service-foot">
+									<a href=""
+										class="sys-btn sys-btn-block sys-btn-secondary">
+										<i class="sys-icon sys-icon-edit-3"></i>
+										<span>Edit Service</span>
+									</a>
+								</div>
+							</div> <a class="create-service-link-w"
+								href="./add-service.html">
+								<div class="create-service-link-i">
+									<div class="add-service-graphic-w">
+										<div class="add-service-plus"><i class="sys-icon sys-icon-plus4"></i></div>
+									</div>
+									<div class="add-service-label">Add Service</div>
+								</div>
+							</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- js script files  -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-alpha.2/chart.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+	<script src="../assets/js/jquery-3.7.0.min.js"></script>
+	<script src="../assets/js/popper.min.js"></script>
+	<script src="../assets/js/bootstrap.bundle.min.js"></script>
+	<script src="../assets/js/dashboard.js"></script>
+	<script src="../assets/js/wow.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>

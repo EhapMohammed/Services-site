@@ -6,14 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title></title>
+	<link rel="stylesheet" href="../assets/css/daterangepicker.css">
 	<!--  Bootstrap v5.3.0 -->
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="../assets/css/all.min.css">
-	<link rel="stylesheet" href="../assets/css/dashboard.css">
 	<link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
-<body>
+<body class="wp-admin wp-core-ui js sys-admin sys toplevel_page_sys auto-fold admin-bar branch-6-2 version-6-2-2 admin-color-fresh locale-en-us multisite customize-support sticky-menu svg">
 
 
 	<div id="sys-show-mobile-menu"
@@ -88,13 +88,13 @@
 					<li class="menu-spacer with-label"><span>Resources<span></span></span></li>
 					<li class=" has-children">
 						<a
-							href="">
+							href="./services.html">
 							<i class="sys-icon sys-icon-package"></i>
 							<span>Services</span>
 						</a>
 						<ul class="side-sub-menu">
 							<li class="side-sub-menu-header">Services</li>
-							<li class=""><a
+							<li class="./services.html"><a
 									href=""><span>Services</span></a>
 							</li>
 							<li class=""><a
@@ -318,7 +318,7 @@
 											<option value="6">Gum Decease</option>
 										</select>
 										<div class="sys-date-range-picker">
-											<span class="range-picker-value">Jun 29, 2023 - Jul 29, 2023</span>
+											<input type="text" id="date-picker" class="range-picker-value" name="daterange" value="Select Date"></input>
 											<input type="hidden" name="date_from" value="2023-06-29">
 											<input type="hidden" name="date_to" value="2023-07-29">
 											<i class="sys-icon sys-icon-chevron-down"></i>
@@ -632,8 +632,8 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
 		<script src="../assets/js/jquery-3.7.0.min.js"></script>
 		<script src="../assets/js/popper.min.js"></script>
+		<script src="../assets/js/daterangepicker.js"></script>
 		<script src="../assets/js/bootstrap.bundle.min.js"></script>
-		<script src="../assets/js/dashboard.js"></script>
 		<script src="../assets/js/wow.min.js"></script>
 		<script src="../assets/js/main.js"></script>
 </body>
