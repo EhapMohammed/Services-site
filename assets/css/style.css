@@ -1643,14 +1643,14 @@ select {
 .sys-all-wrapper .sys-top-bar-w .sys-top-user-info-w .sys-user-info-dropdown {
   display: none;
   position: absolute;
-  top: -1px;
-  right: 0;
+  top: 100%;
+  right: 10px;
   background-color: #fff;
   padding: 10px 20px;
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .2), 0 5px 15px 0 rgba(0, 0, 0, .05);
   z-index: 99999;
-  width: 180px
+  width: max-content;
 }
 
 .info-hover-activate:hover span,

@@ -21,6 +21,11 @@ toggleSidebarMop.addEventListener('click', function() {
   }
 });
 
+// user logout dropdown
+$('#sys-top-user-info-w').on('click', function() {
+  $('#sys-user-info-dropdown').toggleClass('d-block');
+});
+
 //dashborad home screen chart 
 const canvas = document.getElementById('chartDailyBookings');
 const today = new Date();
