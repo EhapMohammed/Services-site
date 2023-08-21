@@ -25,7 +25,13 @@ toggleSidebarMop.addEventListener('click', function() {
 $('#sys-top-user-info-w').on('click', function() {
   $('#sys-user-info-dropdown').toggleClass('d-block');
 });
+//calendar-settings-toggler
 
+
+$('#calendar-settings-toggler').on('click', function() {
+  $('#sys-calendar-settings-extra').toggleClass('d-flex');
+
+});
 //dashborad home screen chart 
 const canvas = document.getElementById('chartDailyBookings');
 const today = new Date();
@@ -57,18 +63,7 @@ new Chart(canvas, {
   }
 });
 
-//calendar-settings-toggler
 
-const calendarSettingsToggler = document.getElementsByClassName('calendar-settings-toggler')[0];
-const calendarSettingsExtra = document.getElementsByClassName('sys-calendar-settings-extra')[0];
-
-calendarSettingsToggler.addEventListener('click', function() {
-  if (getComputedStyle(calendarSettingsExtra).display === "none") {
-    calendarSettingsExtra.style.display = "flex";
-  } else {
-    calendarSettingsExtra.style.display = "none";
-  }
-});
 
 
 $(function() {
