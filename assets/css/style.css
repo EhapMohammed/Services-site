@@ -3595,6 +3595,7 @@ body.sys-admin .new-version-message .version-check-icon {
 
 .sys-dashboard-row {
   display: flex;
+  justify-content: space-around;
 }
 
 /* .sys-dashboard-row .sys-dashboard-column,.version-and-license-info-w>div {

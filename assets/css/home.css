@@ -16,7 +16,7 @@ p {
 
 .inside-container {
   height: 80%;
-  width: 75%;
+  /* width: 75%; */
   background: #fff;
   border-radius: 5px;
   /* padding: 10px; */
@@ -24,7 +24,6 @@ p {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  overflow-y: scroll;
 }
 @media (max-width:768px) {
   .inside-container
@@ -110,11 +109,10 @@ p {
 }
 
  .services-sec {
-  border-right: 1px solid rgba(0, 0, 0, .1);
   display: flex;
   flex-direction: column;
-  border-right: 1px solid rgba(0, 0, 0, .1);
   position: relative;
+  height: 100%;
 }
 
 .services-sec .services-header {
@@ -367,7 +365,7 @@ input {
   width: 100%;
   padding: 10px;
   border-top: 1px solid rgba(0, 0, 0, .1);
-  position: sticky;
+  position: static;
   bottom: 0;
   background-color: white;
 }
@@ -498,12 +496,11 @@ input {
 }
 .date-picker .timePicker a
 {
-  color: black;
+  color: #fff;
   text-decoration: none;
   padding: 8px;
-  background-color: #d6ffd1;
-  border-radius: 8px;
-  font-weight: bold;
+  background-color: #0d6efd;
+  position: relative;
 }
 .date-picker .timePicker a:hover
 {
@@ -617,6 +614,11 @@ input {
 }
 
 .prev-dates ,.next-dates{
+  color: #9F9F9F !important;
+}
+.prev-dates
+{
+  background-color: unset !important;
   color: #9F9F9F !important;
 }
 
