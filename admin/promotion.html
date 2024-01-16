@@ -437,12 +437,12 @@
 										<td class="name-column">John Doe</td>
 										<td class="code-column">ABC123</td>
 										<td class="availability-column">
-											<span style="color:#0F53ED;">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color:#0F53ED;">
 												All Services 
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 													<path d="M5.47168 11.5864L5.47168 4.1384C5.47171 4.00657 5.51082 3.87771 5.58408 3.7681C5.65733 3.65849 5.76144 3.57307 5.88324 3.52262C6.00504 3.47217 6.13906 3.45897 6.26837 3.48468C6.39767 3.51039 6.51644 3.57387 6.60968 3.66707L10.3337 7.39107C10.4587 7.51609 10.5289 7.68563 10.5289 7.8624C10.5289 8.03918 10.4587 8.20872 10.3337 8.33374L6.60968 12.0577C6.51644 12.1509 6.39767 12.2144 6.26837 12.2401C6.13906 12.2658 6.00504 12.2526 5.88324 12.2022C5.76144 12.1517 5.65733 12.0663 5.58408 11.9567C5.51082 11.8471 5.47171 11.7182 5.47168 11.5864Z" fill="#0F53ED"/>
 												  </svg>
-											</span>
+											</a>
 										</td>
 										<td class="valid-to-column">2023-01-01</td>
 										<td class="value-column">$50</td>
@@ -468,12 +468,12 @@
 										<td class="name-column">John Doe</td>
 										<td class="code-column">ABC123</td>
 										<td class="availability-column">
-											<button style="color:#0F53ED;">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color:#0F53ED;">
 												6 Services 
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 													<path d="M5.47168 11.5864L5.47168 4.1384C5.47171 4.00657 5.51082 3.87771 5.58408 3.7681C5.65733 3.65849 5.76144 3.57307 5.88324 3.52262C6.00504 3.47217 6.13906 3.45897 6.26837 3.48468C6.39767 3.51039 6.51644 3.57387 6.60968 3.66707L10.3337 7.39107C10.4587 7.51609 10.5289 7.68563 10.5289 7.8624C10.5289 8.03918 10.4587 8.20872 10.3337 8.33374L6.60968 12.0577C6.51644 12.1509 6.39767 12.2144 6.26837 12.2401C6.13906 12.2658 6.00504 12.2526 5.88324 12.2022C5.76144 12.1517 5.65733 12.0663 5.58408 11.9567C5.51082 11.8471 5.47171 11.7182 5.47168 11.5864Z" fill="#0F53ED"/>
 												  </svg>
-											</button>
+											</a>
 										</td>
 										<td class="valid-to-column">2023-01-01</td>
 										<td class="value-column">$50</td>
@@ -535,7 +535,24 @@
 	</div>
 	</div>
 
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		  ...
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		</div>
+	  </div>
+	</div>
+  </div>
 	<!-- js script files  -->
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-alpha.2/chart.min.js"></script>
