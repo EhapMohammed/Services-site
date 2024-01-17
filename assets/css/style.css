@@ -247,12 +247,6 @@
   border-radius: 0
 }
 
-.sys-admin button:focus,
-.sys-w button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color
-}
-
 .sys-admin button,
 .sys-admin input,
 .sys-admin optgroup,
@@ -4912,13 +4906,6 @@ body.sys-admin .new-version-message .version-check-icon {
 .sys-side-menu-w.side-menu-full .back-to-wp-link-w .back-to-wp-link span,
 .sys-widget .stats-donut-chart-w canvas {
   margin: 0 auto
-}
-
-.sys.wp-core-ui select {
-  border-color: #bcc3ca #bcc3ca #838e96;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .08);
-  background-size: 10px 10px;
-  background-position: right 2px top 55%
 }
 
 .sys-form-message-w {
@@ -27371,6 +27358,11 @@ font-size: 16px;
   {
     overflow-x: auto;
   }
+  .promo-filtersearch
+  {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }
 
 
@@ -27468,6 +27460,22 @@ color: #09AE61;
 background: #FEECEB;
 color: #F04438;
 }
+
+.promo-table .action-column .dropdown-item.active, 
+.promo-table .action-column .dropdown-item:active
+{
+  background-color : unset;
+}
+
+.add-edit-modal label
+{
+  color: #090A22;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.08px;
+}
+
 
 
 @media (max-width: 600px) {
