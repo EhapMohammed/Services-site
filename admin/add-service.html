@@ -713,11 +713,11 @@
 
 			<form action="" method="post" id="setTimingsingle" >
 				<div class="mb-3">
-					<label for="start_date" class="form-label">Select Date</label>
-					<input type="date" class="form-control form-control-lg" id="start_date" placeholder="Select date"> 				
+					<label for="select_date" class="form-label">Select Date</label>
+					<input type="date" class="form-control form-control-lg" id="selecet_date" placeholder="Select date"> 				
 				</div>
 				<div class="row mb-3">
-					<label for="start_time" class="form-label">Set Time</label>
+					<label class="form-label">Set Time</label>
 					<div class="col">
 						<input type="text" class="form-control form-control-lg timepicker " id="start_time" placeholder="From"> 				
 					</div>
@@ -727,8 +727,8 @@
 					
 				  </div>
 				  <div class="mb-3">
-						<label for="start_date" class="form-label">Set A Minimum Time Before Booking</label>
-						<input type="text" class="form-control form-control-lg timepicker" id="start_date" placeholder="Select Time"> 				
+						<label for="timeBefor" class="form-label">Set A Minimum Time Before Booking</label>
+						<input type="text" class="form-control form-control-lg timepicker" id="timeBefor" placeholder="Select Time"> 				
 				  </div>
 			</form>
 
@@ -974,13 +974,35 @@
 
 
 		<script>
-			$(".js-select2").select2({
-					closeOnSelect : false,
-					placeholder : "Placeholder",
-					allowHtml: true,
-					allowClear: true,
-					tags: true
+	
+			$('#ReoccurringEventForm').css('display', 'none');
+			$('#setTimingReoccurring').css('display', 'none');
+
+			$('#singleType').on('click', function() {
+				if($('.serivceType .singlebtn').hasClass('btnActive')){
+				}else{
+					$('.serivceType .singlebtn').addClass('btnActive');
+					$('.serivceType .reoccurringbtn').removeClass('btnActive');
+					$('#setTimingsingle').css('display', 'block');
+					$('#setTimingReoccurring').css('display', 'none');
+				}
+				$('#singleEventForm').css('display', 'block');
+				$('#ReoccurringEventForm').css('display', 'none');
 			});
+
+			$('#reoccurringType').on('click', function() {
+				if($('.serivceType .reoccurringbtn').hasClass('btnActive')){
+				}else{
+					$('.serivceType .reoccurringbtn').addClass('btnActive');
+					$('.serivceType .singlebtn').removeClass('btnActive');
+					$('#setTimingReoccurring').css('display', 'block');
+					$('#setTimingsingle').css('display', 'none');
+				}
+				$('#ReoccurringEventForm').css('display', 'block');
+				$('#singleEventForm').css('display', 'none');
+			});
+
+			
 			$('.timepicker').timepicker({
 				defaultTime: '',
 				minuteStep: 5,
@@ -1012,27 +1034,9 @@
 					</div>
 				`);
 			});
-			$('#ReoccurringEventForm').css('display', 'none');
-			$('#singleType').on('click', function() {
-				if($('.serivceType .singlebtn').hasClass('btnActive')){
-				}else{
-					$('.serivceType .singlebtn').addClass('btnActive');
-					$('.serivceType .reoccurringbtn').removeClass('btnActive');
-				}
-				$('#singleEventForm').css('display', 'block');
-				$('#ReoccurringEventForm').css('display', 'none');
-			});
 
-			$('#reoccurringType').on('click', function() {
-				if($('.serivceType .reoccurringbtn').hasClass('btnActive')){
-				}else{
-					$('.serivceType .reoccurringbtn').addClass('btnActive');
-					$('.serivceType .singlebtn').removeClass('btnActive');
-				}
-				$('#ReoccurringEventForm').css('display', 'block');
-				$('#singleEventForm').css('display', 'none');
-			});
-
+			
+				
 		</script>
 	</body>
 
