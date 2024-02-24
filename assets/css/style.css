@@ -16899,10 +16899,10 @@ body.sys-lightbox-active .sys-lightbox-w {
   left: 50%
 }
 
-.sys-widget-daily-bookings {
+/* .sys-widget-daily-bookings {
   border-right: 1px solid #e1e3ea;
   padding-right: 20px;
-}
+} */
 
 .sys-widget-daily-bookings .no-results-w,
 .sys-widget-top-agents .no-results-w {
@@ -27550,4 +27550,64 @@ color: #F04438;
     text-align: center;
   }
   
+}
+.sys-dashboard-column
+{
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+}
+.sys-dashboard-column .sys-widget
+{
+  margin-bottom: 0;
+}
+.statistics-card-dashboard
+{
+  background-color: #fff;
+  width: 206.4px;
+  padding: 20px 20.4px 20px 20px;
+  border-radius: 8px;
+  border: 1px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.statistics-card-dashboard span
+{
+  color: #8E8E99;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  margin-top: .7rem;
+}
+.statistics-card-dashboard p
+{
+font-size: 24px;
+font-weight: 700;
+letter-spacing: 0.01em;
+color: #090A22;
+margin-bottom: 0;
+}
+.sys-dashboard-row .copy-url
+{
+ /* background-image: url(../img/dashboard-img.png); */
+ height: 402px;
+ overflow: hidden;
+ border-radius: 8px;
+ position: relative;
+}
+.sys-dashboard-row .copy-url div
+{
+  position: absolute;
+  top: 40px;
+  left: 25px;
+}
+.sys-dashboard-row .copy-url div p
+{
+font-size: 24px;
+font-weight: 700;
+line-height: 32px;
+letter-spacing: 0.01em;
+color : #FFFFFF;
+
 }
