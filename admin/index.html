@@ -291,8 +291,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="sys-content ">
-					<div class="sys-dashboard-row">
+				<div class="sys-content dashboard-statistics">
+					<div class="sys-dashboard-row statistics-card-row">
 						<div class="statistics-card-dashboard">
 							<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
 								<rect width="40" height="40" rx="20" fill="#0F53ED" fill-opacity="0.1"/>
@@ -308,6 +308,14 @@
 							</svg>
 							<span>Total Service</span>
 							<p>20</p>
+						</div>
+						<div class="statistics-card-dashboard">
+							<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+								<rect x="0.799805" width="40" height="40" rx="20" fill="#E6E7E9"/>
+								<path d="M20.8001 18.3337C22.641 18.3337 24.1335 16.8413 24.1335 15.0003C24.1335 13.1594 22.641 11.667 20.8001 11.667C18.9592 11.667 17.4668 13.1594 17.4668 15.0003C17.4668 16.8413 18.9592 18.3337 20.8001 18.3337ZM15.3835 20.8337C16.5341 20.8337 17.4668 19.9009 17.4668 18.7503C17.4668 17.5997 16.5341 16.667 15.3835 16.667C14.2329 16.667 13.3001 17.5997 13.3001 18.7503C13.3001 19.9009 14.2329 20.8337 15.3835 20.8337ZM28.3001 18.7503C28.3001 19.9009 27.3674 20.8337 26.2168 20.8337C25.0662 20.8337 24.1335 19.9009 24.1335 18.7503C24.1335 17.5997 25.0662 16.667 26.2168 16.667C27.3674 16.667 28.3001 17.5997 28.3001 18.7503ZM20.8001 19.167C23.1013 19.167 24.9668 21.0325 24.9668 23.3337V28.3337H16.6335V23.3337C16.6335 21.0325 18.4989 19.167 20.8001 19.167ZM14.9668 23.3336C14.9668 22.7562 15.0507 22.1983 15.2069 21.6717L15.0657 21.684C13.6043 21.8423 12.4668 23.0802 12.4668 24.5836V28.3336H14.9668V23.3336ZM29.1335 28.3336V24.5836C29.1335 23.0318 27.9217 21.7631 26.3933 21.6717C26.5495 22.1983 26.6335 22.7562 26.6335 23.3336V28.3336H29.1335Z" fill="#090A22"/>
+							</svg>
+							<span>Total Customer</span>
+							<p>450</p>
 						</div>
 						<div class="statistics-card-dashboard">
 							<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
@@ -333,11 +341,11 @@
 							<p>$250</p>
 						</div>
 					</div>
-					<div class="sys-dashboard-row mt-3">
-						<div class="sys-dashboard-column sys-wider">
+					<div class="sys-dashboard-row appointments-row mt-3">
+						<div class="sys-dashboard-column sys-wider w-100">
 							<div class="sys-widget">
 								<div class="sys-widget-header d-flex justify-content-between">
-									<h3>Upcoming Appointment  <span class="ms-2 p-1 bg-primary rounded text-light">20</span></h3>
+									<h3>Upcoming Appointment  <span class="ms-2 p-1 bg-primary rounded text-light fs-6">20</span></h3>
 									<a href="#" class="btn btn-primary text-light">View All</a>
 								</div>
 								<div class="sys-widget-content no-padding">
@@ -362,11 +370,11 @@
 													<td class="service-column">Spa Service</td>
 													<td class="client-column">Wade Warren</td>
 													<td class="status-column">
-														<span class="active-st">Upcoming</span>
+														<span class="upcoming-st">Upcoming</span>
 													</td>
 													<td class="action-column">
 														<div class="dropdown-center d-flex justify-content-center">
-															<button class=" dropdown-toggle position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+															<button class=" dropdown-toggle position-relative border-0 bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 																<i class="fas fa-ellipsis-v"></i>
 															</button>
 															<ul class="dropdown-menu position-absolute" style="inset: unset; width: 15rem;">
@@ -414,7 +422,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="sys-dashboard-row mt-3">
+					<div class="sys-dashboard-row country-row mt-3">
 						<div class="sys-dashboard-column ">
 							<div class="sys-widget">
 								<div class="sys-widget-header with-actions d-flex justify-content-between">
@@ -453,7 +461,7 @@
 									</div>
 							</div>
 						</div>
-						<div class="sys-dashboard-column sys-wider" style="width: 60%;">
+						<div class="sys-dashboard-column sys-wider w-100">
 							<div class="sys-widget">
 								<div class="sys-widget-header with-actions d-flex justify-content-between">
 									<h3>Most Booking Time</h3>
@@ -468,10 +476,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="sys-dashboard-row mt-3">
-						<div class="sys-dashboard-column" style="width: 60%;">
-							<div class="sys-widget sys-wider">
-								<div class="sys-widget-header d-flex justify-content-between">
+					<div class="sys-dashboard-row customers-row mt-3">
+						<div class="sys-dashboard-column sys-wider w-100">
+							<div class="sys-widget ">
+								<div class="sys-widget-header with-actions d-flex justify-content-between">
 									<h3>Customer Retention</h3>
 									<select class="form-select" aria-label="Default select example">
 										<option selected>Weekly</option>
