@@ -6,10 +6,150 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title></title>
+	<link rel="stylesheet" href="../assets/css/daterangepicker.css">
 	<!--  Bootstrap v5.3.0 -->
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="../assets/css/all.min.css">
 	<link rel="stylesheet" href="../assets/css/style.css" />
+	<script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+	<style>
+		.inputfile {
+			width: 0.1px;
+			height: 0.1px;
+			opacity: 0;
+			overflow: hidden;
+			position: absolute;
+			z-index: -1;
+		}
+
+		.inputfile+label {
+			text-transform: uppercase;
+		}
+
+		.inputfile+label {
+			max-width: 100%;
+			font-size: 14px;
+			font-weight: bold;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			cursor: pointer;
+			display: inline-block;
+			overflow: hidden;
+			text-align: center;
+		}
+
+		.inputfile+label figure {
+			width: 154px;
+			height: 154px;
+			border-radius: 50%;
+			background-color: transparent;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 6px;
+		}
+
+		.inputfile+label figure img {
+			width: 100%;
+			height: 100%;
+			/* border-radius: 50%;  */
+		}
+
+		.form-file {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.fileuploader-theme-thumbnails .fileuploader-thumbnails-input,
+		.fileuploader-theme-thumbnails .fileuploader-items-list li.fileuploader-item {
+			display: block
+		}
+
+		.alert-warning {
+			background-color: #fff0e1;
+			border-color: #fff0e1;
+			color: #ff9f43
+		}
+
+		.alert-warning .btn-close {
+			background-image: url("data:image/svg+xml,%3Csvg width='19' height='18' viewBox='0 0 19 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 4.5L5 13.5' stroke='%23ff9f43' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14 4.5L5 13.5' stroke='white' stroke-opacity='0.2' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5 4.5L14 13.5' stroke='%23ff9f43' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5 4.5L14 13.5' stroke='white' stroke-opacity='0.2' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+		}
+
+		.alert-warning .alert-link {
+			color: #ff9f43
+		}
+
+		.bootstrap-timepicker-widget table td input {
+			width: 30px !important;
+		}
+
+		.bootstrap-timepicker-widget table td>a:hover {
+			background-color: #F3F6F9;
+		}
+
+		.bootstrap-timepicker-widget .glyphicon {
+			font-size: 0.75rem;
+			color: #B5B5C3;
+			line-height: 1;
+		}
+
+		.bootstrap-timepicker-hour,
+		.bootstrap-timepicker-minute,
+		.bootstrap-timepicker-meridian,
+		.bootstrap-timepicker-hour:focus-visible,
+		.bootstrap-timepicker-minute:focus-visible,
+		.bootstrap-timepicker-meridian:focus-visible {
+			border: 0;
+			background-color: transparent;
+			outline: none !important;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			color: #7E8299;
+			font-weight: 500;
+		}
+
+		/* Customize Bootstrap Timepicker icons with Font Awesome */
+		.bootstrap-timepicker-widget a span {
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			vertical-align: middle;
+			width: unset !important;
+		}
+
+		.bootstrap-timepicker-widget a span.glyphicon-chevron-up,
+		.bootstrap-timepicker-widget a span.glyphicon-chevron-down {
+			border-left: 2px solid #B5B5C3;
+			border-right: unset;
+			border-top: unset;
+			transform: rotate(135deg);
+			border-bottom: 2px solid #B5B5C3;
+			width: 6px !important;
+			height: 6px;
+			background-color: transparent !important;
+		}
+
+		.bootstrap-timepicker-widget a span.glyphicon-chevron-down {
+			transform: rotate(315deg);
+		}
+
+		.input-error-validate {
+			border: 1px solid red !important;
+		}
+
+		.label-error-validate {
+			color: red !important;
+			font-size: 12px !important;
+			font-weight: 400 !important;
+		}
+
+		.active-type {
+			border-color: #2652e4 !important;
+			border-style: solid !important;
+		}
+	</style>
 </head>
 
 <body
@@ -21,215 +161,189 @@
 		<div class="sys-content-and-menu-w">
 			<div id="sys-side-menu" class="sys-side-menu-w side-menu-full">
 				<div class="side-menu-top-part-w">
-					<a href="./index.html" class="logo-w"><span class="sys-logo"></span></a>
+					<a href="#" class="logo-w">
+						<img src="home/img/logo-icon.png" alt="" style="width:25px;height:25px;">
+					</a>
 					<div class="menu-color-toggler">
 						<div class="mc-toggler-label"><i class="sys-icon sys-icon-sun"></i></div>
 					</div>
-					<div class="menu-toggler" data-route="settings__set_menu_layout_style">
+					<div id="sys-side-menu-icon" class="menu-toggler" data-route="settings__set_menu_layout_style">
 						<div class="menu-toggler-lines"></div>
 					</div>
 				</div>
 				<ul class="side-menu">
-					<li class=" menu-item-is-active">
-						<a href="./index.html">
-							<i class="sys-icon sys-icon-box"></i>
+
+					<li class="menu-item-is-active">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-box"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M2 2H7.33333V7.33333H2V2ZM2 8.66667H7.33333V14H2V8.66667ZM8.66667 2H14V7.33333H8.66667V2ZM8.66667 8.66667H14V14H8.66667V8.66667ZM10 3.33333V6H12.6667V3.33333H10ZM10 10V12.6667H12.6667V10H10ZM3.33333 3.33333V6H6V3.33333H3.33333ZM3.33333 10V12.6667H6V10H3.33333Z" />
+							</svg>
 							<span>Dashboard</span>
 						</a>
 						<ul class="side-sub-menu only-menu-header">
 							<li class="side-sub-menu-header">Dashboard</li>
 						</ul>
 					</li>
-					<li class="">
-						<a href="./calendar.html">
-							<i class="sys-icon sys-icon-calendar"></i>
-							<span>Calendar</span>
-						</a>
-						<ul class="side-sub-menu only-menu-header">
-							<li class="side-sub-menu-header">Calendar</li>
-						</ul>
-					</li>
-					<li class="">
-						<a href="">
-							<i class="sys-icon sys-icon-inbox"></i>
+
+					<li>
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-inbox"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M13.3363 1.33301C14.0709 1.33301 14.6663 1.93181 14.6663 2.66021V13.3391C14.6663 14.0721 14.0713 14.6663 13.3363 14.6663H2.66634V11.9997H1.33301V10.6663H2.66634V8.66634H1.33301V7.33301H2.66634V5.33301H1.33301V3.99967H2.66634V1.33301H13.3363ZM5.33301 2.66634H3.99967V13.333H5.33301V2.66634ZM13.333 2.66634H6.66634V13.333H13.333V2.66634Z" />
+							</svg>
 							<span>Appointments</span>
 						</a>
 						<ul class="side-sub-menu only-menu-header">
 							<li class="side-sub-menu-header">Appointments</li>
 						</ul>
 					</li>
+
 					<li class="">
-						<a href="">
-							<i class="sys-icon sys-icon-credit-card"></i>
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-box"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M5.99967 0.666992V2.00033H9.99967V0.666992H11.333V2.00033H13.9997C14.3679 2.00033 14.6663 2.29881 14.6663 2.66699V13.3337C14.6663 13.7019 14.3679 14.0003 13.9997 14.0003H1.99967C1.63149 14.0003 1.33301 13.7019 1.33301 13.3337V2.66699C1.33301 2.29881 1.63149 2.00033 1.99967 2.00033H4.66634V0.666992H5.99967ZM13.333 7.33366H2.66634V12.667H13.333V7.33366ZM5.33301 8.66699V10.0003H3.99967V8.66699H5.33301ZM8.66634 8.66699V10.0003H7.33301V8.66699H8.66634ZM11.9997 8.66699V10.0003H10.6663V8.66699H11.9997ZM4.66634 3.33366H2.66634V6.00033H13.333V3.33366H11.333V4.66699H9.99967V3.33366H5.99967V4.66699H4.66634V3.33366Z" />
+							</svg>
+							<span>Calender</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Calender</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-credit-card"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M2.00358 2H14.0036C14.3718 2 14.6703 2.29847 14.6703 2.66667V13.3333C14.6703 13.7015 14.3718 14 14.0036 14H2.00358C1.63539 14 1.33691 13.7015 1.33691 13.3333V2.66667C1.33691 2.29847 1.63539 2 2.00358 2ZM13.3369 7.33334H2.67025V12.6667H13.3369V7.33334ZM13.3369 6V3.33333H2.67025V6H13.3369ZM9.33693 10H12.0036V11.3333H9.33693V10Z" />
+							</svg>
 							<span>Payments</span>
 						</a>
 						<ul class="side-sub-menu only-menu-header">
 							<li class="side-sub-menu-header">Payments</li>
 						</ul>
 					</li>
-					<li class=" has-children">
-						<a href="">
-							<i class="sys-icon sys-icon-users"></i>
-							<span>Customers</span>
-						</a>
-						<ul class="side-sub-menu">
-							<li class="side-sub-menu-header">Customers</li>
-							<li class=""><a href="./customers.html"><span>List
-										of Customers</span></a></li>
-							<li class=""><a href="/add-customer.html"><span>Add
-										Customer</span></a></li>
-						</ul>
-					</li>
+
 					<li class="menu-spacer with-label"><span>Resources<span></span></span></li>
-					<li class=" has-children">
-						<a href="">
-							<i class="sys-icon sys-icon-package"></i>
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-box"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M4.66634 3.33366V1.33366C4.66634 0.965472 4.96482 0.666992 5.33301 0.666992H10.6663C11.0345 0.666992 11.333 0.965472 11.333 1.33366V3.33366H13.9997C14.3679 3.33366 14.6663 3.63214 14.6663 4.00033V13.3337C14.6663 13.7019 14.3679 14.0003 13.9997 14.0003H1.99967C1.63149 14.0003 1.33301 13.7019 1.33301 13.3337V4.00033C1.33301 3.63214 1.63149 3.33366 1.99967 3.33366H4.66634ZM2.66634 10.667V12.667H13.333V10.667H2.66634ZM2.66634 9.33366H13.333V4.66699H2.66634V9.33366ZM5.99967 2.00033V3.33366H9.99967V2.00033H5.99967ZM7.33301 7.33366H8.66634V8.66699H7.33301V7.33366Z" />
+							</svg>
 							<span>Services</span>
 						</a>
-						<ul class="side-sub-menu">
-							<li class="side-sub-menu-header">Services</li>
-							<li class=""><a href=""><span>Services</span></a>
-							</li>
-							<li class=""><a href=""><span>Categories</span></a>
-							</li>
-							<li class=""><a href=""><span>Service
-										Extras</span></a></li>
-						</ul>
-					</li>
-					<li class="">
-						<a href="">
-							<i class="sys-icon sys-icon-briefcase"></i>
-							<span>Agents</span>
-						</a>
 						<ul class="side-sub-menu only-menu-header">
-							<li class="side-sub-menu-header">Agents</li>
+							<li class="side-sub-menu-header">Services</li>
 						</ul>
 					</li>
-					<li class=" has-children">
-						<a href="">
-							<i class="sys-icon sys-icon-map-pin"></i>
-							<span>Locations</span>
-						</a>
-						<ul class="side-sub-menu">
-							<li class="side-sub-menu-header">Locations</li>
-							<li class=""><a href=""><span>All
-										Locations</span></a></li>
-							<li class=""><a href=""><span>Categories</span></a>
-							</li>
-						</ul>
-					</li>
+
 					<li class="menu-spacer with-label"><span>Settings<span></span></span></li>
 					<li class="">
-						<a href="">
-							<i class="sys-icon sys-icon-plus-circle2"></i>
-							<span>Add-ons</span>
-						</a>
-						<ul class="side-sub-menu only-menu-header">
-							<li class="side-sub-menu-header">Add-ons</li>
-						</ul>
-					</li>
-					<li class=" has-children">
-						<a href="">
+						<a href="#">
 							<i class="sys-icon sys-icon-settings"></i>
 							<span>Settings</span>
 						</a>
-						<ul class="side-sub-menu">
+						<ul class="side-sub-menu only-menu-header">
 							<li class="side-sub-menu-header">Settings</li>
-							<li class=""><a href=""><span>General</span></a>
-							</li>
-							<li class=""><a href=""><span>Schedule</span></a>
-							</li>
-							<li class=""><a href=""><span>Tax</span></a>
-							</li>
-							<li class=""><a href=""><span>Steps</span></a>
-							</li>
-							<li class=""><a href=""><span>Payments</span></a>
-							</li>
-							<li class=""><a href=""><span>Notifications</span></a>
-							</li>
-							<li class=""><a href=""><span>Roles</span></a>
-							</li>
 						</ul>
 					</li>
-					<li class=" has-children">
-						<a href="">
-							<i class="sys-icon sys-icon-server"></i>
-							<span>Processes</span>
-						</a>
-						<ul class="side-sub-menu">
-							<li class="side-sub-menu-header">Processes</li>
-							<li class=""><a href=""><span>Processes</span></a>
-							</li>
-							<li class=""><a href=""><span>Scheduled
-										Jobs</span></a></li>
-							<li class=""><a href=""><span>Activity
-										Log</span></a></li>
-						</ul>
-					</li>
-					<li class=" has-children">
-						<a href="">
-							<i class="sys-icon sys-icon-link-2"></i>
-							<span>Integrations</span>
-						</a>
-						<ul class="side-sub-menu">
-							<li class="side-sub-menu-header">Integrations</li>
-							<li class=""><a href=""><span>Calendars</span></a>
-							</li>
-							<li class=""><a href=""><span>Meetings</span></a>
-							</li>
-							<li class=""><a href=""><span>Marketing</span></a>
-							</li>
-						</ul>
-					</li>
+
 					<li class="">
-						<a href="">
-							<i class="sys-icon sys-icon-layers"></i>
-							<span>Form Fields</span>
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-users"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M7.99967 7.33301C9.84061 7.33301 11.333 8.82541 11.333 10.6663V14.6663H9.99967V10.6663C9.99967 9.60121 9.16707 8.73054 8.11721 8.66974L7.99967 8.66634C6.93454 8.66634 6.0639 9.49894 6.00307 10.5488L5.99967 10.6663V14.6663H4.66634V10.6663C4.66634 8.82541 6.15873 7.33301 7.99967 7.33301ZM3.66634 9.33301C3.85224 9.33301 4.03307 9.35474 4.20641 9.39581C4.09435 9.72901 4.02549 10.081 4.00565 10.4459L3.99967 10.6663L4.00014 10.7234C3.92472 10.6967 3.84515 10.6788 3.76265 10.6709L3.66634 10.6663C3.14654 10.6663 2.71937 11.0629 2.67092 11.57L2.66634 11.6663V14.6663H1.33301V11.6663C1.33301 10.3777 2.37767 9.33301 3.66634 9.33301ZM12.333 9.33301C13.6217 9.33301 14.6663 10.3777 14.6663 11.6663V14.6663H13.333V11.6663C13.333 11.1465 12.9364 10.7194 12.4293 10.6709L12.333 10.6663C12.2162 10.6663 12.1041 10.6863 11.9999 10.7231L11.9997 10.6663C11.9997 10.2225 11.9274 9.79568 11.794 9.39674C11.9663 9.35474 12.1471 9.33301 12.333 9.33301ZM3.66634 5.33301C4.58681 5.33301 5.33301 6.0792 5.33301 6.99967C5.33301 7.92014 4.58681 8.66634 3.66634 8.66634C2.74587 8.66634 1.99967 7.92014 1.99967 6.99967C1.99967 6.0792 2.74587 5.33301 3.66634 5.33301ZM12.333 5.33301C13.2535 5.33301 13.9997 6.0792 13.9997 6.99967C13.9997 7.92014 13.2535 8.66634 12.333 8.66634C11.4125 8.66634 10.6663 7.92014 10.6663 6.99967C10.6663 6.0792 11.4125 5.33301 12.333 5.33301ZM3.66634 6.66634C3.48225 6.66634 3.33301 6.81561 3.33301 6.99967C3.33301 7.18374 3.48225 7.33301 3.66634 7.33301C3.85043 7.33301 3.99967 7.18374 3.99967 6.99967C3.99967 6.81561 3.85043 6.66634 3.66634 6.66634ZM12.333 6.66634C12.1489 6.66634 11.9997 6.81561 11.9997 6.99967C11.9997 7.18374 12.1489 7.33301 12.333 7.33301C12.5171 7.33301 12.6663 7.18374 12.6663 6.99967C12.6663 6.81561 12.5171 6.66634 12.333 6.66634ZM7.99967 1.33301C9.47241 1.33301 10.6663 2.52691 10.6663 3.99967C10.6663 5.47243 9.47241 6.66634 7.99967 6.66634C6.52691 6.66634 5.33301 5.47243 5.33301 3.99967C5.33301 2.52691 6.52691 1.33301 7.99967 1.33301ZM7.99967 2.66634C7.26327 2.66634 6.66634 3.26329 6.66634 3.99967C6.66634 4.73605 7.26327 5.33301 7.99967 5.33301C8.73607 5.33301 9.33301 4.73605 9.33301 3.99967C9.33301 3.26329 8.73607 2.66634 7.99967 2.66634Z" />
+							</svg>
+							<span>Customers</span>
 						</a>
 						<ul class="side-sub-menu only-menu-header">
-							<li class="side-sub-menu-header">Form Fields</li>
+							<li class="side-sub-menu-header">Customers</li>
 						</ul>
 					</li>
+
+
+
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-users"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M8.25467 2C8.50713 2 8.738 2.14267 8.85093 2.36853L9.33333 3.33333H13.3333C13.7015 3.33333 14 3.63181 14 4V11.3333C14 11.7015 13.7015 12 13.3333 12H9.07867C8.8262 12 8.59533 11.8573 8.4824 11.6315L8 10.6667H3.33333V14.6667H2V2H8.25467ZM7.8426 3.33333H3.33333V9.33333H8.82407L9.49073 10.6667H12.6667V4.66667H8.50927L7.8426 3.33333Z" />
+							</svg>
+							<span>Countries</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Countries</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-users"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M14.0003 8.82781V13.333H14.667V14.6663H1.33366V13.333H2.00033V8.82781C1.19633 8.28967 0.666992 7.37314 0.666992 6.33301C0.666992 5.78158 0.816612 5.25048 1.08914 4.79798L2.89719 1.66634C3.01628 1.46007 3.23637 1.33301 3.47454 1.33301H12.5261C12.7643 1.33301 12.9844 1.46007 13.1035 1.66634L14.9053 4.78749C15.1841 5.25048 15.3337 5.78158 15.3337 6.33301C15.3337 7.37314 14.8043 8.28967 14.0003 8.82781ZM12.667 9.31467C12.5575 9.32681 12.4463 9.33301 12.3337 9.33301C11.4943 9.33301 10.7196 8.98501 10.167 8.40847C9.61439 8.98501 8.83972 9.33301 8.00033 9.33301C7.16093 9.33301 6.38626 8.98501 5.83366 8.40847C5.28106 8.98501 4.5064 9.33301 3.66699 9.33301C3.55433 9.33301 3.44311 9.32681 3.33366 9.31467V13.333H12.667V9.31467ZM3.85943 2.66634L2.23765 5.47515C2.08305 5.73196 2.00033 6.02561 2.00033 6.33301C2.00033 7.25347 2.74652 7.99967 3.66699 7.99967C4.3543 7.99967 4.96344 7.57987 5.21485 6.95267C5.43859 6.39449 6.22873 6.39449 6.45247 6.95267C6.70386 7.57987 7.31299 7.99967 8.00033 7.99967C8.68766 7.99967 9.29679 7.57987 9.54819 6.95267C9.77192 6.39449 10.5621 6.39449 10.7858 6.95267C11.0372 7.57987 11.6463 7.99967 12.3337 7.99967C13.2541 7.99967 14.0003 7.25347 14.0003 6.33301C14.0003 6.02561 13.9176 5.73196 13.7568 5.46465L12.1412 2.66634H3.85943Z" />
+							</svg>
+							<span>Vendors</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Vendors</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-users"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M1.99421 14C1.62904 14 1.33301 13.7034 1.33301 13.3377V2.66227C1.33301 2.29651 1.63655 2 1.99421 2H14.0051C14.3703 2 14.6663 2.29663 14.6663 2.66227V13.3377C14.6663 13.7035 14.3628 14 14.0051 14H1.99421ZM13.333 10V3.33333H2.66634V12.6667L9.33301 6L13.333 10ZM13.333 11.8856L9.33301 7.8856L4.55196 12.6667H13.333V11.8856ZM5.33301 7.33333C4.59663 7.33333 3.99967 6.7364 3.99967 6C3.99967 5.26362 4.59663 4.66667 5.33301 4.66667C6.06939 4.66667 6.66634 5.26362 6.66634 6C6.66634 6.7364 6.06939 7.33333 5.33301 7.33333Z" />
+							</svg>
+							<span>Service imgs</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Service imgs</li>
+						</ul>
+					</li>
+
+
 				</ul>
 			</div>
+
+
 			<div class="sys-content-w">
 				<div class="sys-top-bar-w">
-					<a href="#" title="Menu" class="sys-top-iconed-link sys-mobile-top-menu-trigger">
+					<a id="sys-mop-icon-menu" href="#" title="Menu"
+						class="sys-top-iconed-link sys-mobile-top-menu-trigger">
 						<i class="sys-icon sys-icon-menu"></i>
 					</a>
-					<div class="sys-top-search-w">
-						<div class="sys-top-search-input-w">
-							<i class="sys-icon sys-icon-x sys-mobile-top-search-trigger-cancel"></i>
-							<input type="text" data-route="search__query_results" class="sys-top-search"
-								placeholder="Start typing to find bookings, customers, agents or services..."
-								spellcheck="false" data-ms-editor="true">
-						</div>
-						<div class="sys-top-search-results-w"></div>
-					</div>
+					
 					<a href="#" title="Search" class="sys-top-iconed-link sys-mobile-top-search-trigger"><i
 							class="sys-icon sys-icon-search"></i></a>
-					<a href=""
-						title="Activity Log" class="sys-top-iconed-link sys-top-activity-trigger">
-						<i class="sys-icon sys-icon-activity"></i>
-					</a>
-					<a href=""
-						title="Pending Bookings" class="sys-top-iconed-link sys-top-notifications-trigger">
+					<a href="" title="Pending Bookings" class="sys-top-iconed-link sys-top-notifications-trigger">
 						<i class="sys-icon sys-icon-inbox"></i>
 					</a>
 					<a href="#" data-sys-params="" data-sys-action="bookings__quick_edit"
-						data-sys-output-target="side-panel" data-sys-after-call="sys_init_quick_booking_form"
-						title="New Appointment"
-						class="sys-mobile-top-new-appointment-btn-trigger sys-top-iconed-link">
+						data-sys-output-target="side-panel" 
+						title="New Appointment" class="sys-mobile-top-new-appointment-btn-trigger sys-top-iconed-link">
 						<i class="sys-icon sys-icon-plus-circle"></i>
 					</a>
-					<a href="#" class="sys-top-new-appointment-btn sys-btn sys-btn-primary"
-						data-sys-params="" data-sys-action="bookings__quick_edit" data-sys-output-target="side-panel"
-						data-sys-after-call="sys_init_quick_booking_form">
+					<a href="#" class="sys-top-new-appointment-btn sys-btn sys-btn-primary" data-sys-params=""
+						
+						>
 						<i class="sys-icon sys-icon-plus"></i>
 						<span>New Booking</span>
 					</a>
 					<div class="sys-top-user-info-w" id="sys-top-user-info-w">
 						<div class="avatar-w top-user-info-toggler"
-							style="background-image: url('../assets/img/093f388d9b7286cefa950eefb3a831ac.png');">
+							style="background-image: url(../assets/img/093f388d9b7286cefa950eefb3a831ac.png);">
 						</div>
 						<div class="sys-user-info-dropdown" id="sys-user-info-dropdown">
 							<a href="#" class="sys-user-info-close top-user-info-toggler"><i
@@ -237,7 +351,7 @@
 							<div class="sys-uid-head">
 								<div class="uid-avatar-w">
 									<div class="uid-avatar"
-										style="background-image: url('../assets/img/093f388d9b7286cefa950eefb3a831ac.png');">
+										style="background-image: url(../assets/img/093f388d9b7286cefa950eefb3a831ac.png);">
 									</div>
 								</div>
 								<div class="uid-info">
@@ -247,15 +361,13 @@
 							</div>
 							<ul>
 								<li>
-									<a
-										href="">
+									<a href="">
 										<i class="sys-icon sys-icon-ui-46"></i>
 										<span>Settings</span>
 									</a>
 								</li>
 								<li>
-									<a
-										href="">
+									<a href="">
 										<i class="sys-icon sys-icon-log-in"></i>
 										<span>Logout</span>
 									</a>
@@ -264,1171 +376,753 @@
 						</div>
 					</div>
 				</div>
-				<div class="page-header-w">
-					<h1 class="page-header-main">Create New Service</h1>
-					<div class="breadcrumbs-w">
-						<ul class="breadcrumbs">
-							<li><a
-									href="">Dashboard</a>
-							</li>
-							<li><a
-									href="">Services</a>
-							</li>
-							<li><span>Create New Service</span></li>
-						</ul>
-					</div>
-				</div>
-				<div class="sys-content ">
-					<div class="sys-form-w">
-						<form action="" data-sys-success-action="redirect"
-							data-sys-redirect-to=""
-							data-sys-action="services__create">
-
-							<div class="white-box">
-								<div class="white-box-header">
-									<div class="sys-form-sub-header">
-										<h3>General Information</h3>
-
-									</div>
-								</div>
-								<div class="white-box-content">
-									<div class="sys-row">
-										<div class="sys-col-lg-6">
-											<div class="sys-form-group sys-form-textfield-group sys-form-group-simple">
-												<label for="service_name">Service Name</label><input type="text"
-													placeholder="Service Name" name="service[name]" value=""
-													id="service_name" class="sys-form-control" spellcheck="false"
-													data-ms-editor="true"></div>
-											<div
-												class="sys-form-group sys-form-select-group sys-form-group-transparent service-selector-adder-field-w">
-												<label for="service[category_id]">Category</label>
-												<div class="selector-adder-w"><select name="service[category_id]"
-														class="sys-form-control"
-														data-select-source="service_categories__list_for_select">
-														<option value="0">Uncategorized</option>
-														<option value="1" selected="">General Dentistry</option>
-														<option value="2">Cosmetic Dentistry</option>
-														<option value="3">Implants Dentistry</option>
-													</select><button class="sys-btn sys-btn-primary"
-														data-sys-action="service_categories__new_form"
-														data-sys-output-target="lightbox"><i
-															class="sys-icon sys-icon-plus"></i> <span>Add
-															Category</span></button></div>
-											</div>
-											<div
-												class="sys-form-group sys-form-group-transparent sys-form-color-picker-group has-value">
-												<label for="service[bg_color]">Background Color</label>
-												<div class="sys-color-picker-w">
-													<div class="sys-color-picker" data-color="#252a3e"
-														style="background: rgb(37, 42, 62); transition: none 0s ease 0s;">
-													</div><input type="text" name="service[bg_color]"
-														placeholder="Pick a color" value="#252a3e"
-														class="sys-form-control" spellcheck="false"
-														data-ms-editor="true">
-												</div>
-											</div>
-										</div>
-										<div class="sys-col-lg-6">
-											<div>
-												<div
-													class="sys-form-group sys-form-textfield-group sys-form-textarea-group sys-form-group-simple">
-													<label for="service_short_description">Short
-														Description</label><textarea type="text"
-														placeholder="Short Description"
-														name="service[short_description]" rows="1"
-														id="service_short_description" class="sys-form-control"
-														spellcheck="false" data-ms-editor="true"></textarea></div>
-											</div>
-											<div class="sys-form-group sys-form-select-group sys-form-group-transparent">
-												<label for="service_status">Status</label><select name="service[status]"
-													id="service_status" class="sys-form-control">
-													<option value="active">Active</option>
-													<option value="disabled">Disabled</option>
-												</select></div>
-											<div class="sys-form-group sys-form-select-group sys-form-group-transparent">
-												<label for="service_visibility">Visibility</label><select
-													name="service[visibility]" id="service_visibility"
-													class="sys-form-control">
-													<option value="visible" selected="">Visible to everyone</option>
-													<option value="hidden">Visible only to admins and agents</option>
-												</select></div>
-										</div>
-									</div>
-								</div>
-							</div>
 
 
-							<div class="white-box">
-								<div class="white-box-header">
-									<div class="sys-form-sub-header">
-										<h3>Media</h3>
-									</div>
-								</div>
-								<div class="white-box-content">
-
-									<div class="sys-row">
-										<div class="sys-col-lg-6">
-											<div class="label-with-description">
-												<h3>Selection Image</h3>
-												<div class="label-desc">This image is used on a service selection step
-													in the booking form.</div>
-											</div>
-											<div class="sys-image-selector-w "><a
-													href=""
-													data-label-remove-str="Remove Image" data-label-set-str="Step Image"
-													class="sys-image-selector-trigger">
-													<div class="sys-image-container "></div>
-													<div class="sys-image-selector-text"><span
-															class="sys-text-holder">Step Image</span></div>
-												</a><input type="hidden" name="service[selection_image_id]" value=""
-													class="sys-image-id-holder"></div>
-										</div>
-										<div class="sys-col-lg-6">
-											<div class="label-with-description">
-												<h3>Service Tile Image</h3>
-												<div class="label-desc">This image is used when service is listed in
-													[sys_resources] shortcode.</div>
-											</div>
-											<div class="sys-image-selector-w "><a
-													href=""
-													data-label-remove-str="Remove Image" data-label-set-str="Step Image"
-													class="sys-image-selector-trigger">
-													<div class="sys-image-container "></div>
-													<div class="sys-image-selector-text"><span
-															class="sys-text-holder">Step Image</span></div>
-												</a><input type="hidden" name="service[description_image_id]" value=""
-													class="sys-image-id-holder"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="white-box">
-								<div class="white-box-header">
-									<div class="sys-form-sub-header">
-										<h3>Service Duration and Price</h3>
-									</div>
-								</div>
-								<div class="white-box-content">
-									<div class="service-duration-box">
-										<div class="sys-row">
-											<div class="sys-col-lg-3">
-												<div class="sys-form-group sys-form-textfield-group sys-form-group-simple">
-													<label for="service_duration_name">Optional Duration
-														Name</label><input type="text"
-														placeholder="Optional Duration Name"
-														name="service[duration_name]" value=""
-														id="service_duration_name" class="sys-form-control"
-														spellcheck="false" data-ms-editor="true"></div>
-											</div>
-											<div class="sys-col-lg-3">
-												<div
-													class="sys-form-group sys-form-textfield-group sys-form-group-simple has-value">
-													<label for="service_duration">Duration (minutes)</label><input
-														type="text" placeholder="Duration (minutes)"
-														name="service[duration]" value="60"
-														class="sys-mask-minutes sys-form-control" id="service_duration"
-														inputmode="numeric" spellcheck="false" data-ms-editor="true">
-												</div>
-											</div>
-											<div class="sys-col-lg-3">
-												<div
-													class="sys-form-group sys-form-textfield-group sys-form-group-simple has-value">
-													<label for="service_charge_amount">Charge Amount</label><input
-														type="text" placeholder="Charge Amount"
-														name="service[charge_amount]" value="0.00"
-														class="sys-mask-money sys-form-control" inputmode="decimal"
-														id="service_charge_amount" spellcheck="false"
-														data-ms-editor="true"></div>
-											</div>
-											<div class="sys-col-lg-3">
-												<div
-													class="sys-form-group sys-form-textfield-group sys-form-group-simple has-value">
-													<label for="service_deposit_amount">Deposit Amount</label><input
-														type="text" placeholder="Deposit Amount"
-														name="service[deposit_amount]" value="0.00"
-														class="sys-mask-money sys-form-control" inputmode="decimal"
-														id="service_deposit_amount" spellcheck="false"
-														data-ms-editor="true"></div>
-											</div>
-										</div>
-									</div>
-									<div class="sys-additional-service-durations sys-service-durations-w">
-									</div>
-									<div class="sys-add-box add-duration-box"
-										data-sys-action="service_durations__duration_fields"
-										data-sys-output-target-do="append"
-										data-sys-output-target=".sys-service-durations-w">
-										<div class="add-box-graphic-w">
-											<div class="add-box-plus"><i
-													class="sys-icon sys-icon-plus4"></i></div>
-										</div>
-										<div class="add-box-label">Create Another Service Duration</div>
-									</div>
-								</div>
-							</div>
-							<div class="white-box">
-								<div class="white-box-header">
-									<div class="sys-form-sub-header">
-										<h3>Display Price</h3>
-									</div>
-								</div>
-								<div class="white-box-content">
-									<div class="sys-message sys-message-subtle">This price is for display
-										purposes only, it is not the price that the customer will be charged. The Charge
-										Amount field above controls the amount that customer will be charged for.
-										Setting both minimum and maximum price, will show a price range on the service
-										selection step.</div>
-									<div class="sys-row">
-										<div class="sys-col-lg-3">
-											<div
-												class="sys-form-group sys-form-textfield-group sys-form-group-simple has-value">
-												<label for="service_price_min">Minimum Price</label><input type="text"
-													placeholder="Minimum Price" name="service[price_min]" value="0.00"
-													class="sys-mask-money sys-form-control" inputmode="decimal"
-													id="service_price_min" spellcheck="false" data-ms-editor="true">
-											</div>
-										</div>
-										<div class="sys-col-lg-3">
-											<div
-												class="sys-form-group sys-form-textfield-group sys-form-group-simple has-value">
-												<label for="service_price_max">Maximum Price</label><input type="text"
-													placeholder="Maximum Price" name="service[price_max]" value="0.00"
-													class="sys-mask-money sys-form-control" inputmode="decimal"
-													id="service_price_max" spellcheck="false" data-ms-editor="true">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="white-box">
-								<div class="white-box-header">
-									<div class="sys-form-sub-header">
-										<h3>Other Settings</h3>
-									</div>
-								</div>
-								<div class="white-box-content">
-									<div class="sys-row">
-										<div class="sys-col-lg-3">
-											<div class="sys-form-group sys-form-textfield-group sys-form-group-simple">
-												<label for="service_buffer_before">Buffer Before</label><input
-													type="text" placeholder="Buffer Before"
-													name="service[buffer_before]" value=""
-													class="sys-mask-minutes sys-form-control" id="service_buffer_before"
-													inputmode="numeric" spellcheck="false" data-ms-editor="true"></div>
-										</div>
-										<div class="sys-col-lg-3">
-											<div class="sys-form-group sys-form-textfield-group sys-form-group-simple">
-												<label for="service_buffer_after">Buffer After</label><input type="text"
-													placeholder="Buffer After" name="service[buffer_after]" value=""
-													class="sys-mask-minutes sys-form-control" id="service_buffer_after"
-													inputmode="numeric" spellcheck="false" data-ms-editor="true"></div>
-										</div>
-										<div class="sys-col-lg-3">
-											<div class="sys-form-group sys-form-textfield-group sys-form-group-simple">
-												<label for="service_timeblock_interval">Override Time
-													Intervals</label><input type="text"
-													placeholder="Override Time Intervals"
-													name="service[timeblock_interval]" value=""
-													class="sys-mask-minutes sys-form-control"
-													id="service_timeblock_interval" inputmode="numeric"
-													spellcheck="false" data-ms-editor="true"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="white-box">
-								<div class="white-box-header">
-									<div class="sys-form-sub-header">
-										<h3>Agents Who Offer This Service</h3>
-										<div class="sys-form-sub-header-actions">
-											<div class="sys-form-group sys-form-checkbox-group "><label
-													for="select_all_agents"><input type="hidden"
-														name="select_all_agents" value="off"><input type="checkbox"
-														name="select_all_agents" value="off"
-														class="sys-select-all-toggler sys-form-checkbox"
-														id="select_all_agents">Select All</label></div>
-										</div>
-									</div>
-								</div>
-								<div class="white-box-content">
-
-									<div class="sys-complex-connections-selector">
-										<div class="connection active">
-											<div class="connection-i selector-trigger">
-												<div class="connection-avatar"><img
-														src="http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar1-150x150.jpg">
-												</div>
-												<h3 class="connection-name">John Mayers</h3>
-												<input type="hidden"
-													name="service[agents][agent_2][location_1][connected]" value="yes"
-													class="connection-child-is-connected"
-													id="service_agents_agent_2_location_1_connected">
-											</div>
-										</div>
-										<div class="connection active">
-											<div class="connection-i selector-trigger">
-												<div class="connection-avatar"><img
-														src="http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar7.jpg">
-												</div>
-												<h3 class="connection-name">Kim Collins</h3>
-												<input type="hidden"
-													name="service[agents][agent_3][location_1][connected]" value="yes"
-													class="connection-child-is-connected"
-													id="service_agents_agent_3_location_1_connected">
-											</div>
-										</div>
-										<div class="connection active">
-											<div class="connection-i selector-trigger">
-												<div class="connection-avatar"><img
-														src="http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar3.jpg">
-												</div>
-												<h3 class="connection-name">Ben Stones</h3>
-												<input type="hidden"
-													name="service[agents][agent_4][location_1][connected]" value="yes"
-													class="connection-child-is-connected"
-													id="service_agents_agent_4_location_1_connected">
-											</div>
-										</div>
-										<div class="connection active">
-											<div class="connection-i selector-trigger">
-												<div class="connection-avatar"><img
-														src="http://sys-demo.com/demo_c9ebe9a8022281f3/wp-content/uploads/sites/23397/2018/11/avatar2.jpg">
-												</div>
-												<h3 class="connection-name">Clark Simeone</h3>
-												<input type="hidden"
-													name="service[agents][agent_5][location_1][connected]" value="yes"
-													class="connection-child-is-connected"
-													id="service_agents_agent_5_location_1_connected">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="white-box">
-								<div class="white-box-header">
-									<div class="sys-form-sub-header">
-										<h3>Service Schedule</h3>
-										<div class="sys-form-sub-header-actions">
-											<div class="sys-form-group sys-form-checkbox-group  has-toggle-element"><label
-													for="is_custom_schedule"><input type="hidden"
-														name="is_custom_schedule" value="off"><input type="checkbox"
-														name="is_custom_schedule" value="on"
-														data-toggle-element=".custom-schedule-wrapper"
-														id="is_custom_schedule" class="sys-form-checkbox">Set Custom
-													Schedule</label></div>
-										</div>
-									</div>
-								</div>
-								<div class="white-box-content">
-									<div class="custom-schedule-wrapper" style="display: none;">
-										<div class="weekday-schedule-w ">
-											<div class="ws-head-w">
-												<div class="sys-toggler on">
-													<div class="toggler-rail">
-														<div class="toggler-pill"></div>
-													</div>
-												</div>
-												<div class="ws-head">
-													<div class="ws-day-name">Monday</div>
-													<div class="ws-day-hours">
-														<span>08:00am-05:00pm</span>
-													</div>
-													<div class="wp-edit-icon">
-														<i class="sys-icon sys-icon-edit-3"></i>
-													</div>
-												</div>
-											</div>
-											<div class="weekday-schedule-form">
-												<div class="ws-period">
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_1_119681][start_time][formatted_value]">Start</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_1_119681][start_time][formatted_value]"
-																value="08:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_1_119681][start_time][ampm]"
-																value="am" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am active"
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm "
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div>
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_1_119681][end_time][formatted_value]">Finish</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_1_119681][end_time][formatted_value]"
-																value="05:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_1_119681][end_time][ampm]"
-																value="pm" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am "
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm active"
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div><input type="hidden"
-														name="work_periods[new_1_119681][week_day]" value="1"
-														id="work_periods_new_1_119681_week_day"><input type="hidden"
-														name="work_periods[new_1_119681][is_active]" value="1"
-														class="is-active"
-														id="work_periods_new_1_119681_is_active"><input type="hidden"
-														name="work_periods[new_1_119681][agent_id]" value="0"
-														id="work_periods_new_1_119681_agent_id"><input type="hidden"
-														name="work_periods[new_1_119681][location_id]" value="0"
-														id="work_periods_new_1_119681_location_id"><input type="hidden"
-														name="work_periods[new_1_119681][service_id]" value="0"
-														id="work_periods_new_1_119681_service_id">
-												</div>
-												<div class="ws-period-add" data-="" data-sys-params="week_day=1"
-													data-sys-before-after="before"
-													data-sys-after-call="sys_init_work_period_form"
-													data-sys-action="settings__load_work_period_form">
-													<div class="add-period-graphic-w">
-														<div class="add-period-plus"><i
-																class="sys-icon sys-icon-plus-square"></i>
-														</div>
-													</div>
-													<div class="add-period-label">Add another work period for Monday
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="weekday-schedule-w ">
-											<div class="ws-head-w">
-												<div class="sys-toggler on">
-													<div class="toggler-rail">
-														<div class="toggler-pill"></div>
-													</div>
-												</div>
-												<div class="ws-head">
-													<div class="ws-day-name">Tuesday</div>
-													<div class="ws-day-hours">
-														<span>08:00am-05:00pm</span>
-													</div>
-													<div class="wp-edit-icon">
-														<i class="sys-icon sys-icon-edit-3"></i>
-													</div>
-												</div>
-											</div>
-											<div class="weekday-schedule-form">
-												<div class="ws-period">
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_2_538134][start_time][formatted_value]">Start</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_2_538134][start_time][formatted_value]"
-																value="08:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_2_538134][start_time][ampm]"
-																value="am" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am active"
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm "
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div>
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_2_538134][end_time][formatted_value]">Finish</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_2_538134][end_time][formatted_value]"
-																value="05:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_2_538134][end_time][ampm]"
-																value="pm" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am "
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm active"
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div><input type="hidden"
-														name="work_periods[new_2_538134][week_day]" value="2"
-														id="work_periods_new_2_538134_week_day"><input type="hidden"
-														name="work_periods[new_2_538134][is_active]" value="1"
-														class="is-active"
-														id="work_periods_new_2_538134_is_active"><input type="hidden"
-														name="work_periods[new_2_538134][agent_id]" value="0"
-														id="work_periods_new_2_538134_agent_id"><input type="hidden"
-														name="work_periods[new_2_538134][location_id]" value="0"
-														id="work_periods_new_2_538134_location_id"><input type="hidden"
-														name="work_periods[new_2_538134][service_id]" value="0"
-														id="work_periods_new_2_538134_service_id">
-												</div>
-												<div class="ws-period-add" data-="" data-sys-params="week_day=2"
-													data-sys-before-after="before"
-													data-sys-after-call="sys_init_work_period_form"
-													data-sys-action="settings__load_work_period_form">
-													<div class="add-period-graphic-w">
-														<div class="add-period-plus"><i
-																class="sys-icon sys-icon-plus-square"></i>
-														</div>
-													</div>
-													<div class="add-period-label">Add another work period for Tuesday
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="weekday-schedule-w ">
-											<div class="ws-head-w">
-												<div class="sys-toggler on">
-													<div class="toggler-rail">
-														<div class="toggler-pill"></div>
-													</div>
-												</div>
-												<div class="ws-head">
-													<div class="ws-day-name">Wednesday</div>
-													<div class="ws-day-hours">
-														<span>08:00am-05:00pm</span>
-													</div>
-													<div class="wp-edit-icon">
-														<i class="sys-icon sys-icon-edit-3"></i>
-													</div>
-												</div>
-											</div>
-											<div class="weekday-schedule-form">
-												<div class="ws-period">
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_3_456666][start_time][formatted_value]">Start</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_3_456666][start_time][formatted_value]"
-																value="08:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_3_456666][start_time][ampm]"
-																value="am" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am active"
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm "
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div>
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_3_456666][end_time][formatted_value]">Finish</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_3_456666][end_time][formatted_value]"
-																value="05:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_3_456666][end_time][ampm]"
-																value="pm" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am "
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm active"
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div><input type="hidden"
-														name="work_periods[new_3_456666][week_day]" value="3"
-														id="work_periods_new_3_456666_week_day"><input type="hidden"
-														name="work_periods[new_3_456666][is_active]" value="1"
-														class="is-active"
-														id="work_periods_new_3_456666_is_active"><input type="hidden"
-														name="work_periods[new_3_456666][agent_id]" value="0"
-														id="work_periods_new_3_456666_agent_id"><input type="hidden"
-														name="work_periods[new_3_456666][location_id]" value="0"
-														id="work_periods_new_3_456666_location_id"><input type="hidden"
-														name="work_periods[new_3_456666][service_id]" value="0"
-														id="work_periods_new_3_456666_service_id">
-												</div>
-												<div class="ws-period-add" data-="" data-sys-params="week_day=3"
-													data-sys-before-after="before"
-													data-sys-after-call="sys_init_work_period_form"
-													data-sys-action="settings__load_work_period_form">
-													<div class="add-period-graphic-w">
-														<div class="add-period-plus"><i
-																class="sys-icon sys-icon-plus-square"></i>
-														</div>
-													</div>
-													<div class="add-period-label">Add another work period for Wednesday
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="weekday-schedule-w ">
-											<div class="ws-head-w">
-												<div class="sys-toggler on">
-													<div class="toggler-rail">
-														<div class="toggler-pill"></div>
-													</div>
-												</div>
-												<div class="ws-head">
-													<div class="ws-day-name">Thursday</div>
-													<div class="ws-day-hours">
-														<span>08:00am-05:00pm</span>
-													</div>
-													<div class="wp-edit-icon">
-														<i class="sys-icon sys-icon-edit-3"></i>
-													</div>
-												</div>
-											</div>
-											<div class="weekday-schedule-form">
-												<div class="ws-period">
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_4_994619][start_time][formatted_value]">Start</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_4_994619][start_time][formatted_value]"
-																value="08:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_4_994619][start_time][ampm]"
-																value="am" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am active"
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm "
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div>
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_4_994619][end_time][formatted_value]">Finish</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_4_994619][end_time][formatted_value]"
-																value="05:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_4_994619][end_time][ampm]"
-																value="pm" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am "
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm active"
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div><input type="hidden"
-														name="work_periods[new_4_994619][week_day]" value="4"
-														id="work_periods_new_4_994619_week_day"><input type="hidden"
-														name="work_periods[new_4_994619][is_active]" value="1"
-														class="is-active"
-														id="work_periods_new_4_994619_is_active"><input type="hidden"
-														name="work_periods[new_4_994619][agent_id]" value="0"
-														id="work_periods_new_4_994619_agent_id"><input type="hidden"
-														name="work_periods[new_4_994619][location_id]" value="0"
-														id="work_periods_new_4_994619_location_id"><input type="hidden"
-														name="work_periods[new_4_994619][service_id]" value="0"
-														id="work_periods_new_4_994619_service_id">
-												</div>
-												<div class="ws-period-add" data-="" data-sys-params="week_day=4"
-													data-sys-before-after="before"
-													data-sys-after-call="sys_init_work_period_form"
-													data-sys-action="settings__load_work_period_form">
-													<div class="add-period-graphic-w">
-														<div class="add-period-plus"><i
-																class="sys-icon sys-icon-plus-square"></i>
-														</div>
-													</div>
-													<div class="add-period-label">Add another work period for Thursday
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="weekday-schedule-w ">
-											<div class="ws-head-w">
-												<div class="sys-toggler on">
-													<div class="toggler-rail">
-														<div class="toggler-pill"></div>
-													</div>
-												</div>
-												<div class="ws-head">
-													<div class="ws-day-name">Friday</div>
-													<div class="ws-day-hours">
-														<span>08:00am-05:00pm</span>
-													</div>
-													<div class="wp-edit-icon">
-														<i class="sys-icon sys-icon-edit-3"></i>
-													</div>
-												</div>
-											</div>
-											<div class="weekday-schedule-form">
-												<div class="ws-period">
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_5_239341][start_time][formatted_value]">Start</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_5_239341][start_time][formatted_value]"
-																value="08:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_5_239341][start_time][ampm]"
-																value="am" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am active"
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm "
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div>
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_5_239341][end_time][formatted_value]">Finish</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_5_239341][end_time][formatted_value]"
-																value="05:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_5_239341][end_time][ampm]"
-																value="pm" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am "
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm active"
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div><input type="hidden"
-														name="work_periods[new_5_239341][week_day]" value="5"
-														id="work_periods_new_5_239341_week_day"><input type="hidden"
-														name="work_periods[new_5_239341][is_active]" value="1"
-														class="is-active"
-														id="work_periods_new_5_239341_is_active"><input type="hidden"
-														name="work_periods[new_5_239341][agent_id]" value="0"
-														id="work_periods_new_5_239341_agent_id"><input type="hidden"
-														name="work_periods[new_5_239341][location_id]" value="0"
-														id="work_periods_new_5_239341_location_id"><input type="hidden"
-														name="work_periods[new_5_239341][service_id]" value="0"
-														id="work_periods_new_5_239341_service_id">
-												</div>
-												<div class="ws-period-add" data-="" data-sys-params="week_day=5"
-													data-sys-before-after="before"
-													data-sys-after-call="sys_init_work_period_form"
-													data-sys-action="settings__load_work_period_form">
-													<div class="add-period-graphic-w">
-														<div class="add-period-plus"><i
-																class="sys-icon sys-icon-plus-square"></i>
-														</div>
-													</div>
-													<div class="add-period-label">Add another work period for Friday
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="weekday-schedule-w ">
-											<div class="ws-head-w">
-												<div class="sys-toggler on">
-													<div class="toggler-rail">
-														<div class="toggler-pill"></div>
-													</div>
-												</div>
-												<div class="ws-head">
-													<div class="ws-day-name">Saturday</div>
-													<div class="ws-day-hours">
-														<span>08:00am-05:00pm</span>
-													</div>
-													<div class="wp-edit-icon">
-														<i class="sys-icon sys-icon-edit-3"></i>
-													</div>
-												</div>
-											</div>
-											<div class="weekday-schedule-form">
-												<div class="ws-period">
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_6_632312][start_time][formatted_value]">Start</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_6_632312][start_time][formatted_value]"
-																value="08:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_6_632312][start_time][ampm]"
-																value="am" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am active"
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm "
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div>
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_6_632312][end_time][formatted_value]">Finish</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_6_632312][end_time][formatted_value]"
-																value="05:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_6_632312][end_time][ampm]"
-																value="pm" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am "
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm active"
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div><input type="hidden"
-														name="work_periods[new_6_632312][week_day]" value="6"
-														id="work_periods_new_6_632312_week_day"><input type="hidden"
-														name="work_periods[new_6_632312][is_active]" value="1"
-														class="is-active"
-														id="work_periods_new_6_632312_is_active"><input type="hidden"
-														name="work_periods[new_6_632312][agent_id]" value="0"
-														id="work_periods_new_6_632312_agent_id"><input type="hidden"
-														name="work_periods[new_6_632312][location_id]" value="0"
-														id="work_periods_new_6_632312_location_id"><input type="hidden"
-														name="work_periods[new_6_632312][service_id]" value="0"
-														id="work_periods_new_6_632312_service_id">
-												</div>
-												<div class="ws-period-add" data-="" data-sys-params="week_day=6"
-													data-sys-before-after="before"
-													data-sys-after-call="sys_init_work_period_form"
-													data-sys-action="settings__load_work_period_form">
-													<div class="add-period-graphic-w">
-														<div class="add-period-plus"><i
-																class="sys-icon sys-icon-plus-square"></i>
-														</div>
-													</div>
-													<div class="add-period-label">Add another work period for Saturday
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="weekday-schedule-w ">
-											<div class="ws-head-w">
-												<div class="sys-toggler on">
-													<div class="toggler-rail">
-														<div class="toggler-pill"></div>
-													</div>
-												</div>
-												<div class="ws-head">
-													<div class="ws-day-name">Sunday</div>
-													<div class="ws-day-hours">
-														<span>08:00am-05:00pm</span>
-													</div>
-													<div class="wp-edit-icon">
-														<i class="sys-icon sys-icon-edit-3"></i>
-													</div>
-												</div>
-											</div>
-											<div class="weekday-schedule-form">
-												<div class="ws-period">
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_7_231439][start_time][formatted_value]">Start</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_7_231439][start_time][formatted_value]"
-																value="08:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_7_231439][start_time][ampm]"
-																value="am" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am active"
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm "
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div>
-													<div class="sys-time-group sys-time-input-w as-period"><label
-															for="work_periods[new_7_231439][end_time][formatted_value]">Finish</label>
-														<div class="sys-time-input-fields"><input type="text"
-																placeholder="HH:MM"
-																name="work_periods[new_7_231439][end_time][formatted_value]"
-																value="05:00" class="sys-form-control sys-mask-time"
-																inputmode="text" spellcheck="false"
-																data-ms-editor="true"><input type="hidden"
-																name="work_periods[new_7_231439][end_time][ampm]"
-																value="pm" class="ampm-value-hidden-holder">
-															<div class="time-ampm-w">
-																<div class="time-ampm-select time-am "
-																	data-ampm-value="am">am</div>
-																<div class="time-ampm-select time-pm active"
-																	data-ampm-value="pm">pm</div>
-															</div>
-														</div>
-													</div><input type="hidden"
-														name="work_periods[new_7_231439][week_day]" value="7"
-														id="work_periods_new_7_231439_week_day"><input type="hidden"
-														name="work_periods[new_7_231439][is_active]" value="1"
-														class="is-active"
-														id="work_periods_new_7_231439_is_active"><input type="hidden"
-														name="work_periods[new_7_231439][agent_id]" value="0"
-														id="work_periods_new_7_231439_agent_id"><input type="hidden"
-														name="work_periods[new_7_231439][location_id]" value="0"
-														id="work_periods_new_7_231439_location_id"><input type="hidden"
-														name="work_periods[new_7_231439][service_id]" value="0"
-														id="work_periods_new_7_231439_service_id">
-												</div>
-												<div class="ws-period-add" data-="" data-sys-params="week_day=7"
-													data-sys-before-after="before"
-													data-sys-after-call="sys_init_work_period_form"
-													data-sys-action="settings__load_work_period_form">
-													<div class="add-period-graphic-w">
-														<div class="add-period-plus"><i
-																class="sys-icon sys-icon-plus-square"></i>
-														</div>
-													</div>
-													<div class="add-period-label">Add another work period for Sunday
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="custom-schedule-wrapper" >
-										<div class="sys-message sys-message-subtle">This service is using
-											general schedule which is set in main settings</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="white-box">
-								<div class="white-box-header">
-									<div class="sys-form-sub-header">
-										<h3>Group Bookings</h3>
-									</div>
-								</div>
-								<div class="white-box-content no-padding">
-									<div class="sub-section-row">
-										<div class="sub-section-label">
-											<h3>Capacity</h3>
-										</div>
-										<div class="sub-section-content">
-											<div class="sys-row">
-												<div class="sys-col-lg-2">
-													<div
-														class="sys-form-group sys-form-textfield-group sys-form-group-bordered has-value">
-														<label for="service_capacity_min">Minimum</label><input
-															type="text" placeholder="Minimum"
-															name="service[capacity_min]" value="1" theme="bordered"
-															id="service_capacity_min" class="sys-form-control"
-															spellcheck="false" data-ms-editor="true"></div>
-												</div>
-												<div class="sys-col-lg-2">
-													<div
-														class="sys-form-group sys-form-textfield-group sys-form-group-bordered has-value">
-														<label for="service_capacity_max">Maximum</label><input
-															type="text" placeholder="Maximum"
-															name="service[capacity_max]" value="1" theme="bordered"
-															id="service_capacity_max" class="sys-form-control"
-															spellcheck="false" data-ms-editor="true"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="sub-section-row">
-										<div class="sub-section-label">
-											<h3>Pricing</h3>
-										</div>
-										<div class="sub-section-content">
-											<div class="sys-form-group sys-form-toggler-group  size-normal"><input
-													type="hidden"
-													name="service[dont_multiply_charge_amount_by_attendees]" value="off"
-													id="service_dont_multiply_charge_amount_by_attendees">
-												<div class="sys-toggler off size-normal" data-is-string-value="true"
-													data-for="service_dont_multiply_charge_amount_by_attendees">
-													<div class="toggler-rail">
-														<div class="toggler-pill"></div>
-													</div>
-												</div>
-												<div class="sys-toggler-label-w"><label>Do not multiply charge amount by
-														the number of attendees</label></div>
-											</div>
-											<div class="sys-form-group sys-form-toggler-group  size-normal"><input
-													type="hidden"
-													name="service[dont_multiply_deposit_amount_by_attendees]"
-													value="off" id="service_dont_multiply_deposit_amount_by_attendees">
-												<div class="sys-toggler off size-normal" data-is-string-value="true"
-													data-for="service_dont_multiply_deposit_amount_by_attendees">
-													<div class="toggler-rail">
-														<div class="toggler-pill"></div>
-													</div>
-												</div>
-												<div class="sys-toggler-label-w"><label>Do not multiply deposit amount by
-														the number of attendees</label></div>
-											</div>
-										</div>
-									</div>
-									<div class="sub-section-row">
-										<div class="sub-section-label">
-											<h3>Other</h3>
-										</div>
-										<div class="sub-section-content">
-											<div class="sys-form-group sys-form-toggler-group  size-normal"><input
-													type="hidden" name="service[fixed_total_attendies]" value="off"
-													id="service_fixed_total_attendies">
-												<div class="sys-toggler off size-normal" data-is-string-value="true"
-													data-for="service_fixed_total_attendies">
-													<div class="toggler-rail">
-														<div class="toggler-pill"></div>
-													</div>
-												</div>
-												<div class="sys-toggler-label-w"><label>Do not ask customers to select
-														number of attendees</label></div>
-											</div>
-											<div class="sys-form-group sys-form-toggler-group  size-normal"><input
-													type="hidden"
-													name="service[block_timeslot_when_minimum_capacity_met]" value="off"
-													id="service_block_timeslot_when_minimum_capacity_met">
-												<div class="sys-toggler off size-normal" data-is-string-value="true"
-													data-for="service_block_timeslot_when_minimum_capacity_met">
-													<div class="toggler-rail">
-														<div class="toggler-pill"></div>
-													</div>
-												</div>
-												<div class="sys-toggler-label-w"><label>Block timeslot if minimum
-														capacity is reached</label></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="white-box">
-								<div class="white-box-header">
-									<div class="sys-form-sub-header">
-										<h3>Service Extras</h3>
-										<div class="sys-form-sub-header-actions">
-											<div class="sys-form-group sys-form-checkbox-group "><label
-													for="select_all_service_extras"><input type="hidden"
-														name="select_all_service_extras" value="off"><input
-														type="checkbox" name="select_all_service_extras" value="off"
-														class="sys-select-all-toggler sys-form-checkbox"
-														id="select_all_service_extras">Select All</label></div>
-										</div>
-									</div>
-								</div>
-								<div class="white-box-content">
-									<div class="sys-complex-connections-selector">
-										<div class="connection active">
-											<div class="connection-i selector-trigger">
-												<div class="connection-avatar"><img
-														src="">
-												</div>
-												<h3 class="connection-name">Teeth Whitening</h3>
-												<input type="hidden"
-													name="service[service_extras][service_extra_1][connected]"
-													value="yes" class="connection-child-is-connected"
-													id="service_service_extras_service_extra_1_connected">
-											</div>
-										</div>
-										<div class="connection active">
-											<div class="connection-i selector-trigger">
-												<div class="connection-avatar"><img
-														src="">
-												</div>
-												<h3 class="connection-name">Hair Wash</h3>
-												<input type="hidden"
-													name="service[service_extras][service_extra_2][connected]"
-													value="yes" class="connection-child-is-connected"
-													id="service_service_extras_service_extra_2_connected">
-											</div>
-										</div>
-										<div class="connection active">
-											<div class="connection-i selector-trigger">
-												<div class="connection-avatar"><img
-														src="">
-												</div>
-												<h3 class="connection-name">Recovery Mask</h3>
-												<input type="hidden"
-													name="service[service_extras][service_extra_3][connected]"
-													value="yes" class="connection-child-is-connected"
-													id="service_service_extras_service_extra_3_connected">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="white-box">
-								<div class="white-box-header">
-									<div class="sys-form-sub-header">
-										<h3>Restrictions for Service Extras</h3>
-									</div>
-								</div>
-								<div class="white-box-content">
-									<div class="sys-form-group sys-form-toggler-group  with-sub-label size-normal"><input
-											type="hidden" name="service[meta][minimum_service_extras_required]"
-											value="off" id="service_meta_minimum_service_extras_required">
-										<div data-controlled-toggle-id="lp-minimum-service-extras-required"
-											class="sys-toggler off size-normal" data-is-string-value="true"
-											data-for="service_meta_minimum_service_extras_required">
-											<div class="toggler-rail">
-												<div class="toggler-pill"></div>
-											</div>
-										</div>
-										<div class="sys-toggler-label-w"><label>Require a minimum to be
-												selected</label><span>Requires user to pick a minimum number of service
-												extras</span></div>
-									</div>
-									<div id="lp-minimum-service-extras-required" style="display: none;">
-										<div class="merged-fields mt-1">
-											<div class="merged-label">At least</div>
-											<div
-												class="sys-form-group sys-form-textfield-group sys-form-group-transparent has-value no-label">
-												<input type="text" placeholder="Value"
-													name="service[meta][minimum_service_extras_value]" value="0"
-													id="service_meta_minimum_service_extras_value"
-													class="sys-form-control" spellcheck="false" data-ms-editor="true">
-											</div>
-											<div class="merged-label">service extras have to be selected</div>
-										</div>
-									</div>
-									<div class="sys-form-group sys-form-toggler-group  with-sub-label size-normal"><input
-											type="hidden" name="service[meta][maximum_service_extras_required]"
-											value="off" id="service_meta_maximum_service_extras_required">
-										<div data-controlled-toggle-id="lp-maximum-service-extras-required"
-											class="sys-toggler off size-normal" data-is-string-value="true"
-											data-for="service_meta_maximum_service_extras_required">
-											<div class="toggler-rail">
-												<div class="toggler-pill"></div>
-											</div>
-										</div>
-										<div class="sys-toggler-label-w"><label>Limit maximum number that can be
-												selected</label><span>Limits user from picking more than a set
-												maximum</span></div>
-									</div>
-									<div id="lp-maximum-service-extras-required" style="display: none;">
-										<div class="merged-fields mt-1">
-											<div class="merged-label">At most</div>
-											<div
-												class="sys-form-group sys-form-textfield-group sys-form-group-transparent no-label">
-												<input type="text" placeholder="Value"
-													name="service[meta][maximum_service_extras_value]" value=""
-													id="service_meta_maximum_service_extras_value"
-													class="sys-form-control" spellcheck="false" data-ms-editor="true">
-											</div>
-											<div class="merged-label">service extras can be selected</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="sys-form-buttons sys-flex">
-								<input type="hidden" name="service[id]" value="" id="service_id">
-								<div class="sys-form-group"><button type="submit" name="submit" class="sys-btn"
-										id="submit">Add Service</button></div>
-							</div>
-						</form>
-					</div>
-				</div>
+			<!-- content -->
 				
+				<div class="sys-content promo">
+						<div class="sys-dashboard-row sys-wider d-flex justify-content-between px-4">
+							<h3 class="sys-widget-header-text">Services</h3>
+							<button class=" sys-btn sys-btn-primary" data-bs-toggle="modal" data-bs-target="#modalServiceType">
+							<i class="sys-icon sys-icon-plus"></i>
+							<span>Create Service</span>
+							</button>						
+						</div>
+
+						<!-- Filter and Search promotion -->
+						<div class="sys-widget-content promo-filtersearch no-padding d-flex justify-content-between mt-4 p-4">
+									<form class="promo-input-group">
+									  <button class="promo-input-group-text" id="basic-addon-search31"><i class="fa fa-search"></i></button>
+									  <input type="text" class="form-control form-control-lg promo-search" placeholder="Search Promotion..." aria-label="Search..." aria-describedby="basic-addon-search31">
+									</form>
+									
+									<div class="dropdown-center">
+										<button class="btn dropdown-toggle form-control-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Sort By: All Services
+										</button>
+										<ul class="dropdown-menu">
+										  <li><a class="dropdown-item" href="#">Action</a></li>
+										  <li><a class="dropdown-item" href="#">Action two</a></li>
+										  <li><a class="dropdown-item" href="#">Action three</a></li>
+										</ul>
+									  </div>
+						</div>
+
+						<!-- Services Cards -->
+						<div class="sys-widget-content promo-table no-padding mb-4 p-3 d-flex justify-content-evenly flex-wrap gap-2">
+							<div class="card p-3" style="width:18rem;">
+								<div class="d-flex justify-content-between align-items-start">
+									<img src="../assets/img/service-briefcase.png" alt="">
+									<div>
+										<button class="btn btn-light border rounded" data-bs-toggle="modal" data-bs-target="#modalServiceType">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M4.16667 15.7404H5.34517L13.1066 7.97902L11.9281 6.80051L4.16667 14.5619V15.7404ZM17.5 17.4071H2.5V13.8716L13.6958 2.67572C14.0213 2.35028 14.5489 2.35028 14.8743 2.67572L17.2314 5.03274C17.5568 5.35818 17.5568 5.88581 17.2314 6.21126L7.7022 15.7404H17.5V17.4071ZM13.1066 5.622L14.2851 6.80051L15.4636 5.622L14.2851 4.44349L13.1066 5.622Z" fill="#090A22"/>
+											  </svg>
+										</button>
+										<button class="btn btn-light border rounded" data-bs-toggle="modal" data-bs-target="#deleteModal">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M16.667 5.83268V16.666C16.667 17.5865 15.9208 18.3327 15.0003 18.3327H5.00033C4.07985 18.3327 3.33366 17.5865 3.33366 16.666V5.83268H1.66699V4.16602H18.3337V5.83268H16.667ZM5.00033 5.83268V16.666H15.0003V5.83268H5.00033ZM9.16699 7.49935H10.8337V9.16602H9.16699V7.49935ZM9.16699 9.99935H10.8337V11.666H9.16699V9.99935ZM9.16699 12.4993H10.8337V14.166H9.16699V12.4993ZM5.83366 1.66602H14.167V3.33268H5.83366V1.66602Z" fill="#090A22"/>
+											  </svg>
+										</button>
+									</div>
+									
+								</div>
+								<p class="mb-0 mt-3" style="color:#090A22;font-size: 20px;font-weight: 700;line-height: 30px; letter-spacing: 0.2px;">
+									New single event 1</p>
+								<hr>
+								<div class="d-flex justify-content-between align-items-start">
+									<div>
+										<p class="text-muted">Booking type</p>
+										<p style="padding: 6px 14px;border-radius: 6px;background-color:#E6F7EF;color:#090A22;font-size: 16px;font-weight: 600;line-height: 24px; letter-spacing: 0.8px;">
+											Single Booking</p>
+									</div>
+									<div>
+										<p class="text-muted">Price</p>
+										<span class="fw-bold">50.000 KD</span>
+									</div>
+								</div>
+								
+							</div>
+							<div class="card p-3" style="width:18rem;">
+								<div class="d-flex justify-content-between align-items-start">
+									<img src="../assets/img/service-briefcase.png" alt="">
+									<div>
+										<button class="btn btn-light border rounded" data-bs-toggle="modal" data-bs-target="#modalServiceType">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M4.16667 15.7404H5.34517L13.1066 7.97902L11.9281 6.80051L4.16667 14.5619V15.7404ZM17.5 17.4071H2.5V13.8716L13.6958 2.67572C14.0213 2.35028 14.5489 2.35028 14.8743 2.67572L17.2314 5.03274C17.5568 5.35818 17.5568 5.88581 17.2314 6.21126L7.7022 15.7404H17.5V17.4071ZM13.1066 5.622L14.2851 6.80051L15.4636 5.622L14.2851 4.44349L13.1066 5.622Z" fill="#090A22"/>
+											  </svg>
+										</button>
+										<button class="btn btn-light border rounded">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M16.667 5.83268V16.666C16.667 17.5865 15.9208 18.3327 15.0003 18.3327H5.00033C4.07985 18.3327 3.33366 17.5865 3.33366 16.666V5.83268H1.66699V4.16602H18.3337V5.83268H16.667ZM5.00033 5.83268V16.666H15.0003V5.83268H5.00033ZM9.16699 7.49935H10.8337V9.16602H9.16699V7.49935ZM9.16699 9.99935H10.8337V11.666H9.16699V9.99935ZM9.16699 12.4993H10.8337V14.166H9.16699V12.4993ZM5.83366 1.66602H14.167V3.33268H5.83366V1.66602Z" fill="#090A22"/>
+											  </svg>
+										</button>
+									</div>
+									
+								</div>
+								<p class="mb-0 mt-3" style="color:#090A22;font-size: 20px;font-weight: 700;line-height: 30px; letter-spacing: 0.2px;">
+									New single event 1</p>
+								<hr>
+								<div class="d-flex justify-content-between align-items-start">
+									<div>
+										<p class="text-muted">Booking type</p>
+										<p style="padding: 6px 14px;border-radius: 6px;background-color:#E6F7EF;color:#090A22;font-size: 16px;font-weight: 600;line-height: 24px; letter-spacing: 0.8px;">
+											Single Booking</p>
+									</div>
+									<div>
+										<p class="text-muted">Price</p>
+										<span class="fw-bold">50.000 KD</span>
+									</div>
+								</div>
+								
+							</div>
+							<div class="card p-3" style="width:18rem;">
+								<div class="d-flex justify-content-between align-items-start">
+									<img src="../assets/img/service-briefcase.png" alt="">
+									<div>
+										<button class="btn btn-light border rounded" data-bs-toggle="modal" data-bs-target="#modalServiceType">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M4.16667 15.7404H5.34517L13.1066 7.97902L11.9281 6.80051L4.16667 14.5619V15.7404ZM17.5 17.4071H2.5V13.8716L13.6958 2.67572C14.0213 2.35028 14.5489 2.35028 14.8743 2.67572L17.2314 5.03274C17.5568 5.35818 17.5568 5.88581 17.2314 6.21126L7.7022 15.7404H17.5V17.4071ZM13.1066 5.622L14.2851 6.80051L15.4636 5.622L14.2851 4.44349L13.1066 5.622Z" fill="#090A22"/>
+											  </svg>
+										</button>
+										<button class="btn btn-light border rounded">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M16.667 5.83268V16.666C16.667 17.5865 15.9208 18.3327 15.0003 18.3327H5.00033C4.07985 18.3327 3.33366 17.5865 3.33366 16.666V5.83268H1.66699V4.16602H18.3337V5.83268H16.667ZM5.00033 5.83268V16.666H15.0003V5.83268H5.00033ZM9.16699 7.49935H10.8337V9.16602H9.16699V7.49935ZM9.16699 9.99935H10.8337V11.666H9.16699V9.99935ZM9.16699 12.4993H10.8337V14.166H9.16699V12.4993ZM5.83366 1.66602H14.167V3.33268H5.83366V1.66602Z" fill="#090A22"/>
+											  </svg>
+										</button>
+									</div>
+									
+								</div>
+								<p class="mb-0 mt-3" style="color:#090A22;font-size: 20px;font-weight: 700;line-height: 30px; letter-spacing: 0.2px;">
+									New single event 1</p>
+								<hr>
+								<div class="d-flex justify-content-between align-items-start">
+									<div>
+										<p class="text-muted">Booking type</p>
+										<p style="padding: 6px 14px;border-radius: 6px;background-color:#E6F7EF;color:#090A22;font-size: 16px;font-weight: 600;line-height: 24px; letter-spacing: 0.8px;">
+											Single Booking</p>
+									</div>
+									<div>
+										<p class="text-muted">Price</p>
+										<span class="fw-bold">50.000 KD</span>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+
+						<!-- empty Servicses -->
+						<div class="sys-widget-content promo-filtersearch no-padding d-flex justify-content-between my-4 p-4">
+								<div class="empty-promo-cont">
+									<img src="../assets/img/no-service.png" alt="no-Service">
+									<h4 class="mt-3">No Service Added</h4>
+									<p class="text-muted fw-medium">Add service for the customer to book appointment </p>
+									<button class=" sys-btn sys-btn-primary" data-bs-toggle="modal" data-bs-target="#modalServiceType">
+									<i class="sys-icon sys-icon-plus"></i>
+									<span>Create Service</span>
+									</button>
+								</div>
+						</div>
+				
+				</div>
+
+			<!-- end of the content -->
+
+
+
 			</div>
+
+
+
+
 		</div>
 	</div>
+	</div>
+	</div>
 
+
+<style>
+	.modal-dialog
+	{
+		max-width: 555px;
+	}
+	.add-edit-modal label,
+	.setTimingModal label
+	{
+		color: #090A22;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 24px; /* 150% */
+		letter-spacing: 0.08px;
+	}
+	.serivceType:hover
+	{
+		background-color: #E7EEFD;
+	}
+	.setTimingModal input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+.is-invalid
+{
+   border-color: #dc3545 !important; 
+}
+</style>
+  <!-- Modal choose Service type -->
+<div class="modal fade add-edit-modal" id="modalServiceType" aria-labelledby="modalEditadd" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content border-0">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="modalEditadd">Choose Service Type</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+
+			<!-- form Service Type -->
+			<form action="" method="post" class="d-flex flex-wrap justify-content-center gap-5 my-3">
+				
+				<!-- single type -->
+				<div class="serivceType btn col-4 d-flex flex-column align-items-center gap-2 py-4"  data-bs-toggle="modal" data-bs-target="#modalSingleServiceType" 
+					style="border: 1px solid #E6E7E9;">
+					<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+						<circle cx="40" cy="40" r="40" fill="#F8FAFB"/>
+						<path d="M31.6666 28.3327V23.3327C31.6666 22.4122 32.4128 21.666 33.3333 21.666H46.6666C47.5871 21.666 48.3333 22.4122 48.3333 23.3327V28.3327H54.9999C55.9204 28.3327 56.6666 29.0789 56.6666 29.9993V53.3327C56.6666 54.2532 55.9204 54.9993 54.9999 54.9993H24.9999C24.0795 54.9993 23.3333 54.2532 23.3333 53.3327V29.9993C23.3333 29.0789 24.0795 28.3327 24.9999 28.3327H31.6666ZM26.6666 44.9993V51.666H53.3333V44.9993H26.6666ZM38.3333 38.3327V41.666H41.6666V38.3327H38.3333ZM34.9999 24.9993V28.3327H44.9999V24.9993H34.9999Z" fill="#1D7BFF"/>
+						</svg>
+					<p class="mb-0 fw-bold">Single Event</p>
+				</div>
+
+				<!-- Reoccurring type -->
+				<div class="serivceType btn col-4 d-flex flex-column align-items-center gap-2 py-4"  data-bs-toggle="modal" data-bs-target="#modalReoccurringServiceType" 
+					style="border: 1px solid #E6E7E9;">
+					<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+						<circle cx="40" cy="40" r="40" fill="#F8FAFB"/>
+						<path d="M31.6666 28.3327V23.3327C31.6666 22.4122 32.4128 21.666 33.3333 21.666H46.6666C47.5871 21.666 48.3333 22.4122 48.3333 23.3327V28.3327H54.9999C55.9204 28.3327 56.6666 29.0789 56.6666 29.9993V53.3327C56.6666 54.2532 55.9204 54.9993 54.9999 54.9993H24.9999C24.0795 54.9993 23.3333 54.2532 23.3333 53.3327V29.9993C23.3333 29.0789 24.0795 28.3327 24.9999 28.3327H31.6666ZM26.6666 44.9993V51.666H53.3333V44.9993H26.6666ZM38.3333 38.3327V41.666H41.6666V38.3327H38.3333ZM34.9999 24.9993V28.3327H44.9999V24.9993H34.9999Z" fill="#1D7BFF"/>
+					</svg>
+					<p class="mb-0 fw-bold">Reoccurring Event</p>
+				</div>
+
+
+			</form>
+
+
+
+		</div>
+		<div class="modal-footer gap-2 rounded-2 py-3">
+		  <button type="button" class="btn btn-light text-primary rounded-1 px-4 py-2" data-bs-dismiss="modal">Cancel</button>
+		  <button type="button" class="btn btn-primary rounded-1 px-3 py-2" data-bs-toggle="modal" data-bs-target="#setTimingModal">Save & Set Timings</button>
+		</div>
+	  </div>
+	</div>
+</div>
+
+  <!-- Modal Single Service type -->
+  <div class="modal fade add-edit-modal" id="modalSingleServiceType" aria-labelledby="modalSingleEditadd" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content border-0">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="modalSingleEditadd">Add Service</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+			<!-- form Add Single Service -->
+			<form action="" method="post" id="singleEventForm" >
+				<!-- Service Name -->
+				<div class="mb-3">
+					<label for="Service_name" class="form-label">Service Name</label>
+					<input type="text" class="form-control form-control-lg" id="Service_name" placeholder="Enter Service Name">
+					<div class="invalid-feedback ms-3"></div>
+				</div>
+				<!-- Service Price -->
+				<div class="mb-3">
+					<label for="service_price" class="form-label">Service Price In KD</label>
+					<input type="number" class="form-control form-control-lg" id="service_price" placeholder="Enter Service Price In KD">
+					<div class="invalid-feedback ms-3"></div>  
+				</div>
+				<!-- accept multiple bookings -->
+				<div class="form-check d-flex align-items-baseline gap-2">
+					<input class="form-check-input" type="checkbox" value="" id="acceptMultiple">
+					<label class="form-label" for="acceptMultiple">
+						Do you want to accept multiple bookings with the current service?
+					</label>
+				  </div>
+				  <!-- Select Group booking -->
+				<div class=" mb-3">
+					<label class="form-label" for="select_service">Select service</label>
+					<select class="form-select form-control-lg" id="select_service">
+					<option selected>Select service</option>
+					<option value="1">One</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					</select>
+					<div class="invalid-feedback ms-3"></div>
+				</div>
+				<!-- Short Description -->
+				<div class="mb-3">
+					<label for="shortDesc" class="form-label">Short Description</label>
+					<input type="text" class="form-control form-control-lg" id="shortDesc" placeholder="Enter Short Description">
+				</div>
+				<!-- Service description  -->
+				<div class="mb-3">
+					<label for="serviceDescription" class="form-label">Service Description</label>
+					<textarea class="form-control" rows="6" id="serviceDescription" placeholder="Service Description"></textarea>
+				</div>
+				
+			 
+			</form>
+
+
+
+
+		</div>
+		<div class="modal-footer gap-2 rounded-2 py-3">
+		  <button type="button" class="btn btn-light text-primary rounded-1 px-4 py-2" data-bs-dismiss="modal">Cancel</button>
+		  <button type="button" class="btn btn-primary rounded-1 px-3 py-2" data-bs-toggle="modal" data-bs-target="#SinglesetTimingModal">Save & Set Timings</button>
+		</div>
+	  </div>
+	</div>
+</div>
+
+  <!-- Modal Reoccurring Service type -->
+  <div class="modal fade add-edit-modal" id="modalReoccurringServiceType" aria-labelledby="modalReoccurringEditadd" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content border-0">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="modalReoccurringEditadd">Add Service</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+			
+
+			<!-- form Add Reoccurring Service -->
+			<form action="" method="post">
+				<!-- Service Name -->
+				<div class="mb-3">
+					<label for="Service_name" class="form-label">Service Name</label>
+					<input type="text" class="form-control form-control-lg" id="Service_name" placeholder="Enter Service Name">
+					<div class="invalid-feedback ms-3"></div>
+				</div>
+				<!-- Service Price -->
+				<div class="mb-3">
+					<label for="service_price" class="form-label">Service Price In KD</label>
+					<input type="number" class="form-control form-control-lg" id="service_price" placeholder="Enter Service Price In KD">
+					<div class="invalid-feedback ms-3"></div> 
+				</div>
+				<!-- accept multiple bookings -->
+				<div class="form-check d-flex align-items-baseline gap-2">
+					<input class="form-check-input" type="checkbox" value="" id="acceptMultipleReoccurring">
+					<label class="form-label" for="acceptMultipleReoccurring">
+						Do you want to accept multiple bookings with the current service?
+					</label>
+				  </div>
+				  <!-- Select Group booking -->
+				<div class=" mb-3">
+					<label class="form-label" for="select_service">Select service</label>
+					<select class="form-select form-control-lg" id="select_service">
+					<option selected>Select service</option>
+					<option value="1">One</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					</select>
+					<div class="invalid-feedback ms-3"></div>
+				</div>
+				<!-- Set to an existing timings -->
+				<div class="form-check d-flex align-items-baseline gap-2">
+					<input class="form-check-input" type="checkbox" value="" id="setToExisting">
+					<label class="form-label" for="setToExisting">
+						Set To An Existing Timings
+					</label>
+				  </div>
+				   <!-- choose Service -->
+				<div class=" mb-3">
+					<label class="form-label" for="choose_service">Choose Service</label>
+					<select class="form-select form-control-lg" id="choose_service">
+					<option selected>Select Service</option>
+					<option value="1">One</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					</select>
+					<div class="invalid-feedback ms-3"></div>
+				</div>
+				<!-- Short Description -->
+				<div class="mb-3">
+					<label for="shortDesc" class="form-label">Short Description</label>
+					<input type="text" class="form-control form-control-lg" id="shortDesc" placeholder="Enter Short Description">
+				</div>
+				<!-- Service description  -->
+				<div class="mb-3">
+					<label for="serviceDescription" class="form-label">Service Description</label>
+					<textarea class="form-control" rows="6" id="serviceDescription" placeholder="Service Description"></textarea>
+				</div>
+				
+			 
+			</form>
+
+
+
+		</div>
+		<div class="modal-footer gap-2 rounded-2 py-3">
+		  <button type="button" class="btn btn-light text-primary rounded-1 px-4 py-2" data-bs-dismiss="modal">Cancel</button>
+		  <button type="button" class="btn btn-primary rounded-1 px-3 py-2" data-bs-toggle="modal" data-bs-target="#ReoccurringsetTimingModal">Save & Set Timings</button>
+		</div>
+	  </div>
+	</div>
+</div>
+
+<!-- Modal Single set timing -->
+<div class="modal fade setTimingModal" id="SinglesetTimingModal" aria-labelledby="SinglesetTimingModallabelledby" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content border-0">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="SinglesetTimingModallabelledby">Add Service</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+
+			<!--  set timing single -->
+
+			<form action="" method="post" id="setTimingsingle" >
+				<div class="mb-3 position-relative">
+					<label for="select_date" class="form-label">Select Date</label>
+					<input onfocus="this.showPicker()" type="date" class="form-control form-control-lg" id="selecet_date" placeholder="Select date"> 				
+					<svg style="top:58%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.49935 0.833008V2.49967H12.4993V0.833008H14.166V2.49967H17.4993C17.9596 2.49967 18.3327 2.87277 18.3327 3.33301V16.6663C18.3327 17.1266 17.9596 17.4997 17.4993 17.4997H2.49935C2.03912 17.4997 1.66602 17.1266 1.66602 16.6663V3.33301C1.66602 2.87277 2.03912 2.49967 2.49935 2.49967H5.83268V0.833008H7.49935ZM16.666 9.16634H3.33268V15.833H16.666V9.16634ZM6.66602 10.833V12.4997H4.99935V10.833H6.66602ZM10.8327 10.833V12.4997H9.16602V10.833H10.8327ZM14.9993 10.833V12.4997H13.3327V10.833H14.9993ZM5.83268 4.16634H3.33268V7.49967H16.666V4.16634H14.166V5.83301H12.4993V4.16634H7.49935V5.83301H5.83268V4.16634Z" fill="#B3B3BA"/>
+                    </svg>
+				</div>
+				<div class="row mb-3">
+					<label class="form-label">Set Time</label>
+					<div class="col position-relative">
+						<input type="text" class="form-control form-control-lg timepicker " id="start_time" placeholder="From"> 				
+						<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+							<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+						</svg>
+					</div>
+					<div class="col position-relative">
+						<input type="text" class="form-control form-control-lg timepicker" id="end_time" placeholder="To"> 
+						<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+							<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+						</svg>
+					</div>
+					
+				  </div>
+				  <div class="mb-3 position-relative">
+						<label for="timeBefor" class="form-label">Set A Minimum Time Before Booking</label>
+						<input type="text" class="form-control form-control-lg timepicker" id="timeBefor" placeholder="Select Time"> 				
+						<svg style="top:58%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+							<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+						</svg>
+					</div>
+			</form>
+
+		  
+		</div>
+		<div class="modal-footer gap-2 rounded-2 py-3">
+		  <button type="button" class="btn btn-light text-primary rounded-1 px-4 py-2" data-bs-dismiss="modal">Cancel</button>
+		  <button type="button" class="btn btn-primary rounded-1 px-3 py-2">Create The Event</button>
+		</div>
+	  </div>
+	</div>
+</div>
+
+<!-- Modal Reoccurring set timing -->
+<div class="modal fade setTimingModal" id="ReoccurringsetTimingModal" aria-labelledby="ReoccurringsetTimingModallabelledby" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content border-0">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="ReoccurringsetTimingModallabelledby">Add Service</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+
+			<!-- set timing Reoccurring Event -->
+
+			<form action="" method="post" id="setTimingReoccurring">
+				<div class="accordion accordion-flush d-flex flex-column gap-3" id="accordionTiming">
+
+					<!-- day one active-->
+					<div class="accordion-item border rounded py-1">
+					  <div class="accordion-headerS d-flex align-items-center">
+						<div class="form-check form-switch mx-2 mb-0">
+						<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked 
+						style="display: flex;width: 40px;height: 22px;padding: 4px 5px 4px 25px;
+						justify-content: flex-end;align-items: center;border-radius: 29px;">
+						</div>
+						<button class="accordion-button collapsed ps-0 border-0 bg-transparent shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#item1" aria-expanded="false" aria-controls="item1">
+						  <span class="fw-bold">Monday</span> <span class="ms-2 text-muted">9:30-11:00</span>
+						</button>
+					  </div>
+					  <div id="item1" class="accordion-collapse border-top collapse" data-bs-parent="#accordionTiming">
+						<div class="accordion-body">
+							<div id="timesContainer">
+								
+								<!-- times to set -->
+								<div class="row mb-3">
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker " id="start_time" placeholder="Set Time"> 				
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<span>To</span>
+									</div>
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker" id="end_time" placeholder="Set Time"> 
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<div class="pointer-event" id="deleteTime">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+												<path d="M20 7V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V7H2V5H22V7H20ZM6 7V20H18V7H6ZM11 9H13V11H11V9ZM11 12H13V14H11V12ZM11 15H13V17H11V15ZM7 2H17V4H7V2Z" fill="#B3B3BA"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+
+								<!-- times to set -->
+								<div class="row mb-3">
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker " id="start_time" placeholder="Set Time"> 				
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<span>To</span>
+									</div>
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker" id="end_time" placeholder="Set Time"> 
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<div class="pointer-event" id="deleteTime">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<path d="M20 7V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V7H2V5H22V7H20ZM6 7V20H18V7H6ZM11 9H13V11H11V9ZM11 12H13V14H11V12ZM11 15H13V17H11V15ZM7 2H17V4H7V2Z" fill="#F04438"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							
+							
+							<!-- add more button -->
+							<div id="addMore" class="btn text-primary fw-bold d-flex align-items-center" >
+								<span>Add More</span>
+								<i class="ms-1 sys-icon sys-icon-plus"></i>
+							</div>	
+						</div>
+					  </div>
+					</div>
+
+					<!-- day two active-->
+					<div class="accordion-item border rounded py-1">
+						<div class="accordion-headerS d-flex align-items-center">
+						  <div class="form-check form-switch mx-2 mb-0">
+						  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"  checked
+						  style="display: flex;width: 40px;height: 22px;padding: 4px 5px 4px 25px;
+						  justify-content: flex-end;align-items: center;border-radius: 29px;">
+						  </div>
+						  <button class="accordion-button collapsed ps-0 border-0 bg-transparent shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#item2" aria-expanded="false" aria-controls="item2">
+							<span class="fw-bold">Tuesday</span> <span class="ms-2 text-muted">9:30-11:00</span>
+						  </button>
+						</div>
+						<div id="item2" class="accordion-collapse border-top collapse" data-bs-parent="#accordionTiming">
+						  <div class="accordion-body">
+							<div id="timesContainer">
+								
+								<!-- times to set -->
+								<div class="row mb-3">
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker " id="start_time" placeholder="Set Time"> 				
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<span>To</span>
+									</div>
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker" id="end_time" placeholder="Set Time"> 
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<div class="pointer-event" id="deleteTime">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+												<path d="M20 7V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V7H2V5H22V7H20ZM6 7V20H18V7H6ZM11 9H13V11H11V9ZM11 12H13V14H11V12ZM11 15H13V17H11V15ZM7 2H17V4H7V2Z" fill="#B3B3BA"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+
+								<!-- times to set -->
+								<div class="row mb-3">
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker " id="start_time" placeholder="Set Time"> 				
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<span>To</span>
+									</div>
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker" id="end_time" placeholder="Set Time"> 
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<div class="pointer-event" id="deleteTime">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<path d="M20 7V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V7H2V5H22V7H20ZM6 7V20H18V7H6ZM11 9H13V11H11V9ZM11 12H13V14H11V12ZM11 15H13V17H11V15ZM7 2H17V4H7V2Z" fill="#F04438"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+							  
+  
+							  <!-- add more button -->
+							  <div id="addMore" class="btn text-primary fw-bold d-flex align-items-center" >
+								  <span>Add More</span>
+								  <i class="ms-1 sys-icon sys-icon-plus"></i>
+							  </div>	
+						  </div>
+						</div>
+					</div>
+
+					<!-- day Three inactive-->
+					<div class="accordion-item border rounded py-1">
+						<div class="accordion-headerS d-flex align-items-center">
+						  <div class="form-check form-switch mx-2 mb-0">
+						  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+						  style="display: flex;width: 40px;height: 22px;padding: 4px 5px 4px 25px;
+						  justify-content: flex-end;align-items: center;border-radius: 29px;">
+						  </div>
+						  <button class="accordion-button collapsed ps-0 border-0 bg-transparent shadow-none" type="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="item3">
+							<span class="fw-bold text-muted">Tuesday</span>
+						  </button>
+						</div>
+						<div id="item3" class="accordion-collapse border-top collapse" data-bs-parent="#accordionTiming">
+						  <div class="accordion-body">
+							  
+							<div id="timesContainer">
+								
+								<!-- times to set -->
+								<div class="row mb-3">
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker " id="start_time" placeholder="Set Time"> 				
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<span>To</span>
+									</div>
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker" id="end_time" placeholder="Set Time"> 
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<div class="pointer-event" id="deleteTime">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+												<path d="M20 7V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V7H2V5H22V7H20ZM6 7V20H18V7H6ZM11 9H13V11H11V9ZM11 12H13V14H11V12ZM11 15H13V17H11V15ZM7 2H17V4H7V2Z" fill="#B3B3BA"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+
+								<!-- times to set -->
+								<div class="row mb-3">
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker " id="start_time" placeholder="Set Time"> 				
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<span>To</span>
+									</div>
+									<div class="col-5 position-relative">
+										<input type="text" class="form-control form-control-lg timepicker" id="end_time" placeholder="Set Time"> 
+										<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+											<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+										</svg>
+									</div>
+									<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+										<div class="pointer-event" id="deleteTime">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<path d="M20 7V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V7H2V5H22V7H20ZM6 7V20H18V7H6ZM11 9H13V11H11V9ZM11 12H13V14H11V12ZM11 15H13V17H11V15ZM7 2H17V4H7V2Z" fill="#F04438"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+  
+							  <!-- add more button -->
+							  <div id="addMore" class="btn  text-primary fw-bold d-flex align-items-center" >
+								  <span>Add More</span>
+								  <i class="ms-1 sys-icon sys-icon-plus"></i>
+							  </div>	
+						  </div>
+						</div>
+					</div>
+					
+				  </div>
+			</form>
+		  
+		</div>
+		<div class="modal-footer gap-2 rounded-2 py-3">
+		  <button type="button" class="btn btn-light text-primary rounded-1 px-4 py-2" data-bs-dismiss="modal">Cancel</button>
+		  <button type="button" class="btn btn-primary rounded-1 px-3 py-2">Create The Event</button>
+		</div>
+	  </div>
+	</div>
+</div>
+
+<!-- Modal Delete -->
+<div class="modal fade deleteModal" id="deleteModal" aria-labelledby="deleteModallabelledby" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content border-0">
+		<div class="modal-header py-4 border-0">
+		  <!-- <h1 class="modal-title fs-5" id="deleteModallabelledby"></h1> -->
+		  <button type="button" class="btn-close me-3 mt-1" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body d-flex flex-column justify-content-center align-items-center gap-1 py-4">
+			<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90" fill="none">
+				<rect width="90" height="90" rx="45" fill="#F0F4F7"/>
+				<path d="M61.668 34.5846V61.668C61.668 63.9692 59.8026 65.8346 57.5013 65.8346H32.5013C30.2001 65.8346 28.3346 63.9692 28.3346 61.668V34.5846H24.168V30.418H65.8346V34.5846H61.668ZM32.5013 34.5846V61.668H57.5013V34.5846H32.5013ZM42.918 38.7513H47.0846V42.918H42.918V38.7513ZM42.918 45.0013H47.0846V49.168H42.918V45.0013ZM42.918 51.2513H47.0846V55.418H42.918V51.2513ZM34.5846 24.168H55.418V28.3346H34.5846V24.168Z" fill="#1D1F2C"/>
+			</svg>
+				<p class="mb-0 mt-2"
+				 style="color: #090A22;
+				font-size: 17px;
+				font-weight: 700;
+				line-height: 30px;">Do you want to delete?</p>
+				<p class="text-center mb-2" style="color: #B3B3BA;font-size: 15px;line-height: 22px;letter-spacing: .5px;font-weight: 400;font-family: sans-serif;">
+				 Are you sure you want to delete it!<br> 
+				once it deleted it can’e be undo </p>
+			
+		  
+		</div>
+		<div class="modal-footer gap-2 rounded-2 py-3">
+		  <button type="button" class="btn btn-light text-primary rounded-1 px-4 py-2" data-bs-dismiss="modal">No, Cancel</button>
+		  <button type="button" class="btn btn-danger rounded-1 px-3 py-2">Yes, Delete</button>
+		</div>
+	  </div>
+	</div>
+</div>
+
+
+
+
+  
 
 	<!-- js script files  -->
 	<script type="text/javascript"
@@ -1437,10 +1131,60 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
 	<script src="../assets/js/jquery-3.7.0.min.js"></script>
 	<script src="../assets/js/popper.min.js"></script>
+	<script src="../assets/js/daterangepicker.js"></script>
 	<script src="../assets/js/bootstrap.bundle.min.js"></script>
-	
 	<script src="../assets/js/wow.min.js"></script>
 	<script src="../assets/js/main.js"></script>
-</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.js"></script>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.css">
+
+
+		<script>
+	
+			
+			$('.timepicker').timepicker({
+				defaultTime: '',
+				minuteStep: 5,
+				showSeconds: false,
+				showMeridian: true,
+				snapToStep: true ,
+				disableTextInput: true
+			});
+			$('#addMore').on('click', function() {
+				$('#timesContainer').append(`
+					<!-- times to set -->
+					<div class="row mb-3">
+						<div class="col-5 position-relative">
+							<input type="text" class="form-control form-control-lg timepicker " id="start_time" placeholder="Set Time"> 				
+							<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+								<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+							</svg>
+						</div>
+						<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+							<span>To</span>
+						</div>
+						<div class="col-5 position-relative">
+							<input type="text" class="form-control form-control-lg timepicker" id="end_time" placeholder="Set Time"> 
+							<svg style="top:25%" class="position-absolute end-0 me-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+								<path d="M9.99935 18.3337C5.39697 18.3337 1.66602 14.6027 1.66602 10.0003C1.66602 5.39795 5.39697 1.66699 9.99935 1.66699C14.6017 1.66699 18.3327 5.39795 18.3327 10.0003C18.3327 14.6027 14.6017 18.3337 9.99935 18.3337ZM9.99935 16.667C13.6813 16.667 16.666 13.6822 16.666 10.0003C16.666 6.31843 13.6813 3.33366 9.99935 3.33366C6.31745 3.33366 3.33268 6.31843 3.33268 10.0003C3.33268 13.6822 6.31745 16.667 9.99935 16.667ZM10.8327 10.0003H14.166V11.667H9.16602V5.83366H10.8327V10.0003Z" fill="#B3B3BA"/>
+							</svg>
+						</div>
+						<div class="col-1 px-0 d-flex align-items-center justify-content-center">
+							<a href="#">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path d="M20 7V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V7H2V5H22V7H20ZM6 7V20H18V7H6ZM11 9H13V11H11V9ZM11 12H13V14H11V12ZM11 15H13V17H11V15ZM7 2H17V4H7V2Z" fill="#F04438"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				`);
+			});
+
+			
+				
+		</script>
+	</body>
 
 </html>

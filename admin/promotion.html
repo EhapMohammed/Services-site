@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title></title>
+	<link rel="stylesheet" href="../assets/css/daterangepicker.css">
+	<!--  Bootstrap v5.3.0 -->
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../assets/css/all.min.css">
+	<link rel="stylesheet" href="../assets/css/style.css" />
+	<script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+	<style>
+		.inputfile {
+			width: 0.1px;
+			height: 0.1px;
+			opacity: 0;
+			overflow: hidden;
+			position: absolute;
+			z-index: -1;
+		}
+
+		.inputfile+label {
+			text-transform: uppercase;
+		}
+
+		.inputfile+label {
+			max-width: 100%;
+			font-size: 14px;
+			font-weight: bold;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			cursor: pointer;
+			display: inline-block;
+			overflow: hidden;
+			text-align: center;
+		}
+
+		.inputfile+label figure {
+			width: 154px;
+			height: 154px;
+			border-radius: 50%;
+			background-color: transparent;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 6px;
+		}
+
+		.inputfile+label figure img {
+			width: 100%;
+			height: 100%;
+			/* border-radius: 50%;  */
+		}
+
+		.form-file {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.fileuploader-theme-thumbnails .fileuploader-thumbnails-input,
+		.fileuploader-theme-thumbnails .fileuploader-items-list li.fileuploader-item {
+			display: block
+		}
+
+		.alert-warning {
+			background-color: #fff0e1;
+			border-color: #fff0e1;
+			color: #ff9f43
+		}
+
+		.alert-warning .btn-close {
+			background-image: url("data:image/svg+xml,%3Csvg width='19' height='18' viewBox='0 0 19 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 4.5L5 13.5' stroke='%23ff9f43' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14 4.5L5 13.5' stroke='white' stroke-opacity='0.2' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5 4.5L14 13.5' stroke='%23ff9f43' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5 4.5L14 13.5' stroke='white' stroke-opacity='0.2' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+		}
+
+		.alert-warning .alert-link {
+			color: #ff9f43
+		}
+
+		.bootstrap-timepicker-widget table td input {
+			width: 30px !important;
+		}
+
+		.bootstrap-timepicker-widget table td>a:hover {
+			background-color: #F3F6F9;
+		}
+
+		.bootstrap-timepicker-widget .glyphicon {
+			font-size: 0.75rem;
+			color: #B5B5C3;
+			line-height: 1;
+		}
+
+		.bootstrap-timepicker-hour,
+		.bootstrap-timepicker-minute,
+		.bootstrap-timepicker-meridian,
+		.bootstrap-timepicker-hour:focus-visible,
+		.bootstrap-timepicker-minute:focus-visible,
+		.bootstrap-timepicker-meridian:focus-visible {
+			border: 0;
+			background-color: transparent;
+			outline: none !important;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			color: #7E8299;
+			font-weight: 500;
+		}
+
+		/* Customize Bootstrap Timepicker icons with Font Awesome */
+		.bootstrap-timepicker-widget a span {
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			vertical-align: middle;
+			width: unset !important;
+		}
+
+		.bootstrap-timepicker-widget a span.glyphicon-chevron-up,
+		.bootstrap-timepicker-widget a span.glyphicon-chevron-down {
+			border-left: 2px solid #B5B5C3;
+			border-right: unset;
+			border-top: unset;
+			transform: rotate(135deg);
+			border-bottom: 2px solid #B5B5C3;
+			width: 6px !important;
+			height: 6px;
+			background-color: transparent !important;
+		}
+
+		.bootstrap-timepicker-widget a span.glyphicon-chevron-down {
+			transform: rotate(315deg);
+		}
+
+		.input-error-validate {
+			border: 1px solid red !important;
+		}
+
+		.label-error-validate {
+			color: red !important;
+			font-size: 12px !important;
+			font-weight: 400 !important;
+		}
+
+		.active-type {
+			border-color: #2652e4 !important;
+			border-style: solid !important;
+		}
+	</style>
+</head>
+
+<body
+	class="wp-admin wp-core-ui js sys-admin sys toplevel_page_sys auto-fold admin-bar branch-6-2 version-6-2-2 admin-color-fresh locale-en-us multisite customize-support sticky-menu svg">
+
+
+	<div id="sys-show-mobile-menu"
+		class="sys-all-wrapper sys sys-view-dashboard-widget_bookings_and_availability_timeline sys-view-dashboard-widget_daily_bookings_chart sys-view-dashboard-widget_upcoming_appointments sys-view-dashboard-index">
+		<div class="sys-content-and-menu-w">
+			<div id="sys-side-menu" class="sys-side-menu-w side-menu-full">
+				<div class="side-menu-top-part-w">
+					<a href="#" class="logo-w">
+						<img src="home/img/logo-icon.png" alt="" style="width:25px;height:25px;">
+					</a>
+					<div class="menu-color-toggler">
+						<div class="mc-toggler-label"><i class="sys-icon sys-icon-sun"></i></div>
+					</div>
+					<div id="sys-side-menu-icon" class="menu-toggler" data-route="settings__set_menu_layout_style">
+						<div class="menu-toggler-lines"></div>
+					</div>
+				</div>
+				<ul class="side-menu">
+
+					<li class="menu-item-is-active">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-box"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M2 2H7.33333V7.33333H2V2ZM2 8.66667H7.33333V14H2V8.66667ZM8.66667 2H14V7.33333H8.66667V2ZM8.66667 8.66667H14V14H8.66667V8.66667ZM10 3.33333V6H12.6667V3.33333H10ZM10 10V12.6667H12.6667V10H10ZM3.33333 3.33333V6H6V3.33333H3.33333ZM3.33333 10V12.6667H6V10H3.33333Z" />
+							</svg>
+							<span>Dashboard</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Dashboard</li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-inbox"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M13.3363 1.33301C14.0709 1.33301 14.6663 1.93181 14.6663 2.66021V13.3391C14.6663 14.0721 14.0713 14.6663 13.3363 14.6663H2.66634V11.9997H1.33301V10.6663H2.66634V8.66634H1.33301V7.33301H2.66634V5.33301H1.33301V3.99967H2.66634V1.33301H13.3363ZM5.33301 2.66634H3.99967V13.333H5.33301V2.66634ZM13.333 2.66634H6.66634V13.333H13.333V2.66634Z" />
+							</svg>
+							<span>Appointments</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Appointments</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-box"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M5.99967 0.666992V2.00033H9.99967V0.666992H11.333V2.00033H13.9997C14.3679 2.00033 14.6663 2.29881 14.6663 2.66699V13.3337C14.6663 13.7019 14.3679 14.0003 13.9997 14.0003H1.99967C1.63149 14.0003 1.33301 13.7019 1.33301 13.3337V2.66699C1.33301 2.29881 1.63149 2.00033 1.99967 2.00033H4.66634V0.666992H5.99967ZM13.333 7.33366H2.66634V12.667H13.333V7.33366ZM5.33301 8.66699V10.0003H3.99967V8.66699H5.33301ZM8.66634 8.66699V10.0003H7.33301V8.66699H8.66634ZM11.9997 8.66699V10.0003H10.6663V8.66699H11.9997ZM4.66634 3.33366H2.66634V6.00033H13.333V3.33366H11.333V4.66699H9.99967V3.33366H5.99967V4.66699H4.66634V3.33366Z" />
+							</svg>
+							<span>Calender</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Calender</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-credit-card"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M2.00358 2H14.0036C14.3718 2 14.6703 2.29847 14.6703 2.66667V13.3333C14.6703 13.7015 14.3718 14 14.0036 14H2.00358C1.63539 14 1.33691 13.7015 1.33691 13.3333V2.66667C1.33691 2.29847 1.63539 2 2.00358 2ZM13.3369 7.33334H2.67025V12.6667H13.3369V7.33334ZM13.3369 6V3.33333H2.67025V6H13.3369ZM9.33693 10H12.0036V11.3333H9.33693V10Z" />
+							</svg>
+							<span>Payments</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Payments</li>
+						</ul>
+					</li>
+
+					<li class="menu-spacer with-label"><span>Resources<span></span></span></li>
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-box"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M4.66634 3.33366V1.33366C4.66634 0.965472 4.96482 0.666992 5.33301 0.666992H10.6663C11.0345 0.666992 11.333 0.965472 11.333 1.33366V3.33366H13.9997C14.3679 3.33366 14.6663 3.63214 14.6663 4.00033V13.3337C14.6663 13.7019 14.3679 14.0003 13.9997 14.0003H1.99967C1.63149 14.0003 1.33301 13.7019 1.33301 13.3337V4.00033C1.33301 3.63214 1.63149 3.33366 1.99967 3.33366H4.66634ZM2.66634 10.667V12.667H13.333V10.667H2.66634ZM2.66634 9.33366H13.333V4.66699H2.66634V9.33366ZM5.99967 2.00033V3.33366H9.99967V2.00033H5.99967ZM7.33301 7.33366H8.66634V8.66699H7.33301V7.33366Z" />
+							</svg>
+							<span>Services</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Services</li>
+						</ul>
+					</li>
+
+					<li class="menu-spacer with-label"><span>Settings<span></span></span></li>
+					<li class="">
+						<a href="#">
+							<i class="sys-icon sys-icon-settings"></i>
+							<span>Settings</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Settings</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-users"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M7.99967 7.33301C9.84061 7.33301 11.333 8.82541 11.333 10.6663V14.6663H9.99967V10.6663C9.99967 9.60121 9.16707 8.73054 8.11721 8.66974L7.99967 8.66634C6.93454 8.66634 6.0639 9.49894 6.00307 10.5488L5.99967 10.6663V14.6663H4.66634V10.6663C4.66634 8.82541 6.15873 7.33301 7.99967 7.33301ZM3.66634 9.33301C3.85224 9.33301 4.03307 9.35474 4.20641 9.39581C4.09435 9.72901 4.02549 10.081 4.00565 10.4459L3.99967 10.6663L4.00014 10.7234C3.92472 10.6967 3.84515 10.6788 3.76265 10.6709L3.66634 10.6663C3.14654 10.6663 2.71937 11.0629 2.67092 11.57L2.66634 11.6663V14.6663H1.33301V11.6663C1.33301 10.3777 2.37767 9.33301 3.66634 9.33301ZM12.333 9.33301C13.6217 9.33301 14.6663 10.3777 14.6663 11.6663V14.6663H13.333V11.6663C13.333 11.1465 12.9364 10.7194 12.4293 10.6709L12.333 10.6663C12.2162 10.6663 12.1041 10.6863 11.9999 10.7231L11.9997 10.6663C11.9997 10.2225 11.9274 9.79568 11.794 9.39674C11.9663 9.35474 12.1471 9.33301 12.333 9.33301ZM3.66634 5.33301C4.58681 5.33301 5.33301 6.0792 5.33301 6.99967C5.33301 7.92014 4.58681 8.66634 3.66634 8.66634C2.74587 8.66634 1.99967 7.92014 1.99967 6.99967C1.99967 6.0792 2.74587 5.33301 3.66634 5.33301ZM12.333 5.33301C13.2535 5.33301 13.9997 6.0792 13.9997 6.99967C13.9997 7.92014 13.2535 8.66634 12.333 8.66634C11.4125 8.66634 10.6663 7.92014 10.6663 6.99967C10.6663 6.0792 11.4125 5.33301 12.333 5.33301ZM3.66634 6.66634C3.48225 6.66634 3.33301 6.81561 3.33301 6.99967C3.33301 7.18374 3.48225 7.33301 3.66634 7.33301C3.85043 7.33301 3.99967 7.18374 3.99967 6.99967C3.99967 6.81561 3.85043 6.66634 3.66634 6.66634ZM12.333 6.66634C12.1489 6.66634 11.9997 6.81561 11.9997 6.99967C11.9997 7.18374 12.1489 7.33301 12.333 7.33301C12.5171 7.33301 12.6663 7.18374 12.6663 6.99967C12.6663 6.81561 12.5171 6.66634 12.333 6.66634ZM7.99967 1.33301C9.47241 1.33301 10.6663 2.52691 10.6663 3.99967C10.6663 5.47243 9.47241 6.66634 7.99967 6.66634C6.52691 6.66634 5.33301 5.47243 5.33301 3.99967C5.33301 2.52691 6.52691 1.33301 7.99967 1.33301ZM7.99967 2.66634C7.26327 2.66634 6.66634 3.26329 6.66634 3.99967C6.66634 4.73605 7.26327 5.33301 7.99967 5.33301C8.73607 5.33301 9.33301 4.73605 9.33301 3.99967C9.33301 3.26329 8.73607 2.66634 7.99967 2.66634Z" />
+							</svg>
+							<span>Customers</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Customers</li>
+						</ul>
+					</li>
+
+
+
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-users"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M8.25467 2C8.50713 2 8.738 2.14267 8.85093 2.36853L9.33333 3.33333H13.3333C13.7015 3.33333 14 3.63181 14 4V11.3333C14 11.7015 13.7015 12 13.3333 12H9.07867C8.8262 12 8.59533 11.8573 8.4824 11.6315L8 10.6667H3.33333V14.6667H2V2H8.25467ZM7.8426 3.33333H3.33333V9.33333H8.82407L9.49073 10.6667H12.6667V4.66667H8.50927L7.8426 3.33333Z" />
+							</svg>
+							<span>Countries</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Countries</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-users"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M14.0003 8.82781V13.333H14.667V14.6663H1.33366V13.333H2.00033V8.82781C1.19633 8.28967 0.666992 7.37314 0.666992 6.33301C0.666992 5.78158 0.816612 5.25048 1.08914 4.79798L2.89719 1.66634C3.01628 1.46007 3.23637 1.33301 3.47454 1.33301H12.5261C12.7643 1.33301 12.9844 1.46007 13.1035 1.66634L14.9053 4.78749C15.1841 5.25048 15.3337 5.78158 15.3337 6.33301C15.3337 7.37314 14.8043 8.28967 14.0003 8.82781ZM12.667 9.31467C12.5575 9.32681 12.4463 9.33301 12.3337 9.33301C11.4943 9.33301 10.7196 8.98501 10.167 8.40847C9.61439 8.98501 8.83972 9.33301 8.00033 9.33301C7.16093 9.33301 6.38626 8.98501 5.83366 8.40847C5.28106 8.98501 4.5064 9.33301 3.66699 9.33301C3.55433 9.33301 3.44311 9.32681 3.33366 9.31467V13.333H12.667V9.31467ZM3.85943 2.66634L2.23765 5.47515C2.08305 5.73196 2.00033 6.02561 2.00033 6.33301C2.00033 7.25347 2.74652 7.99967 3.66699 7.99967C4.3543 7.99967 4.96344 7.57987 5.21485 6.95267C5.43859 6.39449 6.22873 6.39449 6.45247 6.95267C6.70386 7.57987 7.31299 7.99967 8.00033 7.99967C8.68766 7.99967 9.29679 7.57987 9.54819 6.95267C9.77192 6.39449 10.5621 6.39449 10.7858 6.95267C11.0372 7.57987 11.6463 7.99967 12.3337 7.99967C13.2541 7.99967 14.0003 7.25347 14.0003 6.33301C14.0003 6.02561 13.9176 5.73196 13.7568 5.46465L12.1412 2.66634H3.85943Z" />
+							</svg>
+							<span>Vendors</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Vendors</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#">
+							<!-- <i class="sys-icon sys-icon-users"></i> -->
+							<svg class="sys-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M1.99421 14C1.62904 14 1.33301 13.7034 1.33301 13.3377V2.66227C1.33301 2.29651 1.63655 2 1.99421 2H14.0051C14.3703 2 14.6663 2.29663 14.6663 2.66227V13.3377C14.6663 13.7035 14.3628 14 14.0051 14H1.99421ZM13.333 10V3.33333H2.66634V12.6667L9.33301 6L13.333 10ZM13.333 11.8856L9.33301 7.8856L4.55196 12.6667H13.333V11.8856ZM5.33301 7.33333C4.59663 7.33333 3.99967 6.7364 3.99967 6C3.99967 5.26362 4.59663 4.66667 5.33301 4.66667C6.06939 4.66667 6.66634 5.26362 6.66634 6C6.66634 6.7364 6.06939 7.33333 5.33301 7.33333Z" />
+							</svg>
+							<span>Service imgs</span>
+						</a>
+						<ul class="side-sub-menu only-menu-header">
+							<li class="side-sub-menu-header">Service imgs</li>
+						</ul>
+					</li>
+
+
+				</ul>
+			</div>
+
+
+			<div class="sys-content-w">
+				<div class="sys-top-bar-w">
+					<a id="sys-mop-icon-menu" href="#" title="Menu"
+						class="sys-top-iconed-link sys-mobile-top-menu-trigger">
+						<i class="sys-icon sys-icon-menu"></i>
+					</a>
+					
+					<a href="#" title="Search" class="sys-top-iconed-link sys-mobile-top-search-trigger"><i
+							class="sys-icon sys-icon-search"></i></a>
+					<a href="" title="Pending Bookings" class="sys-top-iconed-link sys-top-notifications-trigger">
+						<i class="sys-icon sys-icon-inbox"></i>
+					</a>
+					<a href="#" data-sys-params="" data-sys-action="bookings__quick_edit"
+						data-sys-output-target="side-panel" 
+						title="New Appointment" class="sys-mobile-top-new-appointment-btn-trigger sys-top-iconed-link">
+						<i class="sys-icon sys-icon-plus-circle"></i>
+					</a>
+					<a href="#" class="sys-top-new-appointment-btn sys-btn sys-btn-primary" data-sys-params=""
+						
+						>
+						<i class="sys-icon sys-icon-plus"></i>
+						<span>New Booking</span>
+					</a>
+					<div class="sys-top-user-info-w" id="sys-top-user-info-w">
+						<div class="avatar-w top-user-info-toggler"
+							style="background-image: url(../assets/img/093f388d9b7286cefa950eefb3a831ac.png);">
+						</div>
+						<div class="sys-user-info-dropdown" id="sys-user-info-dropdown">
+							<a href="#" class="sys-user-info-close top-user-info-toggler"><i
+									class="sys-icon sys-icon-x"></i></a>
+							<div class="sys-uid-head">
+								<div class="uid-avatar-w">
+									<div class="uid-avatar"
+										style="background-image: url(../assets/img/093f388d9b7286cefa950eefb3a831ac.png);">
+									</div>
+								</div>
+								<div class="uid-info">
+									<h4>Sandbox Site Admin</h4>
+									<h5>Administrator</h5>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<a href="">
+										<i class="sys-icon sys-icon-ui-46"></i>
+										<span>Settings</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="sys-icon sys-icon-log-in"></i>
+										<span>Logout</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+			<!-- content -->
+				
+				<div class="sys-content promo">
+						<div class="sys-dashboard-row sys-wider d-flex justify-content-between px-4">
+							<h3 class="sys-widget-header-text">Promotion</h3>
+							<button class=" sys-btn sys-btn-primary" data-bs-toggle="modal" data-bs-target="#modalEdit">
+							<i class="sys-icon sys-icon-plus"></i>
+							<span>Add Promotion</span>
+							</button>						
+						</div>
+
+						<!-- Filter and Search promotion -->
+						<div class="sys-widget-content promo-filtersearch no-padding d-flex justify-content-between mt-4 p-4">
+									<div class="promo-input-group">
+									  <span class="promo-input-group-text" id="basic-addon-search31"><i class="fa fa-search"></i></span>
+									  <input type="text" class="form-control form-control-lg promo-search" placeholder="Search Promotion..." aria-label="Search..." aria-describedby="basic-addon-search31">
+									</div>
+									
+									<div class="dropdown-center">
+										<button class="btn dropdown-toggle form-control-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Sort By: All Promotion
+										</button>
+										<ul class="dropdown-menu">
+										  <li><a class="dropdown-item" href="#">Action</a></li>
+										  <li><a class="dropdown-item" href="#">Action two</a></li>
+										  <li><a class="dropdown-item" href="#">Action three</a></li>
+										</ul>
+									  </div>
+						</div>
+
+						<!-- table promotion -->
+						<div class="sys-widget-content promo-table no-padding mb-4">
+							<table class="table mt-0">
+								<thead>
+									<tr class="py-3">
+										<th class="checkbox-column"><input class="form-check-input" type="checkbox" id="selectAll"></th>
+										<th class="name-column">Promotion name</th>
+										<th class="code-column">Code</th>
+										<th class="availability-column">Availability</th>
+										<th class="valid-to-column">Valid till</th>
+										<th class="value-column">Value</th>
+										<th class="status-column">Status</th>
+										<th class="action-column text-center">Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- Sample data rows active -->
+									<tr>
+										<td class="checkbox-column"><input class="form-check-input" type="checkbox"></td>
+										<td class="name-column">John Doe</td>
+										<td class="code-column">ABC123</td>
+										<td class="availability-column">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color:#0F53ED;">
+												All Services 
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+													<path d="M5.47168 11.5864L5.47168 4.1384C5.47171 4.00657 5.51082 3.87771 5.58408 3.7681C5.65733 3.65849 5.76144 3.57307 5.88324 3.52262C6.00504 3.47217 6.13906 3.45897 6.26837 3.48468C6.39767 3.51039 6.51644 3.57387 6.60968 3.66707L10.3337 7.39107C10.4587 7.51609 10.5289 7.68563 10.5289 7.8624C10.5289 8.03918 10.4587 8.20872 10.3337 8.33374L6.60968 12.0577C6.51644 12.1509 6.39767 12.2144 6.26837 12.2401C6.13906 12.2658 6.00504 12.2526 5.88324 12.2022C5.76144 12.1517 5.65733 12.0663 5.58408 11.9567C5.51082 11.8471 5.47171 11.7182 5.47168 11.5864Z" fill="#0F53ED"/>
+												  </svg>
+											</a>
+										</td>
+										<td class="valid-to-column">Jul 18 - Jun26</td>
+										<td class="value-column">25%</td>
+										<td class="status-column">
+											<span class="active-st">Active</span>
+										</td>
+										<td class="action-column">
+											<div class="dropdown-center d-flex justify-content-center">
+												<button class=" dropdown-toggle position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="fas fa-ellipsis-v"></i>
+												</button>
+												<ul class="dropdown-menu position-absolute" style="inset: unset; width: 15rem;">
+												  <li><span class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalEdit" style="color:#212529;">
+														<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+														<path d="M4.16667 15.7414H5.34517L13.1066 7.98L11.9281 6.80148L4.16667 14.5629V15.7414ZM17.5 17.4081H2.5V13.8726L13.6958 2.6767C14.0213 2.35126 14.5489 2.35126 14.8743 2.6767L17.2314 5.03372C17.5568 5.35916 17.5568 5.88679 17.2314 6.21223L7.7022 15.7414H17.5V17.4081ZM13.1066 5.62297L14.2851 6.80148L15.4636 5.62297L14.2851 4.44446L13.1066 5.62297Z" fill="#1D1F2C"/>
+													 	</svg>
+														 Edit Promotion
+												  </span></li>
+												  <li>
+														<div class="dropdown-item form-check form-switch d-flex justify-content-between align-items-center">
+															<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+																<path d="M9.99993 2.5C14.4933 2.5 18.2317 5.73313 19.0154 10C18.2317 14.2668 14.4933 17.5 9.99993 17.5C5.50644 17.5 1.76813 14.2668 0.984375 10C1.76813 5.73313 5.50644 2.5 9.99993 2.5ZM9.99993 15.8333C13.5296 15.8333 16.5499 13.3767 17.3144 10C16.5499 6.62336 13.5296 4.16667 9.99993 4.16667C6.47018 4.16667 3.44986 6.62336 2.68533 10C3.44986 13.3767 6.47018 15.8333 9.99993 15.8333ZM9.99993 13.75C7.92883 13.75 6.24989 12.0711 6.24989 10C6.24989 7.92893 7.92883 6.25 9.99993 6.25C12.0709 6.25 13.7499 7.92893 13.7499 10C13.7499 12.0711 12.0709 13.75 9.99993 13.75ZM9.99993 12.0833C11.1505 12.0833 12.0833 11.1506 12.0833 10C12.0833 8.84942 11.1505 7.91667 9.99993 7.91667C8.84934 7.91667 7.91656 8.84942 7.91656 10C7.91656 11.1506 8.84934 12.0833 9.99993 12.0833Z" fill="#1D1F2C"/>
+															</svg>
+															<label class="form-check-label" for="flexSwitchCheckChecked" style="color:#212529;">Make it in-active</label>
+															<input class="ms-2 form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" 
+															style="
+															display: flex;
+															width: 50px;
+															height: 28px;
+															padding: 4px 5px 4px 25px;
+															justify-content: flex-end;
+															align-items: center;
+															border-radius: 29px;
+														">
+														  </div>
+												  </li>
+												  <li><span class="dropdown-item" >
+														<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+															<path d="M16.666 5.83366V16.667C16.666 17.5875 15.9198 18.3337 14.9993 18.3337H4.99935C4.07887 18.3337 3.33268 17.5875 3.33268 16.667V5.83366H1.66602V4.16699H18.3327V5.83366H16.666ZM4.99935 5.83366V16.667H14.9993V5.83366H4.99935ZM9.16602 7.50033H10.8327V9.16699H9.16602V7.50033ZM9.16602 10.0003H10.8327V11.667H9.16602V10.0003ZM9.16602 12.5003H10.8327V14.167H9.16602V12.5003ZM5.83268 1.66699H14.166V3.33366H5.83268V1.66699Z" fill="#1D1F2C"/>
+														</svg>
+														Delete
+												  </span></li>
+												</ul>
+											  </div>
+										</td>
+									</tr>
+									<!-- Sample data rows active -->
+									<tr>
+										<td class="checkbox-column"><input class="form-check-input" type="checkbox"></td>
+										<td class="name-column">John Doe</td>
+										<td class="code-column">ABC123</td>
+										<td class="availability-column">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color:#0F53ED;">
+												All Services 
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+													<path d="M5.47168 11.5864L5.47168 4.1384C5.47171 4.00657 5.51082 3.87771 5.58408 3.7681C5.65733 3.65849 5.76144 3.57307 5.88324 3.52262C6.00504 3.47217 6.13906 3.45897 6.26837 3.48468C6.39767 3.51039 6.51644 3.57387 6.60968 3.66707L10.3337 7.39107C10.4587 7.51609 10.5289 7.68563 10.5289 7.8624C10.5289 8.03918 10.4587 8.20872 10.3337 8.33374L6.60968 12.0577C6.51644 12.1509 6.39767 12.2144 6.26837 12.2401C6.13906 12.2658 6.00504 12.2526 5.88324 12.2022C5.76144 12.1517 5.65733 12.0663 5.58408 11.9567C5.51082 11.8471 5.47171 11.7182 5.47168 11.5864Z" fill="#0F53ED"/>
+												  </svg>
+											</a>
+										</td>
+										<td class="valid-to-column">Jul 18 - Jun26</td>
+										<td class="value-column">25%</td>
+										<td class="status-column">
+											<span class="active-st">Active</span>
+										</td>
+										<td class="action-column">
+											<div class="dropdown-center d-flex justify-content-center">
+												<button class=" dropdown-toggle position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="fas fa-ellipsis-v"></i>
+												</button>
+												<ul class="dropdown-menu position-absolute" style="inset: unset; width: 15rem;">
+												  <li><span class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalEdit" style="color:#212529;">
+														<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+														<path d="M4.16667 15.7414H5.34517L13.1066 7.98L11.9281 6.80148L4.16667 14.5629V15.7414ZM17.5 17.4081H2.5V13.8726L13.6958 2.6767C14.0213 2.35126 14.5489 2.35126 14.8743 2.6767L17.2314 5.03372C17.5568 5.35916 17.5568 5.88679 17.2314 6.21223L7.7022 15.7414H17.5V17.4081ZM13.1066 5.62297L14.2851 6.80148L15.4636 5.62297L14.2851 4.44446L13.1066 5.62297Z" fill="#1D1F2C"/>
+													 	</svg>
+														 Edit Promotion
+												  </span></li>
+												  <li>
+														<div class="dropdown-item form-check form-switch d-flex justify-content-between align-items-center">
+															<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+																<path d="M9.99993 2.5C14.4933 2.5 18.2317 5.73313 19.0154 10C18.2317 14.2668 14.4933 17.5 9.99993 17.5C5.50644 17.5 1.76813 14.2668 0.984375 10C1.76813 5.73313 5.50644 2.5 9.99993 2.5ZM9.99993 15.8333C13.5296 15.8333 16.5499 13.3767 17.3144 10C16.5499 6.62336 13.5296 4.16667 9.99993 4.16667C6.47018 4.16667 3.44986 6.62336 2.68533 10C3.44986 13.3767 6.47018 15.8333 9.99993 15.8333ZM9.99993 13.75C7.92883 13.75 6.24989 12.0711 6.24989 10C6.24989 7.92893 7.92883 6.25 9.99993 6.25C12.0709 6.25 13.7499 7.92893 13.7499 10C13.7499 12.0711 12.0709 13.75 9.99993 13.75ZM9.99993 12.0833C11.1505 12.0833 12.0833 11.1506 12.0833 10C12.0833 8.84942 11.1505 7.91667 9.99993 7.91667C8.84934 7.91667 7.91656 8.84942 7.91656 10C7.91656 11.1506 8.84934 12.0833 9.99993 12.0833Z" fill="#1D1F2C"/>
+															</svg>
+															<label class="form-check-label" for="flexSwitchCheckChecked" style="color:#212529;">Make it in-active</label>
+															<input class="ms-2 form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" 
+															style="
+															display: flex;
+															width: 50px;
+															height: 28px;
+															padding: 4px 5px 4px 25px;
+															justify-content: flex-end;
+															align-items: center;
+															border-radius: 29px;
+														">
+														  </div>
+												  </li>
+												  <li><span class="dropdown-item" >
+														<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+															<path d="M16.666 5.83366V16.667C16.666 17.5875 15.9198 18.3337 14.9993 18.3337H4.99935C4.07887 18.3337 3.33268 17.5875 3.33268 16.667V5.83366H1.66602V4.16699H18.3327V5.83366H16.666ZM4.99935 5.83366V16.667H14.9993V5.83366H4.99935ZM9.16602 7.50033H10.8327V9.16699H9.16602V7.50033ZM9.16602 10.0003H10.8327V11.667H9.16602V10.0003ZM9.16602 12.5003H10.8327V14.167H9.16602V12.5003ZM5.83268 1.66699H14.166V3.33366H5.83268V1.66699Z" fill="#1D1F2C"/>
+														</svg>
+														Delete
+												  </span></li>
+												</ul>
+											  </div>
+										</td>
+									</tr>
+									<!-- Sample data rows inactive-->
+									<tr>
+										<td class="checkbox-column"><input class="form-check-input" type="checkbox"></td>
+										<td class="name-column">John Doe</td>
+										<td class="code-column">ABC123</td>
+										<td class="availability-column">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color:#0F53ED;">
+												6 Services 
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+													<path d="M5.47168 11.5864L5.47168 4.1384C5.47171 4.00657 5.51082 3.87771 5.58408 3.7681C5.65733 3.65849 5.76144 3.57307 5.88324 3.52262C6.00504 3.47217 6.13906 3.45897 6.26837 3.48468C6.39767 3.51039 6.51644 3.57387 6.60968 3.66707L10.3337 7.39107C10.4587 7.51609 10.5289 7.68563 10.5289 7.8624C10.5289 8.03918 10.4587 8.20872 10.3337 8.33374L6.60968 12.0577C6.51644 12.1509 6.39767 12.2144 6.26837 12.2401C6.13906 12.2658 6.00504 12.2526 5.88324 12.2022C5.76144 12.1517 5.65733 12.0663 5.58408 11.9567C5.51082 11.8471 5.47171 11.7182 5.47168 11.5864Z" fill="#0F53ED"/>
+												  </svg>
+											</a>
+										</td>
+										<td class="valid-to-column">Jul 18 - Jun26</td>
+										<td class="value-column">25%</td>
+										<td class="status-column">
+											<span class="inactive-st">Inactive</span>
+										</td>
+										<td class="action-column">
+											<div class="dropdown-center d-flex justify-content-center">
+												<button class=" dropdown-toggle position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="fas fa-ellipsis-v"></i>
+												</button>
+												<ul class="dropdown-menu position-absolute" style="inset: unset; width: 15rem;">
+												  <li><span class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalEdit" style="color:#212529;">
+														<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+														<path d="M4.16667 15.7414H5.34517L13.1066 7.98L11.9281 6.80148L4.16667 14.5629V15.7414ZM17.5 17.4081H2.5V13.8726L13.6958 2.6767C14.0213 2.35126 14.5489 2.35126 14.8743 2.6767L17.2314 5.03372C17.5568 5.35916 17.5568 5.88679 17.2314 6.21223L7.7022 15.7414H17.5V17.4081ZM13.1066 5.62297L14.2851 6.80148L15.4636 5.62297L14.2851 4.44446L13.1066 5.62297Z" fill="#1D1F2C"/>
+													 	</svg>
+														 Edit Promotion
+												  </span></li>
+												  <li>
+														<div class="dropdown-item form-check form-switch d-flex justify-content-between align-items-center">
+															<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+																<path d="M9.99993 2.5C14.4933 2.5 18.2317 5.73313 19.0154 10C18.2317 14.2668 14.4933 17.5 9.99993 17.5C5.50644 17.5 1.76813 14.2668 0.984375 10C1.76813 5.73313 5.50644 2.5 9.99993 2.5ZM9.99993 15.8333C13.5296 15.8333 16.5499 13.3767 17.3144 10C16.5499 6.62336 13.5296 4.16667 9.99993 4.16667C6.47018 4.16667 3.44986 6.62336 2.68533 10C3.44986 13.3767 6.47018 15.8333 9.99993 15.8333ZM9.99993 13.75C7.92883 13.75 6.24989 12.0711 6.24989 10C6.24989 7.92893 7.92883 6.25 9.99993 6.25C12.0709 6.25 13.7499 7.92893 13.7499 10C13.7499 12.0711 12.0709 13.75 9.99993 13.75ZM9.99993 12.0833C11.1505 12.0833 12.0833 11.1506 12.0833 10C12.0833 8.84942 11.1505 7.91667 9.99993 7.91667C8.84934 7.91667 7.91656 8.84942 7.91656 10C7.91656 11.1506 8.84934 12.0833 9.99993 12.0833Z" fill="#1D1F2C"/>
+															</svg>
+															<label class="form-check-label" for="flexSwitchCheckChecked" style="color:#212529;">Make it in-active</label>
+															<input class="ms-2 form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" 
+															style="
+															display: flex;
+															width: 50px;
+															height: 28px;
+															padding: 4px 5px 4px 25px;
+															justify-content: flex-end;
+															align-items: center;
+															border-radius: 29px;
+														">
+														  </div>
+												  </li>
+												  <li><span class="dropdown-item" >
+														<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+															<path d="M16.666 5.83366V16.667C16.666 17.5875 15.9198 18.3337 14.9993 18.3337H4.99935C4.07887 18.3337 3.33268 17.5875 3.33268 16.667V5.83366H1.66602V4.16699H18.3327V5.83366H16.666ZM4.99935 5.83366V16.667H14.9993V5.83366H4.99935ZM9.16602 7.50033H10.8327V9.16699H9.16602V7.50033ZM9.16602 10.0003H10.8327V11.667H9.16602V10.0003ZM9.16602 12.5003H10.8327V14.167H9.16602V12.5003ZM5.83268 1.66699H14.166V3.33366H5.83268V1.66699Z" fill="#1D1F2C"/>
+														</svg>
+														Delete
+												  </span></li>
+												</ul>
+											  </div>
+										</td>
+									</tr>
+									<!-- Sample data rows active -->
+									<tr>
+										<td class="checkbox-column"><input class="form-check-input" type="checkbox"></td>
+										<td class="name-column">John Doe</td>
+										<td class="code-column">ABC123</td>
+										<td class="availability-column">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color:#0F53ED;">
+												All Services 
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+													<path d="M5.47168 11.5864L5.47168 4.1384C5.47171 4.00657 5.51082 3.87771 5.58408 3.7681C5.65733 3.65849 5.76144 3.57307 5.88324 3.52262C6.00504 3.47217 6.13906 3.45897 6.26837 3.48468C6.39767 3.51039 6.51644 3.57387 6.60968 3.66707L10.3337 7.39107C10.4587 7.51609 10.5289 7.68563 10.5289 7.8624C10.5289 8.03918 10.4587 8.20872 10.3337 8.33374L6.60968 12.0577C6.51644 12.1509 6.39767 12.2144 6.26837 12.2401C6.13906 12.2658 6.00504 12.2526 5.88324 12.2022C5.76144 12.1517 5.65733 12.0663 5.58408 11.9567C5.51082 11.8471 5.47171 11.7182 5.47168 11.5864Z" fill="#0F53ED"/>
+												  </svg>
+											</a>
+										</td>
+										<td class="valid-to-column">Jul 18 - Jun26</td>
+										<td class="value-column">25%</td>
+										<td class="status-column">
+											<span class="active-st">Active</span>
+										</td>
+										<td class="action-column">
+											<div class="dropdown-center d-flex justify-content-center">
+												<button class=" dropdown-toggle position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="fas fa-ellipsis-v"></i>
+												</button>
+												<ul class="dropdown-menu position-absolute" style="inset: unset; width: 15rem;">
+												  <li><span class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalEdit" style="color:#212529;">
+														<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+														<path d="M4.16667 15.7414H5.34517L13.1066 7.98L11.9281 6.80148L4.16667 14.5629V15.7414ZM17.5 17.4081H2.5V13.8726L13.6958 2.6767C14.0213 2.35126 14.5489 2.35126 14.8743 2.6767L17.2314 5.03372C17.5568 5.35916 17.5568 5.88679 17.2314 6.21223L7.7022 15.7414H17.5V17.4081ZM13.1066 5.62297L14.2851 6.80148L15.4636 5.62297L14.2851 4.44446L13.1066 5.62297Z" fill="#1D1F2C"/>
+													 	</svg>
+														 Edit Promotion
+												  </span></li>
+												  <li>
+														<div class="dropdown-item form-check form-switch d-flex justify-content-between align-items-center">
+															<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+																<path d="M9.99993 2.5C14.4933 2.5 18.2317 5.73313 19.0154 10C18.2317 14.2668 14.4933 17.5 9.99993 17.5C5.50644 17.5 1.76813 14.2668 0.984375 10C1.76813 5.73313 5.50644 2.5 9.99993 2.5ZM9.99993 15.8333C13.5296 15.8333 16.5499 13.3767 17.3144 10C16.5499 6.62336 13.5296 4.16667 9.99993 4.16667C6.47018 4.16667 3.44986 6.62336 2.68533 10C3.44986 13.3767 6.47018 15.8333 9.99993 15.8333ZM9.99993 13.75C7.92883 13.75 6.24989 12.0711 6.24989 10C6.24989 7.92893 7.92883 6.25 9.99993 6.25C12.0709 6.25 13.7499 7.92893 13.7499 10C13.7499 12.0711 12.0709 13.75 9.99993 13.75ZM9.99993 12.0833C11.1505 12.0833 12.0833 11.1506 12.0833 10C12.0833 8.84942 11.1505 7.91667 9.99993 7.91667C8.84934 7.91667 7.91656 8.84942 7.91656 10C7.91656 11.1506 8.84934 12.0833 9.99993 12.0833Z" fill="#1D1F2C"/>
+															</svg>
+															<label class="form-check-label" for="flexSwitchCheckChecked" style="color:#212529;">Make it in-active</label>
+															<input class="ms-2 form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" 
+															style="
+															display: flex;
+															width: 50px;
+															height: 28px;
+															padding: 4px 5px 4px 25px;
+															justify-content: flex-end;
+															align-items: center;
+															border-radius: 29px;
+														">
+														  </div>
+												  </li>
+												  <li><span class="dropdown-item" >
+														<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+															<path d="M16.666 5.83366V16.667C16.666 17.5875 15.9198 18.3337 14.9993 18.3337H4.99935C4.07887 18.3337 3.33268 17.5875 3.33268 16.667V5.83366H1.66602V4.16699H18.3327V5.83366H16.666ZM4.99935 5.83366V16.667H14.9993V5.83366H4.99935ZM9.16602 7.50033H10.8327V9.16699H9.16602V7.50033ZM9.16602 10.0003H10.8327V11.667H9.16602V10.0003ZM9.16602 12.5003H10.8327V14.167H9.16602V12.5003ZM5.83268 1.66699H14.166V3.33366H5.83268V1.66699Z" fill="#1D1F2C"/>
+														</svg>
+														Delete
+												  </span></li>
+												</ul>
+											  </div>
+										</td>
+									</tr>
+									<!-- Add more rows as needed -->
+								</tbody>
+
+							</table>
+
+							<!-- pagination -->
+							<div class="d-flex justify-content-between px-3">
+								<p class="text-muted fw-medium">Showing 1-12 from 40</p>
+								<nav aria-label="Page navigation example">
+									<ul class="pagination gap-2">
+									  <li class="page-item">
+										<a class="page-link rounded bg-light text-dark" href="#" aria-label="Previous">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+												<path d="M10.5293 11.5864L10.5293 4.1384C10.5293 4.00657 10.4902 3.87771 10.4169 3.7681C10.3436 3.65849 10.2395 3.57307 10.1177 3.52262C9.99593 3.47217 9.86191 3.45897 9.73261 3.48468C9.60331 3.51039 9.48453 3.57387 9.3913 3.66707L5.66731 7.39107C5.54233 7.51609 5.47211 7.68563 5.47211 7.8624C5.47211 8.03918 5.54233 8.20872 5.66731 8.33374L9.3913 12.0577C9.48453 12.1509 9.60331 12.2144 9.73261 12.2401C9.86191 12.2658 9.99593 12.2526 10.1177 12.2022C10.2395 12.1517 10.3436 12.0663 10.4169 11.9567C10.4902 11.8471 10.5293 11.7182 10.5293 11.5864Z" fill="#090A22"/>
+											  </svg>
+										</a>
+									  </li>
+									  <li class="page-item active"><a class="page-link rounded " href="#">1</a></li>
+									  <li class="page-item"><a class="page-link rounded bg-light text-dark" href="#">2</a></li>
+									  <li class="page-item"><a class="page-link rounded bg-light text-dark" href="#">3</a></li>
+									  <li class="page-item"><a class="page-link rounded bg-light text-dark" href="#">...</a></li>
+ 
+									  <li class="page-item">
+										<a class="page-link rounded bg-light text-dark" href="#" aria-label="Next">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+												<path d="M5.4707 11.5864L5.4707 4.1384C5.47073 4.00657 5.50985 3.87771 5.5831 3.7681C5.65636 3.65849 5.76047 3.57307 5.88227 3.52262C6.00407 3.47217 6.13809 3.45897 6.26739 3.48468C6.39669 3.51039 6.51547 3.57387 6.6087 3.66707L10.3327 7.39107C10.4577 7.51609 10.5279 7.68563 10.5279 7.8624C10.5279 8.03918 10.4577 8.20872 10.3327 8.33374L6.6087 12.0577C6.51547 12.1509 6.39669 12.2144 6.26739 12.2401C6.13809 12.2658 6.00407 12.2526 5.88227 12.2022C5.76047 12.1517 5.65636 12.0663 5.5831 11.9567C5.50985 11.8471 5.47073 11.7182 5.4707 11.5864Z" fill="#090A22"/>
+											  </svg>
+										</a>
+									  </li>
+									</ul>
+								  </nav>
+							</div>
+							
+							
+						</div>
+
+						<!-- empty promotion -->
+						<div class="sys-widget-content promo-filtersearch no-padding d-flex justify-content-between my-4 p-4">
+								<div class="empty-promo-cont">
+									<img src="../assets/img/no-promotion.png" alt="no-promotion">
+									<h4 class="mt-3">No promotion found</h4>
+									<p class="text-muted fw-medium">Add promotion to give your clients some discounts</p>
+									<button class=" sys-btn sys-btn-primary" data-bs-toggle="modal" data-bs-target="#modalEdit">
+									<i class="sys-icon sys-icon-plus"></i>
+									<span>Add Promotion</span>
+									</button>
+								</div>
+						</div>
+				
+				</div>
+
+			<!-- end of the content -->
+
+
+
+			</div>
+
+
+
+
+		</div>
+	</div>
+	</div>
+	</div>
+
+<!-- Modal viwe promotion details -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content border-0">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="exampleModalLabel">Promotion details</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		  <div class="">
+			<p class="mb-0 text-muted">Promotion name</p>
+			<h5 class="mb-3">Year End Offer 2023</h5>
+			<table class="mt-2 table table-borderless">
+				<thead>
+					<tr>
+						<th>Code</th>
+						<th>Discount type</th>
+						<th>Discount value</th>
+						<th>Validity</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="fw-bold">
+						<td>PROMO2234</td>
+						<td>Percentage</td>
+						<td>25 USD</td>
+						<td>25 Jun - 4 Aug <br>
+						<span class="fw-normal">(10am - 12pm)</span></td>
+					</tr>
+				</tbody>
+			</table>
+		  </div>
+		  <hr>
+		  <p class="mb-0 text-muted">Services</p>
+		  <h6 class="my-2">3 Services</h6>
+		  <div class="mb-2">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+				<path d="M5.83366 4.16634V1.66634C5.83366 1.20611 6.20676 0.833008 6.66699 0.833008H13.3337C13.7939 0.833008 14.167 1.20611 14.167 1.66634V4.16634H17.5003C17.9606 4.16634 18.3337 4.53944 18.3337 4.99967V16.6663C18.3337 17.1266 17.9606 17.4997 17.5003 17.4997H2.50033C2.04009 17.4997 1.66699 17.1266 1.66699 16.6663V4.99967C1.66699 4.53944 2.04009 4.16634 2.50033 4.16634H5.83366ZM3.33366 12.4997V15.833H16.667V12.4997H3.33366ZM9.16699 9.16634V10.833H10.8337V9.16634H9.16699ZM7.50033 2.49967V4.16634H12.5003V2.49967H7.50033Z" fill="#0F53ED"/>
+			  </svg>
+			 <span class="ms-2" style="color: #090A22;
+			 font-size: 16px;
+			 font-weight: 600;
+			 line-height: 24px; /* 150% */
+			 letter-spacing: 0.08px;">New Single event 1</span> 
+		  </div>
+		  <div class="mb-2">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+				<path d="M5.83366 4.16634V1.66634C5.83366 1.20611 6.20676 0.833008 6.66699 0.833008H13.3337C13.7939 0.833008 14.167 1.20611 14.167 1.66634V4.16634H17.5003C17.9606 4.16634 18.3337 4.53944 18.3337 4.99967V16.6663C18.3337 17.1266 17.9606 17.4997 17.5003 17.4997H2.50033C2.04009 17.4997 1.66699 17.1266 1.66699 16.6663V4.99967C1.66699 4.53944 2.04009 4.16634 2.50033 4.16634H5.83366ZM3.33366 12.4997V15.833H16.667V12.4997H3.33366ZM9.16699 9.16634V10.833H10.8337V9.16634H9.16699ZM7.50033 2.49967V4.16634H12.5003V2.49967H7.50033Z" fill="#0F53ED"/>
+			  </svg>
+			 <span class="ms-2" style="color: #090A22;
+			 font-size: 16px;
+			 font-weight: 600;
+			 line-height: 24px; /* 150% */
+			 letter-spacing: 0.08px;">New Single event 1</span> 
+		  </div>
+		  <div class="mb-2">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+				<path d="M5.83366 4.16634V1.66634C5.83366 1.20611 6.20676 0.833008 6.66699 0.833008H13.3337C13.7939 0.833008 14.167 1.20611 14.167 1.66634V4.16634H17.5003C17.9606 4.16634 18.3337 4.53944 18.3337 4.99967V16.6663C18.3337 17.1266 17.9606 17.4997 17.5003 17.4997H2.50033C2.04009 17.4997 1.66699 17.1266 1.66699 16.6663V4.99967C1.66699 4.53944 2.04009 4.16634 2.50033 4.16634H5.83366ZM3.33366 12.4997V15.833H16.667V12.4997H3.33366ZM9.16699 9.16634V10.833H10.8337V9.16634H9.16699ZM7.50033 2.49967V4.16634H12.5003V2.49967H7.50033Z" fill="#0F53ED"/>
+			  </svg>
+			 <span class="ms-2" style="color: #090A22;
+			 font-size: 16px;
+			 font-weight: 600;
+			 line-height: 24px; /* 150% */
+			 letter-spacing: 0.08px;">New Single event 1</span> 
+		  </div>
+		</div>
+		<!-- <div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		</div> -->
+	  </div>
+	</div>
+  </div>
+
+  <!-- Modal add promotion details -->
+<div class="modal fade add-edit-modal" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content border-0">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="exampleModalLabel">Add Promotion</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+			<!-- form Add promotion -->
+			<form action="" method="post">
+			<!-- Promotion name -->
+			<div class="mb-3">
+				<label for="promotion_name" class="form-label">Promotion name </label>
+				<input type="text" class="form-control form-control-lg" id="promotion_name" placeholder="Promotion name">
+			  </div>
+			  <!-- Promotion code -->
+			  <div class="mb-3 position-relative">
+				<label for="promotion_code" class="form-label">Promotion code</label>
+				<button type="button" class="btn bg-primary-subtle text-primary rounded-1 position-absolute top-50 end-0 fw-medium me-1">Generate</button>
+				<input type="text" class="form-control form-control-lg" id="promotion_code" placeholder="Ex:PROMO12">
+			  </div>
+			  <!-- Promotion code -->
+			  <div class="mb-3">
+				<label for="number_avilability" class="form-label">Number of time can avail the code</label>
+				<input type="number" class="form-control form-control-lg" id="number_avilability" placeholder="Type number of people2">
+			  </div>
+			  <!-- Discount type & Value -->
+			  <div class="row mb-3">
+				<div class="col">
+					<label for="number_avilability" class="form-label">Discount type</label>
+					<select class="form-select form-control-lg" id="select_service">
+					  <option selected>Select one</option>
+					  <option value="1">One</option>
+					  <option value="2">Two</option>
+					  <option value="3">Three</option>
+					</select>				
+				</div>
+				<div class="col">
+					<label for="discount_value" class="form-label">Discount value</label>
+					<input type="number" class="form-control form-control-lg" id="discount_value" placeholder="Type amount"> 
+				</div>
+				
+			  </div>
+				<!-- Select service -->
+			  <div class=" mb-3">
+				<label class="form-label" for="select_service">Select service</label>
+				<select class="form-select form-control-lg" id="select_service">
+				  <option selected>Select service</option>
+				  <option value="1">One</option>
+				  <option value="2">Two</option>
+				  <option value="3">Three</option>
+				</select>
+			  </div>
+			  <!-- Discount type & Value -->
+			  <div class="row mb-3">
+				<div class="col">
+					<label for="start_date" class="form-label">Start date</label>
+					<input type="date" class="form-control form-control-lg" id="start_date" placeholder="Select date"> 				
+				</div>
+				<div class="col">
+					<label for="end_date" class="form-label">End date</label>
+					<input type="date" class="form-control form-control-lg" id="end_date" placeholder="Select date"> 
+				</div>
+				
+			  </div>
+			  <!-- Discount type & Value -->
+			  <div class="row mb-3">
+				<div class="col">
+					<label for="start_date" class="form-label">Start Time</label>
+					<input type="text" class="form-control form-control-lg timepicker" id="start_date" placeholder="Select Time"> 				
+				</div>
+				<div class="col">
+					<label for="end_time" class="form-label">End Time</label>
+					<input type="text" class="form-control form-control-lg timepicker" id="end_time" placeholder="Select Time"> 
+				</div>
+				
+			  </div>
+			</form>
+
+		</div>
+		<div class="modal-footer gap-2 rounded-2 py-4">
+		  <button type="button" class="btn btn-light text-primary rounded-1 px-4 py-3" data-bs-dismiss="modal">Cancel</button>
+		  <button type="button" class="btn btn-primary rounded-1 px-3 py-3">Save changes</button>
+		</div>
+	  </div>
+	</div>
+</div>
+
+
+  
+
+	<!-- js script files  -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-alpha.2/chart.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+	<script src="../assets/js/jquery-3.7.0.min.js"></script>
+	<script src="../assets/js/popper.min.js"></script>
+	<script src="../assets/js/daterangepicker.js"></script>
+	<script src="../assets/js/bootstrap.bundle.min.js"></script>
+	<script src="../assets/js/wow.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.js"></script>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.css">
+
+
+		<script>
+			// Select All checkbox functionality
+			document.getElementById('selectAll').addEventListener('change', function() {
+				const checkboxes = document.querySelectorAll('tbody input[type="checkbox"]');
+				checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+			});
+			$(".js-select2").select2({
+					closeOnSelect : false,
+					placeholder : "Placeholder",
+					allowHtml: true,
+					allowClear: true,
+					tags: true
+				});
+				$('.timepicker').timepicker({
+            defaultTime: '',
+            minuteStep: 5,
+            showSeconds: false,
+            showMeridian: true,
+            snapToStep: true
+        });
+		</script>
+	</body>
+
+</html>
