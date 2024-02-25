@@ -27405,3 +27405,106 @@ color: #F04438;
   }
   
 }
+.sys-dashboard-column
+{
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+}
+.sys-dashboard-column .sys-widget
+{
+  margin-bottom: 0;
+}
+.statistics-card-row
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+.statistics-card-dashboard
+{
+  background-color: #fff;
+  padding: 20px 20.4px 20px 20px;
+  border-radius: 8px;
+  border: 1px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.statistics-card-dashboard span
+{
+  color: #8E8E99;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  margin-top: .7rem;
+}
+.statistics-card-dashboard p
+{
+font-size: 24px;
+font-weight: 700;
+letter-spacing: 0.01em;
+color: #090A22;
+margin-bottom: 0;
+}
+.appointments-row,
+.customers-row
+{
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.country-row
+{
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.promo-table .status-column span.upcoming-st
+{
+  background-color: #FCF2E7;
+  padding: 7px 16px 7px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.005em;
+  color: #E58110;
+}
+.sys-dashboard-row .copy-url
+{
+ /* background-image: url(../img/dashboard-img.png); */
+ height: 402px;
+ overflow: hidden;
+ border-radius: 8px;
+ position: relative;
+}
+.sys-dashboard-row .copy-url div
+{
+  position: absolute;
+  top: 40px;
+  left: 25px;
+}
+.sys-dashboard-row .copy-url div p
+{
+font-size: 24px;
+font-weight: 700;
+line-height: 32px;
+letter-spacing: 0.01em;
+color : #FFFFFF;
+}
+.dashboard-statistics .sys-widget .sys-widget-header h3
+{
+  font-size: 19px;
+}
+@media (max-width: 1024px) {
+  .dashboard-statistics .sys-dashboard-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .dashboard-statistics .sys-widget .sys-widget-header h3
+  {
+    font-size: 18px;
+  }
+  
+}

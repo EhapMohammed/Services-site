@@ -1089,7 +1089,28 @@
 
 <!-- Modal Delete -->
 <div class="modal fade deleteModal" id="deleteModal" aria-labelledby="deleteModallabelledby" aria-hidden="true">
-	<div class="modal-dialog">
+	<style>
+		.deleteModal .modal-dialog
+		{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			margin: auto;
+			max-width: 425px;
+		}
+		.deleteModal .modal-content
+		{
+			border-radius: 12px;
+		}
+		@media (max-width: 768px) {
+			.deleteModal .modal-dialog
+		{
+			margin: auto 1rem;
+		}	
+		}
+	</style>
+	<div class="modal-dialog" >
 	  <div class="modal-content border-0">
 		<div class="modal-header py-4 border-0">
 		  <!-- <h1 class="modal-title fs-5" id="deleteModallabelledby"></h1> -->
@@ -1112,8 +1133,11 @@
 		  
 		</div>
 		<div class="modal-footer gap-2 rounded-2 py-3">
-		  <button type="button" class="btn btn-light text-primary rounded-1 px-4 py-2" data-bs-dismiss="modal">No, Cancel</button>
-		  <button type="button" class="btn btn-danger rounded-1 px-3 py-2">Yes, Delete</button>
+		  <button type="button" class="btn btn-light text-primary rounded-1" style="padding: 14px 18px 14px 18px;border-radius: 4px"
+		   data-bs-dismiss="modal">
+			No, Cancel</button>
+		  <button type="button" class="btn btn-danger rounded-1" style="background-color: #F04438;border-color: #F04438;padding: 14px 18px 14px 18px">
+			Yes, Delete</button>
 		</div>
 	  </div>
 	</div>
