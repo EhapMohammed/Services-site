@@ -27142,7 +27142,7 @@ body.sys .sys-form-phonefield-group:not(.has-value) .iti {
 }
 
 .promo-filtersearch,
-.promo-table
+.general-table
 {
   background-color: #fff;
 }
@@ -27209,29 +27209,29 @@ body.sys .sys-form-phonefield-group:not(.has-value) .iti {
 
 
 
-.promo-table .dropdown-toggle::after
+.general-table .dropdown-toggle::after
 {
   display: none;
 }
 
-.promo-table .dropdown-toggle
+.general-table .dropdown-toggle
 {
   border: 1px solid #E6E7E9;
 }
 
-.promo-table .dropdown-toggle:focus
+.general-table .dropdown-toggle:focus
 {
   outline-color: #E6E7E9;
 }
 
-.promo-table table,
+.general-table table,
 .payment-table table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.promo-table th ,
+.general-table th ,
 .payment-table th
 {
   background-color: #F5F8FA !important;
@@ -27239,7 +27239,7 @@ body.sys .sys-form-phonefield-group:not(.has-value) .iti {
   padding-bottom: 1rem !important;
 }
 
-.promo-table th,.promo-table td,
+.general-table th,.general-table td,
 .payment-table th,.payment-table td {
   padding: 8px;
   text-align: left;
@@ -27252,28 +27252,28 @@ body.sys .sys-form-phonefield-group:not(.has-value) .iti {
   letter-spacing: 0.07px;
 }
 
-.promo-table .checkbox-column {
+.general-table .checkbox-column {
   width: 50px;
 }
 
-.promo-table .name-column {
+.general-table .name-column {
   width: 150px;
 }
 
-.promo-table .code-column {
+.general-table .code-column {
   width: 100px;
 }
 
-.promo-table .availability-column,
-.promo-table .valid-to-column,
+.general-table .availability-column,
+.general-table .valid-to-column,
 .payment-table .service-column,
 .payment-table .price-column {
   width: 120px;
 }
 
-.promo-table .value-column ,
-.promo-table .status-column ,
-.promo-table .action-column ,
+.general-table .value-column ,
+.general-table .status-column ,
+.general-table .action-column ,
 .payment-table .promo-column ,
 .payment-table .payout-column ,
 .payment-table .status-column
@@ -27281,8 +27281,8 @@ body.sys .sys-form-phonefield-group:not(.has-value) .iti {
   width: 80px;
 }
 
-.promo-table .status-column span.active-st,
-.promo-table .status-column span.inactive-st,
+.general-table .status-column span.active-st,
+.general-table .status-column span.inactive-st,
 .payment-table .status-column span.complete-st,
 .payment-table .status-column span.notpaid-st,
 .payment-modal span.complete-st,
@@ -27299,20 +27299,20 @@ body.sys .sys-form-phonefield-group:not(.has-value) .iti {
   letter-spacing: 0.06px;
 }
 
-.promo-table .status-column span.active-st
+.general-table .status-column span.active-st
 {
 background: #E6F7EF;
 color: #09AE61;
 }
 
-.promo-table .status-column span.inactive-st
+.general-table .status-column span.inactive-st
 {
 background: #FEECEB;
 color: #F04438;
 }
 
-.promo-table .action-column .dropdown-item.active, 
-.promo-table .action-column .dropdown-item:active
+.general-table .action-column .dropdown-item.active, 
+.general-table .action-column .dropdown-item:active
 {
   background-color : unset;
 }
@@ -27380,7 +27380,7 @@ color: #F04438;
 }
 
 @media (max-width: 600px) {
-  .promo-table,
+  .general-table,
   .payment-table
   {
     overflow-x: auto;
@@ -27390,8 +27390,8 @@ color: #F04438;
     flex-wrap: wrap;
     gap: 1rem;
   }
-  .promo-table th,
-  .promo-table td,
+  .general-table th,
+  .general-table td,
   .payment-table th,
   .payment-table td {
     width: 100%;
@@ -27399,7 +27399,7 @@ color: #F04438;
     vertical-align: middle;
   }
 
-  .promo-table th,
+  .general-table th,
   .payment-table th {
     text-align: center;
   }
@@ -27458,7 +27458,7 @@ margin-bottom: 0;
   display: grid;
   grid-template-columns: auto 1fr;
 }
-.promo-table .status-column span.upcoming-st
+.general-table .status-column span.upcoming-st
 {
   background-color: #FCF2E7;
   padding: 7px 16px 7px 16px;
@@ -27507,4 +27507,23 @@ color : #FFFFFF;
     font-size: 18px;
   }
   
+}
+.countryDetails .modal-dialog
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  max-width: 750px;
+}
+.countryDetails .modal-content
+{
+  border-radius: 12px;
+}
+@media (max-width: 768px) {
+  .countryDetails .modal-dialog
+{
+  margin: auto 1rem;
+}	
 }
