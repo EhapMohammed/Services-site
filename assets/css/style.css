@@ -27714,3 +27714,20 @@ color : #FFFFFF;
     margin: auto 1rem;
   }	
 }
+.integration-card
+{
+  width:18rem;
+  border-color: #ECF0F3;
+}
+.integration-img
+{
+  border-radius: 8px;
+  background-color: #F5F8FA;
+  padding: 8px;
+}
+.integration-card p:nth-child(2) {
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0.005em;
+}
