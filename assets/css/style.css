@@ -27731,3 +27731,48 @@ font-weight: 400;
 line-height: 20px;
 letter-spacing: 0.005em;
 }
+
+/* workingHours settings page */
+.workingHours 
+{
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+.workingHours .sys-widget
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.workingHours .sys-widget .working-head p:first-child
+{
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  color: #090A22;
+}
+.workingHours .sys-widget .working-head p:nth-child(2)
+{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: #5A5B6B;
+}
+.workingHours .workingOffDays button
+{
+  width: Fixed (157px);
+  height: Hug (40px);
+  padding: 10 12 10 12 ;
+  gap: 8px;
+  border-radius: 4;
+  background-color: #0F53ED1A;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  color: #0F53ED;
+}
